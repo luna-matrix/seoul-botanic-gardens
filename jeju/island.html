@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeju Island Food Atlas · 섬 전체 맛집</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="logo-dot"></span>Jeju Food Atlas</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="jeju-city.html">Jeju City · 제주시</a></li>
+      <li><a href="island.html" class="active">Island · 섬 전체</a></li>
+      <li><a href="specialties.html">Specialties · 특산물</a></li>
+    </ul>
+    <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- SUB HERO -->
+<header class="sub-hero">
+  <div class="wrap sub-hero-inner">
+    <span class="kicker">섬 전체 · Island-Wide</span>
+    <h1>The Island <em>Atlas</em></h1>
+    <p class="ko">제주도 전역 — 동·서·남 해안도로</p>
+    <p class="lead">Seventeen restaurants across three coasts — organised as a road trip. The West is black-pork country; the East is haenyeo-diver seafood and noodles; the South is pufferfish stew, mackerel sashimi, and market food. Pick a coast, drive, eat.</p>
+  </div>
+</header>
+
+<!-- MAP -->
+<section style="padding-top:3rem">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:1.5rem">
+      <span class="kicker">Island Map · 섬 지도</span>
+      <h2 style="font-size:1.8rem">Island Restaurant Map <span class="ko">섬 전체 맛집 지도</span></h2>
+    </div>
+    <div class="map-container">
+      <div id="map-island" style="height:550px;width:100%;background:var(--paper-dark)"></div>
+      <div class="map-legend">
+        <div class="lg-item"><div class="lg-dot gem"></div>Hidden Gem · 숨은 명소</div>
+        <div class="lg-item"><div class="lg-dot local"></div>Local Favourite · 현지인 맛집</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEST COAST -->
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <div class="region-anchor">
+      <div class="compass">◀</div>
+      <div class="info">
+        <h3>West Coast · 애월 · 한림 · 한경</h3>
+        <span>Black pork country, ocean-view grills, and fusion haenyeo pasta</span>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <p style="max-width:620px;color:var(--muted);margin-bottom:1.5rem;font-size:.95rem">The drive from Jeju City northwest through Aewol to Hallim and Hyeopjae is the island's most photographed coastline — and its richest black-pork corridor. This is where the <em>근고기</em> (thick-cut) style was born.</p>
+
+    <div class="entry" data-query="돈사촌 애월">
+      <div class="entry-tag gem"><div class="icon">★</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>돈사촌<span class="en">Donsachon</span></h3>
+          <span class="price-pill">₩15,000–30,000</span>
+        </div>
+        <div class="entry-cuisine">Black Pork · 근고기 원조 · 연탄불</div>
+        <p>The <strong>originator (원조)</strong> of Jeju's <em>근고기</em> style — extra-thick-cut black pork neck and belly grilled over <strong>연탄불 (charcoal briquette fire)</strong>. The meat juices are, per the blogger who made it their #1 pick, "truly fantastic" (육즙이 환상적). Operates like a butcher shop: fresh meat at fair prices, not a fancy restaurant. This is the style locals prefer over tourist-oriented grills.</p>
+        <div class="anecdote"><b>Dip like a local:</b> <em>멜젓</em> (멸치젓, anchovy sauce) — the only correct dip for 근고기. The briquette charcoal gives a deeper, smokier char than standard charcoal. This combination is why locals drive across the island to get here.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 애월 · Aewol area</span>
+          <span class="m">Butcher-shop style · Cash &amp; card</span>
+          <span class="m">Ask for: 근고기 (thick-cut neck &amp; belly) + 멜젓</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="고향흑돼지 한림 협재">
+      <div class="entry-tag local"><div class="icon">p</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>고향흑돼지<span class="en">Gohyang Heukdwaeji</span></h3>
+          <span class="price-pill">₩44,000 / 2-person set</span>
+        </div>
+        <div class="entry-cuisine">Black Pork BBQ with Ocean View · 흑돼지 세트</div>
+        <p>Recommended by a local accommodation host near Hyeopjae Beach. Features an <strong>ocean view through large windows</strong> while you eat. The 2-person set (₩44,000) includes 180g belly + 180g neck + 2 abalone + 4 shrimp + sausage. The owner grills everything for you. Pork neck is "tender like beef."</p>
+        <div class="anecdote"><b>Order this:</b> Add <em>고사리</em> (bracken fern) to the grill — it chars alongside the pork fat and absorbs the drippings. The black pork + bracken combo is a Jeju institution. Strongly recommended if you're in the Hallim or Hyeopjae area.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 한림읍 한림해안로 29 · Near Hyeopjae Beach</span>
+          <span class="m">11:00–22:00 · Closed Wednesdays · Phone: 064-796-6426</span>
+          <span class="m">Large parking · Owner grills for you</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="밥깡패 한림">
+      <div class="entry-tag gem"><div class="icon">f</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>밥깡패<span class="en">Bapgangpae</span></h3>
+          <span class="price-pill">₩12,000–18,000</span>
+        </div>
+        <div class="entry-cuisine">Jeju Fusion · 해녀파스타 · 흑돼지 두부 커리</div>
+        <p>Long waits but worth it. Creative fusion built entirely from local Jeju ingredients: <strong>해녀파스타</strong> (haenyeo pasta — seafood pasta using what the female divers catch that day) and <strong>흑돼지 두부 커리</strong> (black pork tofu curry). Closes when ingredients run out — arrive at opening time.</p>
+        <div class="anecdote"><b>The name:</b> "밥깡패" literally means "rice gangster" — someone who dominates the meal so thoroughly that rice is all that's left to talk about. The kind of self-aware naming that signals a confident kitchen.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 한림 · Hallim area</span>
+          <span class="m">Closes when sold out · Arrive at opening</span>
+          <span class="m">Limited parking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="블랙씨걸 한림">
+      <div class="entry-tag gem"><div class="icon">s</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>블랙씨걸<span class="en">Black Sea Girl</span></h3>
+          <span class="price-pill">₩40,000 (medium)</span>
+        </div>
+        <div class="entry-cuisine">Mackerel Sashimi & Stew · 고등어회 · 지리탕</div>
+        <p>Also recommended by a local host near Hallim. The entrance aquarium is notably clean — "inspiring confidence before eating." Even the medium-sized mackerel sashimi (₩40,000) is generous. Abundant, delicious side dishes. The owner teaches a recommended lettuce-wrap combination. Ends with <em>지리탕</em> — a clear, slightly spicy mackerel bone stew that cuts through everything before it.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주시 한림읍 한림서길 22 · Near Hallim Harbor</span>
+          <span class="m">Daily 11:00–23:00 · Phone: 064-796-2580</span>
+          <span class="m">Roadside parking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="꽁순이네 애월">
+      <div class="entry-tag gem"><div class="icon">n</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>꽁순이네<span class="en">Kongsun-i-ne</span></h3>
+          <span class="price-pill">₩8,000</span>
+        </div>
+        <div class="entry-cuisine">Hidden Gogi-Guksu · 고기국수</div>
+        <p>A <strong>true hidden gem</strong> in the quiet Aewol mid-mountain (중산간) area. Surrounded by lush greenery with a spacious parking lot — relaxed and away from the coastal crowds. Clean interior and presentation. Frequent <strong>early closures when ingredients sell out fast</strong>. A favorite among Jeju locals who know to come before noon.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주시 애월읍 중산간서로 5642 · Aewol mid-mountain</span>
+          <span class="m">10:00–18:00 · Closed Tuesdays</span>
+          <span class="m">Arrive early — sells out</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EAST COAST -->
+<section style="padding-top:2rem;background:var(--paper-warm)">
+  <div class="wrap">
+    <div class="region-anchor">
+      <div class="compass">▶</div>
+      <div class="info">
+        <h3>East Coast · 성산 · 구좌 · 월정리</h3>
+        <span>Haenyeo divers, Sunrise Peak noodles, and the freshest conch ramen on earth</span>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <p style="max-width:620px;color:var(--muted);margin-bottom:1.5rem;font-size:.95rem">The east is wilder, less developed, and home to Jeju's <em>haenyeo</em> (female free-diver) culture. The food here is pulled from the ocean that morning — literally.</p>
+
+    <div class="entry" data-query="해녀의집 구좌 월정리">
+      <div class="entry-tag gem"><div class="icon">★</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>해녀의 집<span class="en">Haenyeo House</span></h3>
+          <span class="price-pill">₩10,000–20,000</span>
+        </div>
+        <div class="entry-cuisine">Haenyeo Seafood · 해물라면 · 성게 보말죽</div>
+        <p>The author's #1 pick for "the taste of Jeju's sea." More popular with neighbourhood residents than tourists — a sign of authenticity. Seafood is <strong>freshly caught by female divers (해녀)</strong> that morning. The <em>해물라면</em> (seafood ramen) — made with freshly caught conch (소라) and abalone (전복) — has broth that is "on another level." Also try <em>성게 보말죽</em> (sea urchin &amp; abalone porridge).</p>
+        <div class="anecdote"><b>Call ahead:</b> Closes early when ingredients run out — which happens often, because a haenyeo's daily catch is unpredictable. Call to confirm they're open before driving out. This is not a place you can plan around; it plans itself around the tide.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 구좌읍 · Near Woljeongri / Sehwari</span>
+          <span class="m">Closes when food runs out · Call ahead</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="옛날옛적 성산">
+      <div class="entry-tag local"><div class="icon">p</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>옛날옛적<span class="en">Yennalyennyeok</span></h3>
+          <span class="price-pill">₩15,000–25,000</span>
+        </div>
+        <div class="entry-cuisine">Black Pork · 흑돼지 주물럭</div>
+        <p>A warm, cozy black-pork restaurant in the tourist-heavy Seongsan area that is <strong>surprisingly recognised by locals</strong> — a rare find. Their <em>흑돼지 주물럭</em> (seasoned raw/minced black pork) is praised for seasoning that "doesn't overdo it — you taste the natural meat flavour." The name means "Once Upon a Time," and the atmosphere delivers.</p>
+        <div class="anecdote"><b>Solo diner alert:</b> Some black-pork restaurants require a 2-person minimum order. Check in advance if you're eating alone — Seongsan area spots are particularly strict about this.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 성산 · Seongsan area</span>
+          <span class="m">Check minimum order for solo diners</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="가시아방국수 성산 섭지코지">
+      <div class="entry-tag local"><div class="icon">n</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>가시아방 국수<span class="en">Gasiabang Guksu</span></h3>
+          <span class="price-pill">₩8,000 · Set ₩32,000</span>
+        </div>
+        <div class="entry-cuisine">Gogi-Guksu · 고기국수 · 커플세트</div>
+        <p>A long-established gogi-guksu restaurant near <strong>Seongsan Ilchulbong (Sunrise Peak)</strong>. High turnover means shorter waits despite long lines. Supports online/app-based waiting. The <em>커플세트</em> (couple set, ₩32,000) is a must-try — includes noodles, domebegi pork, and sides. Extremely busy every January 1st for sunrise crowds.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주 서귀포시 성산읍 섭지코지로 10 · Near Sunrise Peak</span>
+          <span class="m">10:00–20:30 · Closed Wednesdays</span>
+          <span class="m">Online waitlist available</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="국수마을 성산 동류암로">
+      <div class="entry-tag local"><div class="icon">d</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>국수마을<span class="en">Guksu Maeul</span></h3>
+          <span class="price-pill">₩7,000–10,000</span>
+        </div>
+        <div class="entry-cuisine">Gogi-Guksu & Sea Urchin Noodles · 고기국수 · 성게칼국수</div>
+        <p>Called the <strong>"sacred place for Jeju taxi drivers"</strong> — the ultimate endorsement. A driver's restaurant with good taste and generous portions at ₩7,000, lower than the famous spots nearby. Serving for <strong>20 years</strong> with a loyal regular clientele. The sleeper hit: <em>성게칼국수</em> (sea urchin knife-cut noodles, ₩10,000), made with sea urchin freshly caught by haenyeo divers.</p>
+        <div class="anecdote"><b>Taxi driver wisdom:</b> When in doubt in Jeju, ask a taxi driver where they eat. This place is why. The broth is "savory yet mild" — and at ₩7,000, it's the best-value bowl on the east coast.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주 서귀포시 성산읍 동류암로 30 · Near Seongsan</span>
+          <span class="m">20-year establishment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOUTH COAST -->
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <div class="region-anchor">
+      <div class="compass">▼</div>
+      <div class="info">
+        <h3>South Coast · 서귀포 · 중문</h3>
+        <span>Pufferfish milt, rare mackerel sashimi, market noodles, and Jeju heritage food</span>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <p style="max-width:620px;color:var(--muted);margin-bottom:1.5rem;font-size:.95rem">Seogwipo's food scene runs deeper than its tourist reputation suggests. Inside the 올레시장 (Olle Market) and along the southern coast, you'll find Jeju's most unusual specialties: pufferfish stew with milt, mackerel sashimi so fresh it has no smell, and reimagined heritage dishes.</p>
+
+    <div class="entry" data-query="몰질식육식당 서귀포 이어도로">
+      <div class="entry-tag gem"><div class="icon">★</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>몰질 식육식당<span class="en">Moljil Sikyuk Sikdang</span></h3>
+          <span class="price-pill">₩8,000–25,000</span>
+        </div>
+        <div class="entry-cuisine">Pufferfish Stew & Meat Jjamppong · 복지리 · 고기짬뽕</div>
+        <p>One of the most distinctive restaurants on the island. The name <em>몰질</em> is Jeju dialect for "horse-riding path." Known locally as a <strong>복지리 (pufferfish stew)</strong> specialist — the stew contains pufferfish and <em>"애"</em> (pufferfish milt/soft roe), "a symbol of freshness." Cooked at the table with water parsley, mushrooms, bean sprouts. Selected for the <strong>제주 고메 FESTA</strong>.</p>
+        <div class="anecdote"><b>Two things to know:</b> (1) Pufferfish dishes sell out fast — visit before noon. The milt is "delicate and soft," the meat "firm and chewy." (2) The <em>고기짬뽕</em> (meat jjamppong, ₩8,000) is a sleeper hit — loaded with cabbage and pork, "clean, not greasy, moderately spicy." Two completely different dishes in one kitchen, both exceptional.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주 서귀포시 이어도로 598</span>
+          <span class="m">10:30–15:00 · Closed Sundays · Phone: 064-739-1542</span>
+          <span class="m">Pufferfish sells out by 12:00 — arrive early</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="자연수산 서귀포 서호남로">
+      <div class="entry-tag gem"><div class="icon">f</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>자연수산<span class="en">Jayeon Sushan</span></h3>
+          <span class="price-pill">₩30,000–50,000</span>
+        </div>
+        <div class="entry-cuisine">Mackerel Sashimi & Stew · 고등어회 · 지리탕</div>
+        <p>Run by an elderly couple. Fills up fast after 6 PM. <strong>Closes when ingredients run out</strong> — same-day phone call essential. The <em>고등어회</em> (fresh mackerel sashimi) is described as "not easily found even for Jeju residents." No fishy smell, extremely fresh, tender texture. Served with lavish sides: seaweed, pickled onions, rolled eggs, pan-fried dishes.</p>
+        <div class="anecdote"><b>How to eat it:</b> The owner's recommended method — mix rice with gim (seaweed) and sesame seeds, top with seaweed and mackerel sashimi, eat with pickled onions. "A best single bite combination." The meal ends with <em>지리탕</em> (mackerel bone stew with cabbage and cheongyang peppers) — "cuts through any richness."</div>
+        <div class="entry-meta">
+          <span class="m addr">제주 서귀포시 서호남로32번길 44</span>
+          <span class="m">Daily 17:00–21:30 · Phone: 064-739-8588</span>
+          <span class="m">Call same-day to confirm availability</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="고씨네천지국수 서귀포">
+      <div class="entry-tag gem"><div class="icon">n</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>고씨네 천지국수<span class="en">Go's Family Cheonji Noodles</span></h3>
+          <span class="price-pill">₩7,000–15,000</span>
+        </div>
+        <div class="entry-cuisine">Anchovy-Meat Broth Noodles · 천지국수</div>
+        <p>Inside Seogwipo's <strong>올레시장 (Olle Market)</strong>. The signature <em>천지국수</em> (₩9,000) uses a unique <strong>anchovy-meat broth</strong> — a combination found only in Jeju. Clean, deep, yet light. Thin wheat noodles with tender meat and a generous portion. Also serves <em>흑돼지만두</em> (black pork dumplings, ₩5,000), <em>비빔국수</em> (₩9,000), and <em>수육</em> (boiled pork, ₩15,000).</p>
+        <div class="anecdote"><b>"Often closes early when ingredients run out"</b> — even before the 15:30 closing time. 7–9 tables only; locals wait in line. Near Seogwipo old bus terminal, Cheonjiyeon Falls, and Saebyeol Bridge — a perfect market-and-noodles afternoon.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주 서귀포시 중앙로79번길 4 · Inside Olle Market</span>
+          <span class="m">09:30–15:30 · LO 15:00 · Closed Fridays</span>
+          <span class="m">Phone: 0507-1318-0436 · Parking: 중앙로터리 공영주차장</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="맛존디 본점 서귀포 태평로">
+      <div class="entry-tag gem"><div class="icon">h</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>맛존디 본점<span class="en">Matjondi</span></h3>
+          <span class="price-pill">₩9,000–10,000</span>
+        </div>
+        <div class="entry-cuisine">Reimagined Jeju Heritage Food · 보말죽 · 고기국수</div>
+        <p>Takes traditional Jeju foods that locals have eaten for generations and refines them. The <em>보말죽</em> (sea snail porridge, ₩10,000) — <em>보말</em> is Jeju dialect for sea conch — has a pumpkin-like color, savory with a slightly bitter edge. The <em>고기국수</em> (₩9,000) uses a "milky, rich bone broth that's energizing." Side dishes are served by a robot — a unique IoT touch.</p>
+        <div class="anecdote"><b>What is 보말?</b> It's the Jeju word for <em>고둥</em> (sea conch/whelk) — called 보말 on the island, 표준어 (standard Korean) elsewhere. Eating 보말죽 here is like tasting a piece of Jeju linguistic and culinary heritage simultaneously. Pet-friendly.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주 서귀포시 태평로 36</span>
+          <span class="m">09:30–15:30 · LO 15:00 · Sundays open 10:00</span>
+          <span class="m">Phone: 0507-1343-1278 · Large parking · Pet-friendly</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="중앙식당 서귀포 올레시장">
+      <div class="entry-tag gem"><div class="icon">b</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>중앙식당<span class="en">Jungang Sikdang</span></h3>
+          <span class="price-pill">₩8,000–12,000</span>
+        </div>
+        <div class="entry-cuisine">Pork Bone Soup · 접짝뼈국</div>
+        <p>A hidden gem near Olle Market with a true local atmosphere — "where Jeju elders enjoy morning drinks (반주)." The signature <em>접짝뼈국</em> is pork bone soup served in a <em>뚝배기</em> (earthenware bowl), with broth that is "deeply simmered, rich and savory" (진하고 구수하다). Solo-dining friendly. The author's top pick for "든든한 아침" (hearty breakfast).</p>
+        <div class="entry-meta">
+          <span class="m addr">제주 서귀포시 · Near Olle Market</span>
+          <span class="m">Morning hours · Kid-friendly menu</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="고집돌우럭 중문">
+      <div class="entry-tag local"><div class="icon">r</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>고집돌우럭<span class="en">Gojip Dolureok</span></h3>
+          <span class="price-pill">₩15,000–30,000</span>
+        </div>
+        <div class="entry-cuisine">Braised Rockfish & Filefish Sashimi · 우럭조림 · 자리돔회</div>
+        <p>Despite being near the Jungmun Tourist Complex, it's <strong>frequented more by Jeju locals than tourists</strong> — the key signal. Uses seasonal fish to prepare fresh dishes daily. <em>우럭 조림</em> (braised rockfish) and <em>자리돔 회</em> (raw filefish sashimi) are the signatures. Lunchtime has waiting lines — reservation recommended.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주 서귀포시 중문동 · Near Jungmun Tourist Complex</span>
+          <span class="m">Reservation recommended for lunch</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="제미니국수 서귀포 쇠소깍">
+      <div class="entry-tag local"><div class="icon">g</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>제미니국수 서귀포점<span class="en">Gemini Noodles — Seogwipo</span></h3>
+          <span class="price-pill">₩32,000 / 2-person set</span>
+        </div>
+        <div class="entry-cuisine">Gogi-Guksu with Farm-Direct Ingredients · 고기국수</div>
+        <p>A 1-minute walk from Sogeummak (쇠소깍). Uses <strong>fresh hand-pulled noodles (생면)</strong> and carefully simmered bone broth. Ingredients sourced directly from the owner's parents' farm. Serves <em>아강발</em> (a local pork offal dish) with makgeolli for older patrons, and mandu for kids. The Gemini A Set for 2 (₩32,000) is the way to go.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주 서귀포시 쇠소깍로 134 · 1 min from Sogeummak</span>
+          <span class="m">Daily 09:00–18:00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="청송고기국수 서귀포 동홍로">
+      <div class="entry-tag local"><div class="icon">v</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>청송 고기국수<span class="en">Cheongsong Gogi-guksu</span></h3>
+          <span class="price-pill">₩7,000</span>
+        </div>
+        <div class="entry-cuisine">Best-Value Gogi-Guksu & Black Pork Suyuk · 고기국수 · 흑돼지 수육</div>
+        <p>A long-running <strong>traditional old restaurant (노포)</strong> in old Seogwipo downtown — the cheapest gogi-guksu on the island at ₩7,000. Also sells bibim guksu, anchovy guksu, and <em>흑돼지 수육</em> (Jeju black pork boiled slices, ₩15,000). Located across from the famous "오는 정 김밥" kimbap shop. <strong>Open until midnight</strong> — a rarity for gogi-guksu shops.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주 서귀포시 동홍로 8 · Old Seogwipo downtown</span>
+          <span class="m">08:00–24:00 · Great value</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE NAV -->
+<div class="wrap">
+  <div class="page-nav">
+    <a href="jeju-city.html">
+      <div class="pn-dir">← Previous</div>
+      <div class="pn-title">Jeju City Centre</div>
+    </a>
+    <a href="specialties.html" class="next">
+      <div class="pn-dir">Next →</div>
+      <div class="pn-title">Specialties &amp; Dishes</div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <p>"바다가 키운 제주의 맛."</p>
+    <small>
+      Island-wide restaurant guide · 섬 전체 맛집 가이드<br>
+      Many places close when food runs out — always call ahead before driving.
+    </small>
+    <div class="sig">제주도 전역 · 2026</div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="js/main.js"></script>
+<script>
+  JEJU_MAPS.init('map-island', JEJU_MAPS.island, {zoom:10});
+</script>
+</body>
+</html>

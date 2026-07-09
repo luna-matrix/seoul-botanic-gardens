@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeju City Food Guide · 제주시 맛집</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="logo-dot"></span>Jeju Food Atlas</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="jeju-city.html" class="active">Jeju City · 제주시</a></li>
+      <li><a href="island.html">Island · 섬 전체</a></li>
+      <li><a href="specialties.html">Specialties · 특산물</a></li>
+    </ul>
+    <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- SUB HERO -->
+<header class="sub-hero">
+  <div class="wrap sub-hero-inner">
+    <span class="kicker">제주시 시내 · Jeju City Centre</span>
+    <h1>Jeju City <em>Eats</em></h1>
+    <p class="ko">제주시 — 공항에서 도보권, 현지인이 먹는 곳</p>
+    <p class="lead">Thirteen restaurants within a 2km radius of the city core. This is your guide for the day before you hit the road and the day you come back — from the legendary <em>gogi-guksu</em> noodle wars to port-side sashimi at dawn and the black pork institution that needs no introduction.</p>
+  </div>
+</header>
+
+<!-- MAP -->
+<section style="padding-top:3rem">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:1.5rem">
+      <span class="kicker">Interactive Map · 지도</span>
+      <h2 style="font-size:1.8rem">Jeju City Restaurant Map <span class="ko">제주시 맛집 지도</span></h2>
+    </div>
+    <div class="map-container">
+      <div id="map-city" style="height:500px;width:100%;background:var(--paper-dark)"></div>
+      <div class="map-legend">
+        <div class="lg-item"><div class="lg-dot gem"></div>Hidden Gem · 숨은 명소</div>
+        <div class="lg-item"><div class="lg-dot local"></div>Local Favourite · 현지인 맛집</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORNING -->
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <div class="meal-anchor">
+      <div class="tag">07:00</div>
+      <div class="label">Dawn & Breakfast<span>아침 — 공항 근처</span></div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="entry" data-query="팔도수산식당 제주시 임항로">
+      <div class="entry-tag gem"><div class="icon">★</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>팔도수산식당<span class="en">Paldo Susikdang</span></h3>
+          <span class="price-pill">₩10,000–15,000</span>
+        </div>
+        <div class="entry-cuisine">Sashimi & Raw Seafood Soup · 한치물회 · 회덮밥</div>
+        <p>The moment you land. Opens at <strong>7:00 AM</strong> — practically dawn — near the western harbor breakwater. Their <em>한치물회</em> (swordfish cold raw-fish soup, ₩15,000) and <em>회덮밥</em> (sashimi rice bowl, ₩10,000) are a shockingly good way to start a Jeju trip. The complimentary <em>옥돔구이</em> (grilled tilefish) that arrives unbidden is a tell: this place is generous.</p>
+        <div class="anecdote"><b>Why so early?</b> The harbor is right there. Fish comes in at dawn; the kitchen serves it immediately. Not yet widely known — "highly recommended for mulhoe lovers," as the blogger who found it wrote, slightly amazed at the quality for the price.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 임항로 27 · 15 min drive from airport</span>
+          <span class="m">Daily 07:00–23:00</span>
+          <span class="m">Phone: 064-725-1181 · Parking: 3–4 spaces</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="신해바다 제주시">
+      <div class="entry-tag gem"><div class="icon">f</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>신해바다<span class="en">Sinhaebada</span></h3>
+          <span class="price-pill">₩8,000–12,000</span>
+        </div>
+        <div class="entry-cuisine">Hangover Soup & Jeju Rice Meals · 해장국 · 백반</div>
+        <p>The other early-morning play. Sinhaebada serves <em>객주리조림</em> (braised filefish) — described as "clear and refreshing" — alongside proper hangover soup and Jeju-style <em>백반</em> set meals. Opens early, solo-dining friendly, and the best value is ordering "오늘의 메뉴" (today's menu) for a rotating plate of whatever's fresh.</p>
+        <div class="anecdote"><b>Local trick:</b> Ask if they have <em>자리돔젓</em> (rabbitfish jeotgal) or <em>깅이젓</em> (crab jeotgal) — Jeju's fermented seafood condiments that mainlanders rarely encounter. If available, spoon it over hot rice.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 · Near Jeju Airport</span>
+          <span class="m">Opens early morning · Solo dining (혼밥) OK</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="남양해장국 제주시 노형동">
+      <div class="entry-tag local"><div class="icon">h</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>남양해장국<span class="en">Namyang Haejangguk</span></h3>
+          <span class="price-pill">₩8,000–14,000</span>
+        </div>
+        <div class="entry-cuisine">Pork Bone & Abalone Hangover Soup · 뼈다귀해장국 · 전복해장국</div>
+        <p>The reliable neighbourhood anchor in Nohyeong-dong. Their <em>뼈다귀 해장국</em> (pork bone hangover soup) is generous and cheap; the <em>전복해장국</em> (abalone hangover soup) elevates the genre. Opens at <strong>7:00 AM</strong> — ideal for a pre-itinerary meal that won't slow you down.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주시 노형동</span>
+          <span class="m">Opens 07:00 · Great value</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOODLES -->
+<section style="padding-top:2rem;background:var(--paper-warm)">
+  <div class="wrap">
+    <div class="meal-anchor">
+      <div class="tag">09:00</div>
+      <div class="label">The Noodle Wars<span>고기국수 전쟁</span></div>
+      <div class="rule"></div>
+    </div>
+    <p style="max-width:620px;color:var(--muted);margin-bottom:1rem;font-size:.95rem"><em>Gogi-guksu</em> (고기국수) — pork-bone broth noodles topped with sliced boiled pork — is Jeju's civic dish. You'll find it everywhere, but these six shops are the ones locals argue about. Plan at least one bowl per day.</p>
+
+    <div class="entry" data-query="자매국수 제주시 향골남길">
+      <div class="entry-tag local"><div class="icon">1</div><div class="lab">Pillar</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>자매국수<span class="en">Jamae Guksu</span></h3>
+          <span class="price-pill">₩9,000</span>
+        </div>
+        <div class="entry-cuisine">Gogi-Guksu · 고기국수</div>
+        <p>One of the <strong>"two great pillars" (양대산맥)</strong> of Jeju gogi-guksu. So popular with a single dish that they <em>built a new building</em> to accommodate the crowds. Known for its mild, clean "original" broth — a gentle introduction to the genre. Also serves bibim guksu, domebegi (pork), and unique special dumplings. The ticket-system entrance keeps the line moving.</p>
+        <div class="anecdote"><b>The rivalry:</b> Jeju locals split into Team Jamae and Team Ollae (below). Jamae's broth is milder and more approachable; Ollae's is deeper and milkier. Try both and pick a side — this is a conversation starter with any Jeju resident.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 향골남길 46</span>
+          <span class="m">09:00–18:00 · Closed Wed · Break 14:20–16:00</span>
+          <span class="m">Ticket system · comparatively easy parking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="올래국수 제주시 귀아랑길">
+      <div class="entry-tag local"><div class="icon">2</div><div class="lab">Pillar</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>올래국수<span class="en">Ollae Guksu</span></h3>
+          <span class="price-pill">₩9,000</span>
+        </div>
+        <div class="entry-cuisine">Gogi-Guksu · 고기국수 (single menu)</div>
+        <p>The other pillar. Ollae serves <strong>one dish and one dish only</strong>: gogi-guksu. No bibim, no sides, no compromise. The broth is milky-white, clear, deep — simple but with a gravity that keeps people coming back. Always crowded; no dedicated parking lot (use nearby paid lots).</p>
+        <div class="anecdote"><b>Tip:</b> Drop off passengers first to save waiting time — the line moves fast but the parking situation is tight. Come before 11:00 or after 14:00 to avoid the longest queues.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 귀아랑길 24</span>
+          <span class="m">08:30–15:00 · Closed Sundays</span>
+          <span class="m">No parking lot — use nearby paid lots</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="골막식당 제주시 이도이동">
+      <div class="entry-tag gem"><div class="icon">★</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>골막식당<span class="en">Golmak Sikdang</span></h3>
+          <span class="price-pill">₩8,000–12,000</span>
+        </div>
+        <div class="entry-cuisine">Gogi-Guksu · 고기국수 · 수육</div>
+        <p>The <strong>self-declared "original" (원조)</strong> Jeju meat noodle restaurant. Featured on <em>Running Man</em>, visited by comedian Kim Jun-hyun, and appeared on Baek Jong-won's <em>3 Great Heavens</em>. A local told a visiting blogger: "You're from the mainland, right? This place is the original meat noodle spot. You came to the right place."</p>
+        <div class="anecdote"><b>First meal after landing:</b> Opens at <strong>06:30</strong> — earlier than almost anywhere else — making it the perfect first bowl straight off the plane. Near the airport in Ido 2-dong. Also serves <em>수육</em> (boiled pork slices) as a side.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 이도2동 362-1 · Near Jeju Airport</span>
+          <span class="m">06:30–18:00 · Closed Sundays</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="국시트멍 제주시 진군길">
+      <div class="entry-tag local"><div class="icon">n</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>국시트멍<span class="en">Guksiteumeong</span></h3>
+          <span class="price-pill">₩9,000</span>
+        </div>
+        <div class="entry-cuisine">Gogi-Guksu & Cold Noodles · 고기국수 · 냉면</div>
+        <p>The name combines <em>guksi</em> (old Jeju word for noodles) with <em>teumeong</em>, meaning "clearing a narrow passage." Started in 2013 as a tiny button shop in Nohyeong-dong. The noodles are <strong>thick and plump</strong>, the pork thinly sliced and wide with a special sauce. Halla University students line up here before national exams — a good sign.</p>
+        <div class="anecdote"><b>Beyond gogi-guksu:</b> Their <em>제주냉면 산도롱한면</em> (Jeju cold noodles, ₩9,000) is a sleeper hit — order it if you're noodled-out on the hot version.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 진군길 31-3 · Near Nohyeong Park</span>
+          <span class="m">Weekdays 08:00–16:00 · Weekends 11:00–16:00 · LO 15:30</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="국수마당 제주시 삼성로">
+      <div class="entry-tag local"><div class="icon">m</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>국수마당<span class="en">Guksumadang</span></h3>
+          <span class="price-pill">₩8,000–9,000</span>
+        </div>
+        <div class="entry-cuisine">Gogi-Guksu & Momguk · 고기국수 · 몸국</div>
+        <p>The <strong>first meat noodle restaurant on Jeju Noodle Street</strong> (국수거리, Samseong-ro). Open until <strong>2:00 AM</strong> — the late-night saviour. Broth is clean and mild, no pork odor or gaminess. Topped with <em>dombe</em> (a local dried radish/pork preparation), carrots, chili powder, green onions. Also serves <em>몸국</em> (momguk, Jeju brown-seaweed soup, ₩9,000).</p>
+        <div class="anecdote"><b>Noodle Day:</b> On the 11th of every month ("Noodle Day"), all noodle dishes are ₩500 off. A charming quirk that keeps regulars loyal.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 삼성로 65 · Jeju Noodle Street</span>
+          <span class="m">08:00–02:00 daily · ₩500 off on the 11th</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="제주미담 제주시 가령로">
+      <div class="entry-tag local"><div class="icon">p</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>제주미담<span class="en">Jeju Midam</span></h3>
+          <span class="price-pill">₩7,000–8,500</span>
+        </div>
+        <div class="entry-cuisine">Gogi-Guksu, Momguk & Sundae · 고기국수 · 몸국 · 순대국</div>
+        <p>The <strong>generous one</strong>. Jeju Midam tops its gogi-guksu with reportedly <strong>3× more pork</strong> than standard bowls — "almost an entire strip of pork sliced on top," as one review put it. Also famous for <em>막창순대</em> (makchang sundae — pork intestines stuffed with blood-sausage casing), served in heaping portions.</p>
+        <div class="anecdote"><b>Value play:</b> At ₩8,500 for gogi-guksu with triple pork, this is one of the best price-to-quantity ratios on the island. Leftovers can be packed to go — locals do exactly that.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 가령로 19</span>
+          <span class="m">09:00–22:00 · Closed Tuesdays</span>
+          <span class="m">Also serves: 멸치국수 ₩7,000 · 몸국 ₩8,500 · 순대국밥 ₩8,000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LUNCH / BLACK PORK -->
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <div class="meal-anchor">
+      <div class="tag">12:00</div>
+      <div class="label">Lunch & Black Pork<span>점심 — 흑돼지</span></div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="entry" data-query="돈사돈 본점 제주시 연동">
+      <div class="entry-tag local"><div class="icon">p</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>돈사돈 본점<span class="en">Donsadon — Main Branch</span></h3>
+          <span class="price-pill">₩15,000–25,000</span>
+        </div>
+        <div class="entry-cuisine">Charcoal Black Pork BBQ · 숯불 흑돼지</div>
+        <p>The go-to for proper Jeju black pork in the city centre, in Yeon-dong. Charcoal-grilled thick-cut neck (목살) with a fat-to-lean balance that hits from the first bite. <strong>Reservation essential.</strong> Note: you grill it yourself here — no staff grilling service. Come confident, or come with someone who is.</p>
+        <div class="anecdote"><b>Dip correctly:</b> The traditional Jeju way is <em>멜젓</em> (멸치젓, anchovy sauce) — not ssamjang. The salt-umami of the anchovy cuts through the pork fat and creates an addictive loop. Some places also offer <em>기름장</em> (oil-salt mixture) as an alternative.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 연동 · Central Jeju City</span>
+          <span class="m">Reservation essential · Self-grill</span>
+          <span class="m">Recently added self-service bar</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="만강촌옛날칼국수 제주시 월랑로">
+      <div class="entry-tag local"><div class="icon">c</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>만강촌옛날칼국수<span class="en">Mangangchon Kalguksu</span></h3>
+          <span class="price-pill">₩8,000–12,000</span>
+        </div>
+        <div class="entry-cuisine">Half-Chicken Knife Noodles · 닭반마리 칼국수</div>
+        <p>Not noodles in the gogi-guksu sense — this is a different beast. A <strong>half chicken</strong> arrives submerged in knife-cut noodle soup. You grab the chicken leg, tear the meat, eat it with noodles and kimchi together — "feels like eating samgyetang for nourishment," as the Visit Jeju write-up put it. Designated a <em>착한가격업소</em> (honest-price business). <strong>Unlimited noodle and rice refills.</strong></p>
+        <div class="anecdote"><b>Bonus:</b> They sell <em>옛날 통닭</em> (old-style fried chicken) for takeaway — excellent late-night food. Handmade dumplings (수제 만두) available in single portions too. 10–15 minutes from the airport.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 월랑로 42 · 10–15 min from airport</span>
+          <span class="m">11:00–21:30 daily · LO 21:00</span>
+          <span class="m">Unlimited noodle refills · Phone: 064-744-4780</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DINNER / SEAFOOD -->
+<section style="padding-top:2rem;background:var(--paper-warm)">
+  <div class="wrap">
+    <div class="meal-anchor">
+      <div class="tag">17:00</div>
+      <div class="label">Evening & Seafood<span>저녁 — 해산물</span></div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="entry" data-query="순옥이네명가 본점 제주시 도공로">
+      <div class="entry-tag local"><div class="icon">s</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>순옥이네명가 본점<span class="en">Sunok's House — Main Branch</span></h3>
+          <span class="price-pill">₩10,000–16,000</span>
+        </div>
+        <div class="entry-cuisine">Grilled Mackerel & Water Sashimi · 고등어구이 · 물회</div>
+        <p>Perfect for a post-sunset dinner after walking Olle Trail Course 17 along the coast. <em>고등어구이</em> (grilled mackerel, ₩10,000) comes in large portions with lightly seasoned side dishes. The house <em>물회</em> (water sashimi, ₩16,000) is a generous raw-seafood soup. Spacious interior, good for groups.</p>
+        <div class="anecdote"><b>The walk:</b> Stroll from Iho Breakwater (이호방파제) past Dodubong Peak — the coastal approach is part of the experience. Nearby Dodu Harbor makes this a natural evening combo: sunset walk, then grilled mackerel.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 도공로 8 · Near Dodu Harbor / Olle Trail 17</span>
+          <span class="m">09:00–21:00 · LO 20:30 · Break 15:30–17:00</span>
+          <span class="m">Closed 2nd &amp; 4th Tuesdays · Phone: 064-784-4813</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="모던돔베 제주시 1100로">
+      <div class="entry-tag gem"><div class="icon">★</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>모던 돔베<span class="en">Modern Dombae</span></h3>
+          <span class="price-pill">₩13,000</span>
+        </div>
+        <div class="entry-cuisine">Upscale Gogi-Guksu · 고기국수 (파인 다이닝)</div>
+        <p>The <strong>fine-dining gogi-guksu</strong>. Presentation resembles Japanese <em>chashu ramen</em> — thick, long-sliced meat draped over noodles like an art piece. Uses <strong>homemade soba (buckwheat) noodles</strong> for a unique aroma. Topped with charcoal-grilled Jeju black pork belly. The priciest bowl on the island at ₩13,000, but reviewers call it <em>가심비</em> (worth the psychological satisfaction).</p>
+        <div class="anecdote"><b>Why it matters:</b> This is what happens when a chef takes Jeju's humblest dish and treats it with precision. If you think you've exhausted gogi-guksu, this reframes it entirely. The soba noodle aroma changes the whole experience.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 1100로 3029</span>
+          <span class="m">11:00–20:00 · Break 16:30–17:30</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE NAV -->
+<div class="wrap">
+  <div class="page-nav">
+    <a href="index.html">
+      <div class="pn-dir">← Back</div>
+      <div class="pn-title">Home</div>
+    </a>
+    <a href="island.html" class="next">
+      <div class="pn-dir">Next →</div>
+      <div class="pn-title">The Island Atlas</div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <p>"바다가 키운 제주의 맛."</p>
+    <small>
+      Jeju City restaurant guide · 제주시 맛집 가이드<br>
+      Researched from Korean-language sources · Always verify on Naver Maps before going.
+    </small>
+    <div class="sig">제주시 · 2026</div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="js/main.js"></script>
+<script>
+  JEJU_MAPS.init('map-city', JEJU_MAPS.jejuCity, {center:[33.5020, 126.5250], zoom:13});
+</script>
+</body>
+</html>

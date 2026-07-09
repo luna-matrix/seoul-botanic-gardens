@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeju Food Atlas · 제주 맛집 가이드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .hero{
+    position:relative;min-height:100vh;
+    display:flex;align-items:flex-end;
+    padding:6rem 2rem 4rem;
+    background:
+      radial-gradient(ellipse at 70% 20%, rgba(12,92,116,.4), transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(221,107,31,.15), transparent 55%),
+      linear-gradient(165deg,#073d4d 0%,#1c1e22 50%,#0a1218 100%);
+    color:var(--white);overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,253,248,.03) 59px,rgba(255,253,248,.03) 60px),
+      repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,253,248,.03) 59px,rgba(255,253,248,.03) 60px);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;width:100%}
+  .hero-eyebrow{font-family:'Noto Sans KR',sans-serif;font-size:.78rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tangerine-soft);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+  .hero-eyebrow::before{content:"";width:48px;height:1px;background:var(--tangerine-soft)}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.8rem,7vw,5.8rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:1.2rem}
+  .hero h1 em{font-style:italic;color:var(--tangerine-soft);font-weight:400}
+  .hero .ko{font-family:'Noto Serif KR',serif;font-size:clamp(1.1rem,2.4vw,1.5rem);font-weight:300;color:rgba(255,253,248,.75);margin-bottom:2rem}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:2rem;padding-top:2rem;border-top:1px solid rgba(255,253,248,.15);max-width:780px}
+  .hero-meta div{font-size:.85rem}
+  .hero-meta span{display:block;color:var(--tangerine-soft);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.3rem}
+  .hero-meta strong{font-family:'Noto Sans KR',sans-serif;font-weight:500;font-size:1rem}
+
+  /* Card navigation */
+  .guide-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:1rem}
+  .gcard{
+    display:block;text-decoration:none;color:inherit;
+    background:var(--white);border:1px solid var(--line);
+    border-radius:3px;overflow:hidden;
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease;
+    position:relative;
+  }
+  .gcard:hover{transform:translateY(-6px);box-shadow:0 20px 48px -16px rgba(28,30,34,.3)}
+  .gcard-banner{height:140px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:#fff;position:relative}
+  .gcard-banner.b1{background:linear-gradient(135deg,var(--ocean-deep),var(--ocean))}
+  .gcard-banner.b2{background:linear-gradient(135deg,var(--tangerine-deep),var(--tangerine))}
+  .gcard-banner.b3{background:linear-gradient(135deg,var(--green-deep),var(--green))}
+  .gcard-banner .icon{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:3rem;opacity:.9}
+  .gcard-body{padding:1.8rem 1.6rem}
+  .gcard-body h3{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;margin-bottom:.2rem}
+  .gcard-body .en{font-family:'Playfair Display',serif;font-style:italic;color:var(--muted);font-size:.9rem;margin-bottom:.8rem}
+  .gcard-body p{font-size:.88rem;color:#332e26;margin-bottom:.8rem}
+  .gcard-body .more{font-size:.74rem;color:var(--tangerine);letter-spacing:.1em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:.4rem}
+  .gcard-body .more::after{content:"→";transition:transform .3s ease}
+  .gcard:hover .more::after{transform:translateX(4px)}
+
+  .intro-section{background:var(--paper-warm)}
+  .intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:start}
+  .intro-grid p{font-size:1.02rem;margin-bottom:1.1rem;color:#332e26}
+  .intro-grid .kw{background:linear-gradient(transparent 62%,rgba(221,107,31,.2) 62%);font-weight:500;padding:0 .1em}
+  .intro-card{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:2rem}
+  .intro-card h4{font-family:'Noto Serif KR',serif;font-size:1.1rem;font-weight:600;margin-bottom:1rem;padding-bottom:.7rem;border-bottom:1px dashed var(--line-strong)}
+  .intro-card ul{list-style:none}
+  .intro-card li{display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px dotted var(--line);font-size:.88rem}
+  .intro-card li:last-child{border-bottom:none}
+  .intro-card li b{font-family:'Noto Sans KR',sans-serif;font-weight:600}
+  .intro-card li span{color:var(--muted);font-size:.8rem;text-align:right;max-width:60%}
+
+  .overview-map{background:var(--white);padding:3.5rem 0}
+  .map-aside{max-width:380px;margin-left:2rem;flex-shrink:0}
+  @media(max-width:820px){
+    .hero{padding:5rem 1.5rem 3rem}
+    .intro-grid{grid-template-columns:1fr}
+    .map-aside{margin-left:0;margin-top:1.5rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="logo-dot"></span>Jeju Food Atlas</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="jeju-city.html">Jeju City · 제주시</a></li>
+      <li><a href="island.html">Island · 섬 전체</a></li>
+      <li><a href="specialties.html">Specialties · 특산물</a></li>
+    </ul>
+    <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">제주특별자치도 · Jeju, South Korea</div>
+    <h1>The Jeju <em>Food</em> Atlas<br>A Locals' Field Guide</h1>
+    <p class="ko">제주 맛집 지도 — 현지인이 먹는 곳</p>
+    <div class="hero-meta">
+      <div><span>Trip</span><strong>3–4 island days + city days</strong></div>
+      <div><span>Approach</span><strong>Korean sources, no tourist traps</strong></div>
+      <div><span>Priority</span><strong>Food quality & authenticity</strong></div>
+      <div><span>Built from</span><strong>네이버 블로그, 다이닝코드, 비짓제주</strong></div>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">The Premise · 시작하며</span>
+      <h2>For the Foodie Who's Done the Tourist Hits <span class="ko">관광객 맛집은 그만</span></h2>
+    </div>
+    <div class="intro-grid">
+      <div>
+        <p>You've been to Jeju. You've done the <span class="kw">Heukdonga</span> row in Jeju City, eaten at the famous pork belly place near the airport, queued for tangerine ice cream on <span class="kw">Udo</span>. This guide is for what comes next.</p>
+        <p>Built entirely from Korean-language food blogs, Naver reviews, 다이닝코드 ratings, and 비짓제주's local-verified lists, this atlas charts the restaurants where <span class="kw">Jeju Island residents actually eat</span> — the haenyeo-house with no sign, the noodle shop that built a new building for its queue, the pufferfish stew that sells out by noon.</p>
+        <p>The guide is split into three sections: <span class="kw">Jeju City centre</span> for your arrival and departure days, the <span class="kw">island-wide atlas</span> for your 3–4 day road trip (organised by coast), and a <span class="kw">specialties reference</span> for the 12+ dishes you can't leave without trying. Every restaurant has an interactive map pin and one-click Naver Maps / Google links.</p>
+      </div>
+      <aside class="intro-card">
+        <h4>Quick Orientation</h4>
+        <ul>
+          <li><b>Jeju City</b><span>Your hub — airport, harbor, dense eating streets</span></li>
+          <li><b>West Coast</b><span>Aewol, Hallim, Hyeopjae — black pork & ocean seafood</span></li>
+          <li><b>East Coast</b><span>Seongsan, Gujwa, Woljeongri — haenyeo divers & noodles</span></li>
+          <li><b>South Coast</b><span>Seogwipo, Jungmun — pufferfish, mackerel, markets</span></li>
+          <li><b>Get around</b><span>Rental car essential for island exploring</span></li>
+          <li><b>Apps</b><span>네이버지도 for navigation + booking</span></li>
+          <li><b>Warning</b><span>Many places close when food runs out. Call ahead.</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE CARDS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Three Guides · 세 가지 가이드</span>
+      <h2>Choose Your Path <span class="ko">어디서부터?</span></h2>
+      <p>Each guide is a standalone deep-dive with an interactive map, restaurant cards with pop-out links, and local anecdotes from the Korean food community.</p>
+    </div>
+    <div class="guide-cards">
+      <a href="jeju-city.html" class="gcard">
+        <div class="gcard-banner b1"><span class="icon">市</span></div>
+        <div class="gcard-body">
+          <h3>Jeju City Centre</h3>
+          <div class="en">제주시 시내</div>
+          <p>13 restaurants within walking distance of the city core — the legendary gogi-guksu noodle shops, airport-area hangover soup, port-side sashimi, and black pork institutions. Perfect for arrival and departure days.</p>
+          <div class="more">Explore the city</div>
+        </div>
+      </a>
+      <a href="island.html" class="gcard">
+        <div class="gcard-banner b2"><span class="icon">島</span></div>
+        <div class="gcard-body">
+          <h3>The Island Atlas</h3>
+          <div class="en">섬 전체 — 동·서·남</div>
+          <p>17 restaurants across four coastal regions: the West (Aewol, Hallim), the East (Seongsan, Gujwa), and the South (Seogwipo, Jungmun). Includes the originator of thick-cut black pork, the haenyeo house, and pufferfish stew with milt.</p>
+          <div class="more">Explore the island</div>
+        </div>
+      </a>
+      <a href="specialties.html" class="gcard">
+        <div class="gcard-banner b3"><span class="icon">食</span></div>
+        <div class="gcard-body">
+          <h3>Specialties & Dishes</h3>
+          <div class="en">제주 특산물 · 향토음식</div>
+          <p>The 12 essential Jeju foods — from black pork dipped in anchovy sauce to sea urchin seaweed soup, octopus porridge, pufferfish milt, and brown seaweed hangover stew. Know what to order and where.</p>
+          <div class="more">Study the menu</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW MAP -->
+<section class="overview-map">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Island Overview · 전체 지도</span>
+      <h2>Every Spot, One Map <span class="ko">모든 맛집 한눈에</span></h2>
+      <p>All 30 restaurants across Jeju Island. Click any pin for details, Naver Maps, and Google links. Use this to plan your road trip routes.</p>
+    </div>
+    <div class="map-container">
+      <div id="map-overview" style="height:600px;width:100%;background:var(--paper-dark)"></div>
+      <div class="map-legend">
+        <div class="lg-item"><div class="lg-dot gem"></div>Hidden Gem · 숨은 명소</div>
+        <div class="lg-item"><div class="lg-dot local"></div>Local Favourite · 현지인 맛집</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <p>"바다가 키운 제주의 맛."</p>
+    <small>
+      A foodie's field guide to Jeju Island, South Korea.<br>
+      Researched from Korean-language sources: 네이버 블로그, 다이닝코드, 식신, 비짓제주,<br>and the Korean food creator community on YouTube & Instagram.<br>
+      Prices and hours are indicative — always verify on Naver Maps before driving out.
+    </small>
+    <div class="sig">제주특별자치도 · 2026</div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="js/main.js"></script>
+<script>
+  var allData = JEJU_MAPS.jejuCity.concat(JEJU_MAPS.island);
+  JEJU_MAPS.init('map-overview', allData, {zoom:10, fixedView:false});
+</script>
+</body>
+</html>
