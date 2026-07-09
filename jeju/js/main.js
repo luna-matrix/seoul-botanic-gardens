@@ -184,3 +184,356 @@ window.JEJU_MAPS = {
     return map;
   }
 };
+
+/* ================================================
+   RATING SYSTEM
+   Each venue: food, vibe, value, unique (each /5)
+   Overall = weighted avg rounded to 0.1
+   Tiers: Pilgrim's Choice (4.5+), Essential (4.0-4.4), Solid Pick (3.5-3.9)
+   ================================================ */
+window.JEJU_RATINGS = {
+  // ---- JEJU CITY ----
+  "팔도수산식당":{f:4.3,v:3.2,val:4.5,u:3.8},
+  "신해바다":{f:4.0,v:3.0,val:4.5,u:4.0},
+  "남양해장국":{f:3.7,v:3.0,val:4.5,u:3.0},
+  "자매국수":{f:4.5,v:3.5,val:4.3,u:3.8},
+  "올래국수":{f:4.6,v:3.2,val:4.3,u:4.0},
+  "골막식당":{f:4.4,v:3.3,val:4.5,u:4.2},
+  "국시트멍":{f:4.2,v:3.5,val:4.0,u:3.8},
+  "국수마당":{f:4.0,v:3.5,val:4.5,u:3.5},
+  "제주미담":{f:4.2,v:3.3,val:4.7,u:3.5},
+  "돈사돈":{f:4.5,v:4.0,val:3.5,u:4.0},
+  "만강촌옛날칼국수":{f:4.0,v:3.5,val:4.7,u:3.5},
+  "순옥이네명가":{f:4.2,v:3.8,val:4.0,u:3.7},
+  "모던 돔베":{f:4.5,v:4.5,val:3.5,u:4.8},
+
+  // ---- ISLAND: WEST ----
+  "돈사촌":{f:4.8,v:3.5,val:4.3,u:4.8},
+  "고향흑돼지":{f:4.5,v:4.5,val:4.0,u:4.0},
+  "밥깡패":{f:4.3,v:4.0,val:4.0,u:4.5},
+  "블랙씨걸":{f:4.5,v:3.8,val:3.8,u:4.3},
+  "꽁순이네":{f:4.3,v:4.0,val:4.5,u:4.0},
+
+  // ---- ISLAND: EAST ----
+  "옛날옛적":{f:4.2,v:3.8,val:4.0,u:3.8},
+  "가시아방 국수":{f:4.3,v:3.5,val:4.3,u:3.8},
+  "해녀의 집":{f:4.8,v:4.0,val:4.5,u:5.0},
+  "국수마을":{f:4.2,v:3.3,val:4.8,u:4.0},
+
+  // ---- ISLAND: SOUTH ----
+  "몰질 식육식당":{f:4.6,v:3.8,val:4.3,u:4.8},
+  "자연수산":{f:4.8,v:3.5,val:3.5,u:4.8},
+  "고씨네 천지국수":{f:4.5,v:3.8,val:4.5,u:4.5},
+  "맛존디":{f:4.3,v:4.2,val:4.3,u:4.5},
+  "중앙식당":{f:4.3,v:3.3,val:4.7,u:4.0},
+  "고집돌우럭":{f:4.3,v:3.8,val:4.0,u:3.8},
+  "제미니국수":{f:4.2,v:4.0,val:3.8,u:3.8},
+  "청송 고기국수":{f:4.0,v:3.0,val:4.8,u:3.5},
+
+  // ---- HOT HITS: Burgers ----
+  "제주 몬트락 버거":{f:4.0,v:4.2,val:3.5,u:4.5},
+  "블랙버거하우스":{f:3.8,v:4.0,val:3.5,u:4.2},
+
+  // ---- HOT HITS: Desserts ----
+  "오설록 티뮤지엄":{f:4.0,v:4.8,val:4.0,u:4.2},
+  "귤향당":{f:4.2,v:4.0,val:4.3,u:4.0},
+  "카페 델문도":{f:4.0,v:4.8,val:4.0,u:4.2},
+  "우도왕자":{f:4.0,v:4.5,val:4.5,u:4.0},
+
+  // ---- HOT HITS: Cafes ----
+  "봄날":{f:3.8,v:4.8,val:3.5,u:4.0},
+  "리브레 제주":{f:4.0,v:4.8,val:3.5,u:4.0},
+  "카페 월정리101":{f:3.8,v:4.7,val:3.5,u:3.8},
+  "카페 테라로사":{f:4.5,v:4.8,val:4.0,u:4.0},
+  "서귀다원":{f:4.2,v:4.8,val:4.3,u:4.2},
+
+  // ---- HOT HITS: Unique ----
+  "한라면옥":{f:4.0,v:3.8,val:3.8,u:4.8},
+  "천일만두":{f:4.5,v:3.8,val:4.3,u:4.5},
+  "희신이네":{f:4.2,v:3.5,val:4.3,u:4.0},
+  "동문시장":{f:4.0,v:4.5,val:4.8,u:4.0},
+
+  // ---- HOT HITS: Bakeries ----
+  "런던베이글뮤지엄":{f:4.2,v:4.8,val:3.5,u:4.5},
+  "블루메베이글":{f:4.0,v:3.8,val:4.3,u:3.8},
+  "우드노트 베이커리":{f:4.8,v:4.8,val:3.8,u:4.8},
+  "백마베이크":{f:4.5,v:3.8,val:4.0,u:4.5},
+  "웃뜨리":{f:4.2,v:4.5,val:4.5,u:4.8},
+  "아베베 베이커리":{f:4.2,v:4.0,val:4.5,u:4.0},
+  "빵귿":{f:4.5,v:4.3,val:4.0,u:4.5},
+
+  // ---- HOT HITS: Hard-to-Book ----
+  "이모카세 제주":{f:4.7,v:4.5,val:4.5,u:4.8},
+  "엘엠엔티":{f:4.5,v:5.0,val:3.5,u:5.0},
+  "더 스푼":{f:4.5,v:4.3,val:3.8,u:4.3},
+  "치저스":{f:4.0,v:4.2,val:3.5,u:4.5},
+  "서문 수산":{f:4.7,v:3.8,val:3.5,u:4.5},
+
+  // ---- HOT HITS: Summer/Beach ----
+  "짐바란 비치":{f:4.0,v:4.8,val:4.0,u:4.5},
+  "해지개":{f:3.8,v:4.8,val:4.0,u:4.2},
+  "원앤온리":{f:4.0,v:5.0,val:3.8,u:4.5},
+  "아베베 베이커리 비킬라":{f:4.0,v:4.5,val:4.3,u:4.0},
+  "오드랑베이커리":{f:4.2,v:4.3,val:4.5,u:3.8}
+};
+
+// ---- Backup recommendations for specialties ----
+window.JEJU_BACKUPS = {
+  "흑돼지":[
+    {name:"흑돈가",note:"the other major chain — solid, consistent, multiple branches"},
+    {name:"돈이랑 (Jungmun)",note:"staff-grills for you, tourist + local mix, Naver coupon for free kimchi"},
+    {name:"산방도감산방산 본점",note:"crystal grill plates, both black &amp; white pork, near Sanbangsan"}
+  ],
+  "고기국수":[
+    {name:"국시트멍",note:"thick plump noodles, Halla University student favourite"},
+    {name:"국수마당",note:"open till 02:00, Noodle Street, ₩500 off on the 11th"},
+    {name:"제주미담",note:"3× pork portions, best value at ₩8,500"}
+  ],
+  "갈치요리":[
+    {name:"하구리 해물탕",note:"Jeju-style grilled hairtail with unique cooking methods"},
+    {name:"우정회센타 중문점",note:"hairtail sashimi — the raw version, rare delicacy"}
+  ],
+  "성게미역국":[
+    {name:"전통 향토음식점",note:"most Seogwipo traditional restaurants serve it in winter"},
+    {name:"국수마을",note:"sea urchin knife-cut noodles (성게칼국수) as an alternative"}
+  ],
+  "전복":[
+    {name:"순옥이네명가",note:"grilled mackerel + abalone side, generous portions"},
+    {name:"팔도수산식당",note:"complimentary abalone with 물회 orders"}
+  ],
+  "오분자기":[
+    {name:"동문시장",note:"buy fresh 오분자기 or fermented 젓갈 to take home"},
+    {name:"올레시장 (Seogwipo)",note:"Seogwipo's daily market — fresh seafood stalls"}
+  ],
+  "물회":[
+    {name:"삼대국수회관",note:"한치물회 — \"practically in the middle of the sea\""},
+    {name:"팔도수산식당",note:"opens 07:00, airport-adjacent, ₩15,000 한치물회"}
+  ],
+  "복지리":[
+    {name:"고기짬뽕 at 몰질",note:"₩8,000 — the sleeper-hit jjamppong, always available even if pufferfish sells out"},
+    {name:"traditional 해장국 shops",note:"most Seogwipo hangover-soup places have a pufferfish option"}
+  ],
+  "고등어회":[
+    {name:"팔도수산식당",note:"raw fish specialists near the port — call to ask about mackerel availability"},
+    {name:"순옥이네명가",note:"grilled mackerel is the safer bet; raw depends on daily catch"}
+  ],
+  "몸국":[
+    {name:"전통 한식당",note:"virtually every traditional restaurant serves 몸국 — just ask"},
+    {name:"맛존디",note:"heritage food specialist — reimagined momguk alongside 보말죽"}
+  ],
+  "빙떡":[
+    {name:"올레시장 (Seogwipo)",note:"Seogwipo's daily market — multiple vendors"},
+    {name:"제주 오일장 (5-day market)",note:"rotating traditional market — the most authentic source"}
+  ],
+  "문게죽":[
+    {name:"향토음식 전문점",note:"search Naver for \"제주 문게죽\" — mostly interior Jeju restaurants"},
+    {name:"seasonal special at 해녀의 집",note:"ask if they have it — depends on diver's catch"}
+  ],
+  "보말죽":[
+    {name:"전통 해산물 식당",note:"most coastal seafood restaurants serve 보말죽 in summer"},
+    {name:"해녀의 집",note:"sea snail sourced by haenyeo divers — call ahead"}
+  ],
+  "옥돔":[
+    {name:"서문옥돔",note:"the tilefish specialist — grilled and as porridge"},
+    {name:"팔도수산식당",note:"complimentary grilled tilefish — a mark of generosity"}
+  ],
+  "꿩고기":[
+    {name:"꿩 메밀국수 전문점",note:"search Naver — the buckwheat noodles in pheasant broth are the gateway"},
+    {name:"Autumn food festivals",note:"제주 가을 축제 often feature pheasant dishes seasonally"}
+  ],
+  "돔베고기":[
+    {name:"골막식당",note:"수육 side order — the \"original\" gogi-guksu shop does it right"},
+    {name:"국수마당",note:"dombe toppings on the gogi-guksu itself — built in"},
+    {name:"제주미담",note:"3× pork — the dombe is correspondingly generous"}
+  ]
+};
+
+// ---- Restaurant-level backups ("Also consider") ----
+window.JEJU_ALT = {
+  "팔도수산식당":"삼대국수회관 (different angle on 물회, central Yeon-dong)",
+  "신해바다":"남양해장국 (same category, Nohyeong-dong, opens 07:00)",
+  "남양해장국":"신해바다 (more variety, near airport)",
+  "자매국수":"올래국수 (the rival pillar — try both, pick a side)",
+  "올래국수":"자매국수 (the other pillar — milder, approachable)",
+  "골막식당":"만강촌옛날칼국수 (different noodle style, same near-airport convenience)",
+  "국시트멍":"제주미담 (bigger portions, also in Jeju City)",
+  "국수마당":"청송 고기국수 (Seogwipo — even cheaper at ₩7,000)",
+  "제주미담":"국수마당 (open till 02:00, Noodle Street)",
+  "돈사돈":"돈사촌 (Aewol — the originator of thick-cut style)",
+  "만강촌옛날칼국수":"모던 돔베 (different noodle league, same city)",
+  "순옥이네명가":"팔도수산식당 (port-side, opens at dawn)",
+  "모던 돔베":"자매국수 (traditional version, half the price)",
+  "돈사촌":"돈사돈 본점 (city centre, self-grill)",
+  "고향흑돼지":"산방도감산방산 본점 (crystal grill, near Sanbangsan)",
+  "밥깡패":"해녀의 집 (different style — direct from divers)",
+  "블랙씨걸":"자연수산 (Seogwipo — even more rare, call same-day)",
+  "꽁순이네":"돌담 땅콩 국수 (Aewol — fusion peanut noodles)",
+  "해녀의 집":"국수마을 (Seongsan — sea urchin kalguksu as alternative)",
+  "몰질 식육식당":"고기짬뽕 at same location (₩8,000, always available)",
+  "자연수산":"블랙씨걸 (Hallim — easier to access, generous portions)",
+  "고씨네 천지국수":"제미니국수 (Seogwipo — fresh hand-pulled noodles)",
+  "맛존디":"중앙식당 (both near Olle Market, different specialties)",
+  "중앙식당":"맛존디 (heritage food, robot-served, near same market)",
+  "고집돌우럭":"우정회센타 중문점 (sashimi specialist, same Jungmun area)"
+};
+
+// ---- Rating injection ----
+(function(){
+  function calcOverall(r){
+    return Math.round((r.f*0.4 + r.v*0.2 + r.val*0.25 + r.u*0.15) * 10) / 10;
+  }
+  function getTier(score){
+    if(score>=4.5) return {cls:'pilgrim',label:"Pilgrim's Choice"};
+    if(score>=4.0) return {cls:'essential',label:'Essential'};
+    return {cls:'solid',label:'Solid Pick'};
+  }
+  function nameKey(h3text){
+    // Extract Korean name — first text node before any span
+    var match = h3text.match(/^([^\s<]+)/);
+    if(!match) return h3text.trim();
+    var name = match[1];
+    // Try progressively shorter keys
+    var checks = [name, name.replace(/본점$/,''), name.replace(/ 제주$/,''),
+      name.replace(/ 마곡$/,''), name.replace(/점$/,''), name.replace(/ 본점$/,''),
+      name.replace(/ 마곡본점$/,''), name.replace(/ 서귀포점$/,'')];
+    for(var i=0;i<checks.length;i++){
+      if(window.JEJU_RATINGS[checks[i]]) return checks[i];
+    }
+    // Try partial match
+    var keys = Object.keys(window.JEJU_RATINGS);
+    for(var j=0;j<keys.length;j++){
+      if(name.indexOf(keys[j])!==-1 || keys[j].indexOf(name)!==-1) return keys[j];
+    }
+    return null;
+  }
+
+  function buildRatingHtml(r, compact){
+    var score = calcOverall(r);
+    var tier = getTier(score);
+    var pct = function(n){return (n/5*100)+'%'};
+    if(compact){
+      return '<div class="rating-compact">'+
+        '<span class="tier-badge tier-'+tier.cls+'">'+tier.label+'</span>'+
+        '<span class="score-overall">'+score.toFixed(1)+'<span class="max">/5</span></span>'+
+        '</div>';
+    }
+    return '<div class="rating-block">'+
+      '<span class="tier-badge tier-'+tier.cls+'">'+tier.label+'</span>'+
+      '<span class="score-overall">'+score.toFixed(1)+'<span class="max">/5</span></span>'+
+      '<div class="score-bars">'+
+        '<div class="score-bar"><span class="sb-label">Food</span><div class="sb-track"><div class="sb-fill food" style="width:'+pct(r.f)+'"></div></div><span class="sb-num">'+r.f.toFixed(1)+'</span></div>'+
+        '<div class="score-bar"><span class="sb-label">Vibe</span><div class="sb-track"><div class="sb-fill vibe" style="width:'+pct(r.v)+'"></div></div><span class="sb-num">'+r.v.toFixed(1)+'</span></div>'+
+        '<div class="score-bar"><span class="sb-label">Value</span><div class="sb-track"><div class="sb-fill value" style="width:'+pct(r.val)+'"></div></div><span class="sb-num">'+r.val.toFixed(1)+'</span></div>'+
+        '<div class="score-bar"><span class="sb-label">Unique</span><div class="sb-track"><div class="sb-fill unique" style="width:'+pct(r.u)+'"></div></div><span class="sb-num">'+r.u.toFixed(1)+'</span></div>'+
+      '</div>'+
+    '</div>';
+  }
+
+  function injectRatings(){
+    // Entry cards (jeju-city, island)
+    document.querySelectorAll('.entry-body').forEach(function(body){
+      if(body.querySelector('.rating-block')) return;
+      var h3 = body.querySelector('h3');
+      if(!h3) return;
+      var key = nameKey(h3.textContent);
+      if(!key) return;
+      var r = window.JEJU_RATINGS[key];
+      if(!r) return;
+      var cuisine = body.querySelector('.entry-cuisine');
+      if(cuisine){
+        cuisine.insertAdjacentHTML('afterend', buildRatingHtml(r,false));
+      }
+      // Add backup suggestion
+      var altKey = key;
+      var alt = window.JEJU_ALT[altKey];
+      if(alt){
+        var meta = body.querySelector('.entry-meta');
+        if(meta){
+          meta.insertAdjacentHTML('beforebegin',
+            '<div style="font-size:.76rem;color:var(--muted);padding:.4rem 0;font-style:italic">'+
+            '<b style="color:var(--basalt);font-style:normal">↻ Also consider:</b> '+alt+
+            '</div>');
+        }
+      }
+    });
+
+    // Hot-card bodies
+    document.querySelectorAll('.hot-body').forEach(function(body){
+      if(body.querySelector('.rating-block')) return;
+      var h3 = body.querySelector('h3');
+      if(!h3) return;
+      var key = nameKey(h3.textContent);
+      if(!key) return;
+      var r = window.JEJU_RATINGS[key];
+      if(!r) return;
+      var cuisine = body.querySelector('.entry-cuisine');
+      if(cuisine){
+        cuisine.insertAdjacentHTML('afterend', buildRatingHtml(r,false));
+      }
+    });
+
+    // Cafe cards
+    document.querySelectorAll('.cafe-card').forEach(function(card){
+      if(card.querySelector('.rating-compact')) return;
+      var h3 = card.querySelector('h3');
+      if(!h3) return;
+      var key = nameKey(h3.textContent);
+      if(!key) return;
+      var r = window.JEJU_RATINGS[key];
+      if(!r) return;
+      var en = card.querySelector('.en');
+      if(en){
+        en.insertAdjacentHTML('afterend', buildRatingHtml(r,true));
+      }
+    });
+
+    // Spec cards — inject compact rating + backup recs
+    document.querySelectorAll('.spec-card').forEach(function(card){
+      if(card.querySelector('.rating-compact')) return;
+      var h3 = card.querySelector('h3');
+      if(!h3) return;
+      var specEn = card.querySelector('.spec-en');
+      if(!specEn) return;
+      // Find matching venue ratings for restaurants mentioned in this card's recs
+      var recs = card.querySelectorAll('.spec-rec b');
+      var topScore = 0;
+      recs.forEach(function(b){
+        var key = nameKey(b.textContent);
+        if(key && window.JEJU_RATINGS[key]){
+          var s = calcOverall(window.JEJU_RATINGS[key]);
+          if(s > topScore) topScore = s;
+        }
+      });
+      if(topScore > 0){
+        var tier = getTier(topScore);
+        specEn.insertAdjacentHTML('afterend',
+          '<div class="rating-compact">'+
+          '<span class="tier-badge tier-'+tier.cls+'">Top Pick: '+tier.label+'</span>'+
+          '<span class="score-overall">'+topScore.toFixed(1)+'<span class="max">/5</span></span>'+
+          '</div>');
+      }
+
+      // Inject backup recommendations after the spec-recs div
+      var dishName = h3.textContent.trim();
+      var backup = window.JEJU_BACKUPS[dishName];
+      if(backup){
+        var recsDiv = card.querySelector('.spec-recs');
+        if(recsDiv){
+          var bkHtml = '<div class="spec-backup">'+
+            '<div class="bk-label">If those are booked or sold out</div>';
+          backup.forEach(function(bk){
+            bkHtml += '<div class="bk-item"><b>'+bk.name+'</b> — '+bk.note+'</div>';
+          });
+          bkHtml += '</div>';
+          recsDiv.insertAdjacentHTML('afterend', bkHtml);
+        }
+      }
+    });
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',injectRatings);
+  } else {
+    injectRatings();
+  }
+})();
