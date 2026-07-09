@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seoul Botanic Garden · A Foodie's 24-Hour Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1614;
+    --paper:#f7f2ea;
+    --paper-warm:#efe7d8;
+    --paper-dark:#e4d9c4;
+    --red:#b8341c;
+    --red-deep:#8a1f0e;
+    --green:#3d5a3d;
+    --green-deep:#1f3a2b;
+    --gold:#b8923a;
+    --gold-soft:#d4b16a;
+    --muted:#6b5d4f;
+    --line:rgba(26,22,20,.12);
+    --line-strong:rgba(26,22,20,.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter','Noto Sans KR',sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:flex-end;
+    padding:6rem 2rem 4rem;
+    background:
+      radial-gradient(ellipse at 70% 20%, rgba(61,90,61,.35), transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(184,52,28,.18), transparent 55%),
+      linear-gradient(160deg,#1f3a2b 0%,#16291f 40%,#0f1a14 100%);
+    color:var(--paper);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(247,242,234,.04) 39px,rgba(247,242,234,.04) 40px),
+      repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(247,242,234,.04) 39px,rgba(247,242,234,.04) 40px);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;width:100%}
+  .hero-eyebrow{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:.78rem;letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-bottom:1.5rem;
+    display:flex;align-items:center;gap:1rem;
+  }
+  .hero-eyebrow::before{content:"";width:48px;height:1px;background:var(--gold-soft)}
+  .hero h1{
+    font-family:'Playfair Display',serif;
+    font-weight:900;
+    font-size:clamp(2.6rem,7vw,5.6rem);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    margin-bottom:1.5rem;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-soft);font-weight:400}
+  .hero .ko{
+    font-family:'Noto Serif KR',serif;
+    font-size:clamp(1.1rem,2.4vw,1.6rem);
+    font-weight:300;
+    color:rgba(247,242,234,.78);
+    margin-bottom:2.5rem;
+    letter-spacing:.02em;
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:2.5rem;
+    padding-top:2rem;
+    border-top:1px solid rgba(247,242,234,.18);
+    max-width:760px;
+  }
+  .hero-meta div{font-size:.85rem}
+  .hero-meta span{display:block;color:var(--gold-soft);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;margin-bottom:.3rem}
+  .hero-meta strong{font-family:'Noto Sans KR',sans-serif;font-weight:500;font-size:1.02rem}
+  .hero-scroll{
+    position:absolute;bottom:2rem;right:2rem;
+    writing-mode:vertical-rl;
+    font-size:.7rem;letter-spacing:.3em;
+    color:rgba(247,242,234,.5);
+    text-transform:uppercase;
+    z-index:2;
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+  section{padding:6rem 0}
+  .section-head{margin-bottom:3.5rem;max-width:760px}
+  .kicker{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--red);
+    margin-bottom:1rem;
+    display:inline-flex;align-items:center;gap:.6rem;
+  }
+  .kicker::before{content:"◆";color:var(--gold)}
+  .section-head h2{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:clamp(2rem,4.5vw,3.2rem);
+    line-height:1.1;letter-spacing:-.015em;
+    margin-bottom:1rem;
+  }
+  .section-head h2 .ko{display:block;font-family:'Noto Serif KR',serif;font-size:1.1rem;font-weight:400;color:var(--muted);margin-top:.4rem}
+  .section-head p{color:var(--muted);font-size:1.02rem;max-width:620px}
+
+  /* ---------- INTRO / ORIENTATION ---------- */
+  #orientation{background:var(--paper-warm)}
+  .intro-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:start;
+  }
+  .intro-grid p{font-size:1.05rem;margin-bottom:1.2rem;color:#33291f}
+  .intro-grid p .kw{background:linear-gradient(transparent 62%,rgba(184,146,58,.32) 62%);font-weight:500;padding:0 .1em}
+  .intro-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:2rem;
+    position:relative;
+  }
+  .intro-card h4{
+    font-family:'Noto Serif KR',serif;
+    font-size:1.15rem;font-weight:600;
+    margin-bottom:1rem;
+    padding-bottom:.8rem;
+    border-bottom:1px dashed var(--line-strong);
+  }
+  .intro-card ul{list-style:none}
+  .intro-card li{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:.7rem 0;
+    border-bottom:1px dotted var(--line);
+    font-size:.92rem;
+  }
+  .intro-card li:last-child{border-bottom:none}
+  .intro-card li b{font-family:'Noto Sans KR',sans-serif;font-weight:600;color:var(--ink)}
+  .intro-card li span{color:var(--muted);font-size:.82rem;text-align:right;max-width:60%}
+  .intro-card .map-note{
+    margin-top:1.2rem;padding-top:1rem;
+    border-top:1px solid var(--line);
+    font-size:.8rem;color:var(--muted);font-style:italic;
+  }
+
+  /* ---------- SPECIALTIES ---------- */
+  #specialties{}
+  .spec-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;
+  }
+  .spec-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:2.2rem 1.8rem;
+    border-radius:2px;
+    position:relative;
+    transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .spec-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(26,22,20,.25)}
+  .spec-num{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:2.4rem;color:var(--gold);
+    line-height:1;margin-bottom:1rem;
+  }
+  .spec-card h3{
+    font-family:'Noto Serif KR',serif;
+    font-size:1.35rem;font-weight:600;
+    margin-bottom:.3rem;
+  }
+  .spec-card .spec-en{font-family:'Playfair Display',serif;font-style:italic;color:var(--muted);font-size:.95rem;margin-bottom:1rem}
+  .spec-card p{font-size:.92rem;color:#3d332a;margin-bottom:1rem}
+  .spec-card .where{
+    font-size:.78rem;
+    color:var(--red);
+    letter-spacing:.05em;
+    padding-top:.8rem;
+    border-top:1px solid var(--line);
+  }
+  .spec-card .where b{font-weight:600}
+
+  /* ---------- RESTAURANT ENTRIES ---------- */
+  #guide{background:var(--paper-warm);padding-top:6rem}
+  .meal-anchor{
+    display:flex;align-items:center;gap:1.5rem;
+    margin:5rem 0 2.5rem;
+  }
+  .meal-anchor:first-of-type{margin-top:0}
+  .meal-anchor .time{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:2.6rem;color:var(--red-deep);font-weight:700;
+    line-height:1;
+    min-width:140px;
+  }
+  .meal-anchor .label{
+    font-family:'Noto Serif KR',serif;
+    font-size:1.3rem;font-weight:600;
+  }
+  .meal-anchor .label span{display:block;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--muted);font-weight:400;letter-spacing:.05em;margin-top:.2rem}
+  .meal-anchor .rule{flex:1;height:1px;background:var(--line-strong)}
+
+  .entry{
+    display:grid;grid-template-columns:80px 1fr;gap:0;
+    background:var(--paper);
+    border:1px solid var(--line);
+    margin-bottom:1.5rem;
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .entry-tag{
+    background:var(--ink);
+    color:var(--paper);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:1.5rem .5rem;
+    text-align:center;
+  }
+  .entry-tag.gem{background:var(--red-deep)}
+  .entry-tag.local{background:var(--green-deep)}
+  .entry-tag .icon{font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic;line-height:1}
+  .entry-tag .lab{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;margin-top:.5rem;opacity:.85}
+
+  .entry-body{padding:1.8rem 2rem}
+  .entry-head{
+    display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;
+    margin-bottom:.4rem;
+  }
+  .entry-head h3{
+    font-family:'Noto Serif KR',serif;
+    font-size:1.4rem;font-weight:700;
+    line-height:1.3;
+  }
+  .entry-head h3 .en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.95rem;display:block;margin-top:.15rem}
+  .price-pill{
+    background:var(--paper-dark);
+    padding:.35rem .9rem;border-radius:50px;
+    font-size:.78rem;font-weight:600;color:var(--ink);
+    white-space:nowrap;
+    letter-spacing:.02em;
+  }
+  .entry-cuisine{
+    font-size:.78rem;color:var(--red);letter-spacing:.12em;text-transform:uppercase;
+    margin-bottom:.9rem;font-weight:500;
+  }
+  .entry-body p{font-size:.95rem;color:#3a2f25;margin-bottom:1rem}
+  .entry-body p:last-child{margin-bottom:0}
+  .entry-meta{
+    display:flex;flex-wrap:wrap;gap:.4rem .8rem;
+    padding-top:1rem;margin-top:.3rem;
+    border-top:1px dashed var(--line);
+    font-size:.8rem;color:var(--muted);
+  }
+  .entry-meta .m{display:flex;align-items:center;gap:.35rem}
+  .entry-meta .m::before{content:"";width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0}
+  .entry-meta .m.addr::before{display:none}
+  .entry-meta .m.addr{font-weight:500;color:var(--ink);min-width:100%}
+
+  /* anecdote callout */
+  .anecdote{
+    background:linear-gradient(135deg,rgba(184,146,58,.1),rgba(184,52,28,.06));
+    border-left:3px solid var(--gold);
+    padding:.9rem 1.2rem;
+    margin:.8rem 0;
+    font-size:.9rem;
+    font-style:italic;
+    color:#3d332a;
+    border-radius:0 2px 2px 0;
+  }
+  .anecdote b{font-style:normal;font-weight:600;color:var(--red-deep)}
+
+  /* ---------- CAFE / SWEET ---------- */
+  #cafes{}
+  .cafe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+  .cafe-card{
+    background:linear-gradient(160deg,#fff,var(--paper-warm));
+    border:1px solid var(--line);
+    padding:2rem;border-radius:2px;
+    position:relative;
+  }
+  .cafe-card .badge{
+    position:absolute;top:1.2rem;right:1.2rem;
+    background:var(--green);color:var(--paper);
+    font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;
+    padding:.25rem .7rem;border-radius:50px;font-weight:600;
+  }
+  .cafe-card h3{font-family:'Noto Serif KR',serif;font-size:1.25rem;font-weight:600;margin-bottom:.2rem}
+  .cafe-card .en{font-family:'Playfair Display',serif;font-style:italic;color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+  .cafe-card p{font-size:.9rem;color:#3a2f25;margin-bottom:1rem}
+  .cafe-card .det{font-size:.78rem;color:var(--muted);padding-top:.8rem;border-top:1px dashed var(--line)}
+  .cafe-card .det b{color:var(--ink);font-weight:600}
+
+  /* ---------- ITINERARY ---------- */
+  #itinerary{background:var(--ink);color:var(--paper)}
+  #itinerary .section-head h2{color:var(--paper)}
+  #itinerary .section-head h2 .ko{color:rgba(247,242,234,.55)}
+  #itinerary .section-head p{color:rgba(247,242,234,.65)}
+  #itinerary .kicker{color:var(--gold-soft)}
+  .timeline{position:relative;padding-left:2rem}
+  .timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:rgba(247,242,234,.2)}
+  .t-stop{position:relative;padding-bottom:2.2rem}
+  .t-stop:last-child{padding-bottom:0}
+  .t-stop::before{
+    content:"";position:absolute;left:-2rem;top:.5rem;
+    width:13px;height:13px;border-radius:50%;
+    background:var(--gold);border:2px solid var(--ink);
+    box-shadow:0 0 0 1px rgba(247,242,234,.3);
+  }
+  .t-time{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-soft);font-size:1.05rem;margin-bottom:.2rem}
+  .t-stop h4{font-family:'Noto Serif KR',serif;font-size:1.2rem;font-weight:600;margin-bottom:.4rem}
+  .t-stop p{color:rgba(247,242,234,.7);font-size:.92rem;max-width:640px}
+
+  /* ---------- TIPS ---------- */
+  #tips{background:var(--paper-warm)}
+  .tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .tip{
+    background:var(--paper);border:1px solid var(--line);
+    padding:1.8rem;border-radius:2px;
+  }
+  .tip .tnum{font-family:'Playfair Display',serif;font-style:italic;font-size:1.8rem;color:var(--red);line-height:1;margin-bottom:.6rem}
+  .tip h4{font-family:'Noto Sans KR',sans-serif;font-size:1rem;font-weight:600;margin-bottom:.5rem}
+  .tip p{font-size:.88rem;color:#3a2f25}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--green-deep);color:rgba(247,242,234,.8);
+    padding:4rem 0 3rem;text-align:center;
+  }
+  footer .wrap{max-width:680px}
+  footer p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;margin-bottom:1rem;color:var(--gold-soft)}
+  footer small{font-size:.78rem;letter-spacing:.05em;color:rgba(247,242,234,.5);display:block;line-height:1.8}
+  footer .sig{margin-top:1.5rem;font-family:'Noto Serif KR',serif;font-size:.9rem;color:rgba(247,242,234,.55)}
+
+  @media(max-width:820px){
+    .hero{padding:5rem 1.5rem 3rem}
+    .hero-meta{gap:1.5rem}
+    .intro-grid{grid-template-columns:1fr}
+    .entry{grid-template-columns:64px 1fr}
+    .entry-body{padding:1.4rem 1.3rem}
+    .meal-anchor .time{font-size:2rem;min-width:auto}
+    section{padding:4rem 0}
+  }
+
+  /* ---------- POP-OUT LINK BUTTONS ---------- */
+  .pop-links{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:1.1rem}
+  .pl{
+    display:inline-flex;align-items:center;gap:.4rem;
+    padding:.55rem 1.1rem;
+    border-radius:50px;
+    font-family:'Noto Sans KR','Inter',sans-serif;
+    font-size:.77rem;font-weight:700;letter-spacing:.01em;
+    text-decoration:none;
+    transition:transform .32s cubic-bezier(.34,1.56,.64,1),box-shadow .32s ease,filter .2s ease;
+    cursor:pointer;border:none;white-space:nowrap;
+  }
+  .pl svg{flex-shrink:0;display:block}
+  .pl:hover{text-decoration:none}
+  .pl:active{transform:translateY(-1px) scale(1.01)!important}
+  .pl.naver{
+    background:linear-gradient(135deg,#03c75a,#019a43);
+    color:#fff;
+    box-shadow:0 5px 16px -3px rgba(3,199,90,.5),0 1px 3px rgba(0,0,0,.12);
+  }
+  .pl.naver:hover{
+    transform:translateY(-4px) scale(1.06);
+    box-shadow:0 14px 32px -5px rgba(3,199,90,.62),0 4px 10px rgba(0,0,0,.18);
+    filter:brightness(1.06);
+  }
+  .pl.google{
+    background:#fff;
+    color:#3c4043;
+    box-shadow:0 5px 16px -3px rgba(60,64,67,.2),0 1px 3px rgba(0,0,0,.1);
+  }
+  .pl.google:hover{
+    transform:translateY(-4px) scale(1.06);
+    box-shadow:0 14px 32px -5px rgba(66,133,244,.45),0 4px 10px rgba(0,0,0,.16);
+    color:#1a73e8;
+  }
+  .cafe-card .pop-links{margin-top:auto;padding-top:.4rem}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">마곡 · 강서구 · Seoul, Korea</div>
+    <h1>A Foodie's Field Guide to <em>Magok</em><br>&amp; the Seoul Botanic Garden</h1>
+    <p class="ko">서울식물원 — 24시간, 맛을 찾아서</p>
+    <div class="hero-meta">
+      <div><span>Brief</span><strong>24 hours, one neighbourhood</strong></div>
+      <div><span>Mood</span><strong>Locals-only, no tourist traps</strong></div>
+      <div><span>Priority</span><strong>Food quality first</strong></div>
+      <div><span>Lineage</span><strong>For the returning Seoul foodie</strong></div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll · 아래로</div>
+</header>
+
+<!-- ============ ORIENTATION ============ -->
+<section id="orientation">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">The Lay of the Land · 동네 지형</span>
+      <h2>Why Magok? <span class="ko">왜 하필 마곡인가</span></h2>
+    </div>
+    <div class="intro-grid">
+      <div>
+        <p>Most Seoul veterans speed past <span class="kw">Magok</span> on Line 9, eyes fixed on Hongdae or Gangnam. That is exactly why it rewards the curious. Carved from an industrial floodplain in the 2010s, Magok is Seoul's youngest business district — a grid of glass towers, a canal, the LG Science Park, and the dazzling glass-arc <span class="kw">Seoul Botanic Garden</span> (서울식물원) that opened in 2019.</p>
+        <p>What grew up around the garden is a feeding ground built by and for <span class="kw">Korean office workers, engineers, and locals</span> — not tourists. The result: tight, high-turnover kitchens, omakase at shockingly fair prices, and a Korean BBQ scene that punches well above its postcode. You will eat very, very well within a 15-minute walk of the garden gates.</p>
+        <p>This guide is built from Korean-language reviews (네이버, 다이닝코드, 식신), local blog deep-dives, and the kind of neighbourhood chatter you only get reading Korean. Where a place is a true <em>hidden gem</em>, we say so. Where it's merely excellent and famous locally, we say that too.</p>
+      </div>
+      <aside class="intro-card">
+        <h4>Neighbourhood Cheat Sheet</h4>
+        <ul>
+          <li><b>Station</b><span>마곡나루 (Magoknaru, Line 9 · 공항철도) — closest to the Botanic Garden</span></li>
+          <li><b>Also useful</b><span>마곡 (Magok, Line 9) &amp; 발산 (Balsan, Line 5) — 5 min apart</span></li>
+          <li><b>Vibe</b><span>New-build, clean, corporate by day — lively eating strip by night</span></li>
+          <li><b>Walk radius</b><span>Everything here is within ~800m of the garden</span></li>
+          <li><b>Reservations</b><span>네이버예약 (Naver) &amp; 캐치테이블 (Catch Table) are the booking apps to load</span></li>
+          <li><b>Cash?</b><span>Card everywhere. Bring appetite, not won-notes.</span></li>
+        </ul>
+        <p class="map-note">All distances are approximate, measured from Magoknaru Station Exit 5.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECIALTIES ============ -->
+<section id="specialties">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Local Specialities · 이 동네의 맛</span>
+      <h2>What Magok Eats <span class="ko">마곡 사람들이 먹는 것</span></h2>
+      <p>Gangseo-gu doesn't have a single UNESCO dish, but it has developed distinct food identities. Here are the things this pocket of Seoul does unusually well — and the reasons why.</p>
+    </div>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-num">01</div>
+        <h3>한우 곱창전골</h3>
+        <div class="spec-en">Hanwoo Beef-Intestine Hot Pot</div>
+        <p>The signature dish of greater Magok/Balsan. Premium <em>hanwoo</em> (Korean beef) intestines simmered in a deep, peppery, slightly spicy broth until the collagen melts into silk. It is luxurious, restorative, and the closest thing this district has to a civic religion.</p>
+        <div class="where">Eat at <b>중앙해장</b>, <b>발산한우진곱창</b>, <b>청담동순도리</b></div>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-num">02</div>
+        <h3>숙성 삼겹살 &amp; 생삼겹살</h3>
+        <div class="spec-en">Dry-Aged &amp; Raw Pork Belly</div>
+        <p>Magok runs on charcoal smoke. The local gogi-jip scene splits between <em>sukhyung</em> (wet-aged belly, deeper umami) and <em>saeng</em> (raw, fresh-cut, sweeter fat). Both are grilled over real charcoal — a marker of quality that's quietly disappearing elsewhere in Seoul.</p>
+        <div class="where">Eat at <b>마부자생삼겹살</b>, <b>지피다</b>, <b>금고깃집</b></div>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-num">03</div>
+        <h3>가성비 오마카세</h3>
+        <div class="spec-en">Honest-Price Omakase</div>
+        <p>A peculiar Magok phenomenon: serious, reservation-only sushi omakase starting around ₩35,000 — a third of what the same meal costs across the river. The district's high-income, time-poor office crowd sustains quality without the Gangnam markup.</p>
+        <div class="where">Eat at <b>우미마토</b>, <b>서울 오마카세 우미마토 마곡본점</b></div>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-num">04</div>
+        <h3>나폴리 화덕피자</h3>
+        <div class="spec-en">Neapolitan Wood-Fired Pizza</div>
+        <p>Unexpected, but genuine: Magok hosts one of Seoul's most respected pizzerias, run by a <em>Salvatore-trained</em> first-generation wood-fire chef. Leopardo-spotted crusts, house-cured meats, and a queue every night.</p>
+        <div class="where">Eat at <b>비바나폴리 (Viva Napoli)</b></div>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-num">05</div>
+        <h3>미슐랭 셰프의 이탈리안</h3>
+        <div class="spec-en">Michelin-Lineage Italian</div>
+        <p>When chef Kim Do-hyung — whose <em>Seochon Kim's Ristorante</em> held a Michelin listing 2017–2020 — chose Magok for his third venture, he brought downtown fine-dining discipline to the office park. It remains the neighbourhood's quiet trophy.</p>
+        <div class="where">Eat at <b>서촌김씨 오스테리아</b></div>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-num">06</div>
+        <h3>곰탕 &amp; 해장국</h3>
+        <div class="spec-en">Bone-Broth Soup &amp; Hangover Stew</div>
+        <p>The old residential edges of Gangseo (toward Balsan) keep the soul food alive: milky beef-bone <em>gomtang</em> simmered 24 hours, and hearty <em>haejangguk</em> built on the legendary Majang-dong livestock house's pedigree.</p>
+        <div class="where">Eat at <b>원조나주곰탕</b>, <b>중앙해장</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE GUIDE ============ -->
+<section id="guide">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">The Eats · 맛집 가이드</span>
+      <h2>Where to Eat, Hour by Hour <span class="ko">시간대별 추천</span></h2>
+      <p>Organised as a day — from breakfast coffee through to a late-night cup. Gem markers (<span style="color:var(--red-deep);font-weight:600">◆ GEM</span>) flag true hidden spots; (<span style="color:var(--green-deep);font-weight:600">◆ LOCAL</span>) marks beloved neighbourhood fixtures.</p>
+    </div>
+
+    <!-- ===== MORNING ===== -->
+    <div class="meal-anchor">
+      <div class="time">09:00</div>
+      <div class="label">Morning / Coffee &amp; Pastries<span>아침 — 커피와 빵</span></div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="entry" data-query="플라워플로우 마곡">
+      <div class="entry-tag gem"><div class="icon">f</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>플라워플로우<span class="en">Flower Flow</span></h3>
+          <span class="price-pill">₩6,000–8,000</span>
+        </div>
+        <div class="entry-cuisine">Plant-Themed Coffeehouse · 식물 카페</div>
+        <p>Begin the day inside what feels like a botanical garden within a botanical garden. Flower Flow occupies the entire second floor of the Magok COEX building — an indoor forest of greenery, "like stepping into a forest studio," as one Korean reviewer put it. The coffee is genuinely good (three single-origin options), not just a prop for the scenery, and the space is vast enough to never feel cramped.</p>
+        <div class="anecdote"><b>Local whisper:</b> The whole room is draped in (artificial but convincing) foliage, but the beans are real and roasted with care. Locals come for the calm as much as the caffeine — 2 hours free parking with any purchase keeps the laptop crowd away; this is a place to sit, not to work.</div>
+        <div class="entry-meta">
+          <span class="m addr">서울 강서구 마곡중앙로 143, 마곡 COEX 2F · Magoknaru Stn Exit 5, 3 min</span>
+          <span class="m">Mon–Fri 07:00–20:00 · Sat–Sun 09:30–20:00</span>
+          <span class="m">Americano ₩5,500 · 2hr free parking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="떼헤브 마곡">
+      <div class="entry-tag local"><div class="icon">t</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>떼헤브<span class="en">Théheuve</span></h3>
+          <span class="price-pill">₩3,500–7,000</span>
+        </div>
+        <div class="entry-cuisine">French Bakery &amp; Dessert · 프렌치 베이커리</div>
+        <p>A sliver of Paris plonked into Magok. The exterior and interior both ooze French-pâtisserie charm, and the pastries are the real draw — proper butter, proper laminating. "You'd expect a place this pretty to be takeaway-only," one blogger wrote, "but they actually keep ~10 seats, so you can sit and savour."</p>
+        <div class="entry-meta">
+          <span class="m addr">Near Magoknaru Stn · 서울 강서구 마곡나루 일대</span>
+          <span class="m">Best for: morning viennoiserie &amp; afternoon dessert</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== LUNCH ===== -->
+    <div class="meal-anchor">
+      <div class="time">12:00</div>
+      <div class="label">Lunch / The Main Event<span>점심 — 본게임</span></div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="entry" data-query="나우니스 마곡">
+      <div class="entry-tag gem"><div class="icon">g</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>나우니스<span class="en">Nowness</span></h3>
+          <span class="price-pill">₩12,000–16,000</span>
+        </div>
+        <div class="entry-cuisine">Handmade Burger Bar · 수제버거</div>
+        <p>The most elusive lunch in Magok. Hidden on the second floor of a residential-commercial tower near the garden, Nowness opens for just <strong>three hours a day</strong> (11:30–14:30) and is closed Mondays and Tuesdays. Yet it is packed every single service. The signature <em>Cheese Bam Nau Burger</em> arrives with a waterfall of molten cheese sauce cascading over the patty — grilled onions, cracked black pepper, and a sweetness that reviewers compare to "eating fondue on a bun."</p>
+        <div class="anecdote"><b>The hunt:</b> Finding the door is half the fun — it is buried inside a mixed-use building, unmarked at street level. Those limited hours exist because the kitchen makes everything to order. Go early, go hungry, and pair it with their aggressively salty, perfect fries.</div>
+        <div class="entry-meta">
+          <span class="m addr">서울 강서구 마곡 일대, 주상복합건물 2층 · Near Seoul Botanic Garden</span>
+          <span class="m">Tue–Sun 11:30–14:30 (Fri only: open late) · Closed Mon &amp; Tue</span>
+          <span class="m">Reservation strongly advised</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="봉이밥 마곡">
+      <div class="entry-tag local"><div class="icon">b</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>봉이밥<span class="en">Bongi Bap</span></h3>
+          <span class="price-pill">₩9,000–14,000</span>
+        </div>
+        <div class="entry-cuisine">Korean Home Cooking · 한식 밥집</div>
+        <p>Ranked #1 on Naver for Magok dining — the neighbourhood's consensus pick for a proper, no-nonsense Korean lunch. Expect generous banchan, soulful stews, and the kind of rice dishes (제육덮밥, 국밥) that office workers queue for at noon. It is the antithesis of the glass-tower fine dining down the street: loud, fast, cheap, and deeply satisfying.</p>
+        <div class="entry-meta">
+          <span class="m addr">Magok-dong, Gangseo-gu · walking distance from Magok Stn</span>
+          <span class="m">Naver #1 · Google top-10 in Magok</span>
+          <span class="m">Best for: quick, hearty Korean lunch</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="동양식당 마곡">
+      <div class="entry-tag local"><div class="icon">d</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>동양식당<span class="en">Dongyang Sikdang</span></h3>
+          <span class="price-pill">₩10,000–14,000</span>
+        </div>
+        <div class="entry-cuisine">Noodles &amp; Roast Chicken · 국수 · 로스트치킨</div>
+        <p>The perfect light lunch after a morning walking the garden's glass arc. Their <strong>wasabi noodles</strong> (와사비 국수) are cold, bright, and topped with tangerine, tomato, dried tangerine peel, onion, and bean sprouts — the wasabi is gentle, the sweetness of the fruit dominates. For something punchier, the <em>spicy oil pasta</em> lands at roughly jjamppong heat.</p>
+        <div class="entry-meta">
+          <span class="m addr">Near Seoul Botanic Garden · 서울 강서구 마곡</span>
+          <span class="m">Ideal ~16:00 late-lunch window</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== DINNER ===== -->
+    <div class="meal-anchor">
+      <div class="time">18:30</div>
+      <div class="label">Dinner / Where the Day Peaks<span>저녁 — 하루의 절정</span></div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="entry" data-query="서촌김씨 오스테리아 마곡">
+      <div class="entry-tag gem"><div class="icon">★</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>서촌김씨 오스테리아<span class="en">Seochon Kim's Osteria</span></h3>
+          <span class="price-pill">Course ₩60,000–110,000</span>
+        </div>
+        <div class="entry-cuisine">Modern Italian · Michelin-Lineage · 파인 다이닝</div>
+        <p>If you book one dinner, book this. Chef Kim Do-hyung's <em>Seochon Kim's Ristorante</em> was listed in the Michelin Guide four years running (2017–2020). His Magok osteria — the third in his stable — is where he cooks now: a relaxed, intimate room (no-kids, reservation-only, generous table spacing) serving precise Italian-Korean course menus at a fraction of downtown prices.</p>
+        <div class="anecdote"><b>The dish to chase:</b> The gorgonzola lasagna layered with hanwoo beef and cheese — "rich and nutty, the second slice starts to tip toward heavy, exactly as it should." Diners also rave about the burrata with seasonal vegetables, and an abalone course finished with guava and grapefruit. For birthdays, the chef personally brings out the final dessert, candle lit. Basement parking is free with validation.</div>
+        <div class="entry-meta">
+          <span class="m addr">서울 강서구 마곡, 지엠지 엘스타타워 2F · Near Magok Stn</span>
+          <span class="m">Reservation via Naver or Catch Table · No-kids policy</span>
+          <span class="m">Catch Table: 4.8★ (452 reviews)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="비바나폴리 마곡">
+      <div class="entry-tag local"><div class="icon">p</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>비바나폴리<span class="en">Viva Napoli</span></h3>
+          <span class="price-pill">₩18,000–28,000</span>
+        </div>
+        <div class="entry-cuisine">Neapolitan Wood-Fired Pizza · 나폴리 화덕피자</div>
+        <p>The pizzeria that legitimates Magok's food scene. Helmed by Chef LEO, a Salvatore-trained first-generation wood-fire pioneer, Viva Napoli turns out leopard-spotted, naturally-leavened crusts from a proper dome oven. The signature pie arrives heaped with house-made jam, prosciutto, and a small mountain of arugula, finished tableside with olive oil.</p>
+        <div class="anecdote"><b>Worth knowing:</b> The dining room is small and the queue is real — Naver reservations are essentially mandatory. One reviewer who "never pays for pizza" admitted defeat here; the gluten and salt balance is that dialed-in. A genuine surprise to find this caliber outside central Seoul.</div>
+        <div class="entry-meta">
+          <span class="m addr">서울 강서구 마곡중앙로 76 · Magok Stn Exit 3, 1 min</span>
+          <span class="m">11:30–21:30 · Break 16:00–17:00 · Closed Tuesdays</span>
+          <span class="m">Catch Table: 4.8★ (419 reviews) · Reserve!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="우미마토 마곡본점">
+      <div class="entry-tag gem"><div class="icon">s</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>우미마토 마곡본점<span class="en">Umi Mato — Magok Head Store</span></h3>
+          <span class="price-pill">Omakase from ₩35,000</span>
+        </div>
+        <div class="entry-cuisine">Sushi Omakase · 초밥 오마카세</div>
+        <p>The phenomenon. Umi Mato is the omakase that broke the price ceiling: a full sushi omakase course starting at ₩35,000 — about a third of what comparable quality costs in Gangnam. Each course alternates aged/sliced fish (숙성회) with nigiri, keeping every bite interesting. The room is private and quiet; the chef is talkative if you engage.</p>
+        <div class="anecdote"><b>"혜자 가격":</b> Korean slang for "generous-to-a-fault pricing." Reviewers consistently use it here: "If price has kept you away from omakase, this is the door." One diner noted she'd eaten at a Gangnam omakase the week before for three times the money and preferred Umi Mato. Reservations are non-negotiable — book at least a week ahead.</div>
+        <div class="entry-meta">
+          <span class="m addr">서울 강서구 마곡 · Balsan Stn Exit 9 / Magok Stn Exit 3, 5 min walk</span>
+          <span class="m">Reservation required (phone or Naver) · ₩35,000 minimum</span>
+          <span class="m">Diningcode: 맛 4.9 / 가격 4.5 / 친절 4.6</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="중앙해장 마곡 원그로브">
+      <div class="entry-tag local"><div class="icon">c</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>중앙해장 원그로브점<span class="en">Jungang Haejang — One Grove</span></h3>
+          <span class="price-pill">₩15,000–35,000</span>
+        </div>
+        <div class="entry-cuisine">Hanwoo Gopchang Hot Pot · 한우 곱창전골</div>
+        <p>The flagship of Magok's signature dish. Built by <strong>중앙축산 (Jungang Chuksan)</strong> — a Majang-dong livestock house with 60 years of pedigree — this is their first large-format venture, and they chose Magok for it. The <em>hanwoo gopchang jeongol</em> arrives bubbling, the broth turning cloudy and collagen-thick as it simmers.</p>
+        <div class="anecdote"><b>Finding it:</b> The restaurant is buried deep inside One Grove Building B, 1st floor — walk past everything, it is at the very back. Ranked among the top-3 gopchang spots in greater Gangseo/Balsan. Order the set for two; the broth alone is worth the trip.</div>
+        <div class="entry-meta">
+          <span class="m addr">서울 강서구 마곡 원그로브 B동 1층 (안쪽) · Near Magok Stn</span>
+          <span class="m">Grand-opened May 2025 · 60-yr parent house</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="지피다 마곡">
+      <div class="entry-tag local"><div class="icon">m</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>지피다<span class="en">Jipida</span></h3>
+          <span class="price-pill">₩45,000–94,000 (meat)</span>
+        </div>
+        <div class="entry-cuisine">Korean BBQ / Aged Pork · 숙성 돼지고기</div>
+        <p>The pork-belly spot locals quietly rebook. Jipida specialises in <em>sukhyung</em> (dry-aged) pork — the 600g <strong>미나리돈</strong> (minari-wrapped aged belly) is the move, the herb cutting through the richness. The banchan table genuinely groans ("상다리 부러지는 반찬" — side dishes that could break the table, as one reel put it).</p>
+        <div class="entry-cuisine" style="margin-top:.8rem">Lunch sets are a steal: <em>돼지불백쌈밥</em> (spicy pork wrap-rice) + kimchi jjigae for ₩10,000.</div>
+        <div class="entry-meta">
+          <span class="m addr">서울 강서구 마곡 · Near Magoknaru Stn</span>
+          <span class="m">Lunch ₩10,000–12,000 · Dinner ₩45,000+</span>
+          <span class="m">Diningcode-listed · local repeat favourite</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="금고깃집 마곡본점">
+      <div class="entry-tag local"><div class="icon">k</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>금고깃집 마곡본점<span class="en">Geum Go Git Jip — Magok Flagship</span></h3>
+          <span class="price-pill">₩20,000–60,000</span>
+        </div>
+        <div class="entry-cuisine">Premium Korean BBQ · 프리미엄 고깃집</div>
+        <p>Magok's go-to for company dinners and date nights — "the premium gogi-jip that comes to mind first," per the local Instagram. Seasonal ingredients are sourced direct, and the table spans <em>yukhoe</em> beef tartare bibimbap, a winter-only <em>hwangtae</em> (pollack) hangover stew, kimchi-jjigae and doenjang-jjigae that never leave the menu, cold noodles, galbi-tang, and a spicy galbi-jjim.</p>
+        <div class="entry-meta">
+          <span class="m addr">서울 강서구 마곡본점 · Near Magok Stn</span>
+          <span class="m">Popular for 회식 (work dinners) &amp; dates</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="호호방 마곡">
+      <div class="entry-tag gem"><div class="icon">h</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>호호방<span class="en">Hohobang</span></h3>
+          <span class="price-pill">Most dishes &lt; ₩20,000</span>
+        </div>
+        <div class="entry-cuisine">East–West Fusion Izakaya · 동서양 퓨전</div>
+        <p>The hot spot for the 20s–30s crowd — dim, candlelit, walls papered with art and postcards. The menu is a confident mash-up: assorted sashimi, sweet-shrimp (sells out early), tuna yukhoe, a Hanwoo <em>motsu-nabe</em> hot pot, and a clam-and-wine-steam pasta. Eastern and Western ingredients share one menu and somehow agree.</p>
+        <div class="anecdote"><b>Go early:</b> Arrive before 18:00 or expect to wait. Most plates sit under ₩20,000 (the big sashimi platter excepted), which is remarkable given the atmosphere. The raw items run out fast — if sashimi is your goal and it's gone, pivot to the motsu-nabe.</div>
+        <div class="entry-meta">
+          <span class="m addr">Near Seoul Botanic Garden / Magoknaru</span>
+          <span class="m">Arrive before 18:00 · Popular with locals in their 20s–30s</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== LATE NIGHT ===== -->
+    <div class="meal-anchor">
+      <div class="time">22:00</div>
+      <div class="label">Late Night / The Adult Hour<span>심야 — 어른의 시간</span></div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="entry" data-query="심야식당켬 마곡">
+      <div class="entry-tag gem"><div class="icon">★</div><div class="lab">Gem</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>심야식당켬<span class="en">Simya Sikdang Keum</span></h3>
+          <span class="price-pill">₩12,000–25,000 + drinks</span>
+        </div>
+        <div class="entry-cuisine">Late-Night Gourmet Pub · 심야식당</div>
+        <p>Magok's most theatrical dinner. The menu <strong>changes every 2–3 days</strong> based on what the chef sourced that morning — embrace the surprise. The headline is <em>"오늘의 한잔" (Today's Glass)</em>: the chef chooses your drink, additional pours just ₩1,000 each, type and quantity at the chef's whim.</p>
+        <div class="anecdote"><b>What might appear:</b> <em>gopchang guksi</em> — pork intestines in a spicy noodle broth scattered with dried radish; fried chicken built from kelp-aged leg meat, lemon-soy marinated, fried crisp, served with burdock chips; and <em>jjokjjim</em> (braised trotters) slow-cooked until they melt "like dogani suyuk." One explicit warning from the kitchen: everything is seasoned <strong>intentionally saltier</strong> because it is drinking food. Ask if you want it dialed back.</div>
+        <div class="entry-meta">
+          <span class="m addr">Near Seoul Botanic Garden / Magoknaru</span>
+          <span class="m">Menu rotates every 2–3 days · "Today's Glass" ₩1,000/pour</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="원조나주곰탕 강서구">
+      <div class="entry-tag local"><div class="icon">n</div><div class="lab">Local</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>원조나주곰탕<span class="en">Wonjo Naju Gomtang</span></h3>
+          <span class="price-pill">₩12,000–16,000</span>
+        </div>
+        <div class="entry-cuisine">Beef Bone Soup · 나주곰탕</div>
+        <p>The 20-year anchor of Gangseo-gu — a TikTok-famous "20-year regular's real deal" pick. Milky, slow-simmered Naju-style beef-bone soup, generous with the meat, and a house special <em>사태찜</em> (braised beef shank) that regulars treat as a complimentary ceremony. The ultimate late-night closer.</p>
+        <div class="entry-meta">
+          <span class="m addr">서울 강서구 · 20 years in Gangseo-gu</span>
+          <span class="m">Open late · Cash &amp; card</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CAFES / SWEETS ============ -->
+<section id="cafes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Coffee &amp; Sweets · 카페와 디저트</span>
+      <h2>The Sweet Interludes <span class="ko">달콤한 쉼표</span></h2>
+      <p>Magok's cafe scene has exploded in lockstep with the garden. These are the spots worth scheduling a pause for.</p>
+    </div>
+
+    <div class="cafe-grid">
+      <div class="cafe-card" data-query="카페디얼 마곡">
+        <span class="badge">Minimal</span>
+        <h3>카페디얼</h3>
+        <div class="en">Cafe Dial</div>
+        <p>A pristine white-toned takeaway cafe near the garden — the kind of place where the cup design matters as much as the drink. Mix-teas (peppermint &amp; lemon, chamomile &amp; lemongrass), peanut-cream latte, salt-cream coffee, seasonal watermelon juice. Not a franchise, and the prices reflect it.</p>
+        <div class="det"><b>Tip:</b> No indoor seating on weekdays (cookie-baking takes the space) — weekend only. Perfect for a garden stroll.</div>
+      </div>
+
+      <div class="cafe-card" data-query="타르데마1942 마곡나루">
+        <span class="badge">Dessert</span>
+        <h3>타르데마 1942 마곡나루</h3>
+        <div class="en">Tardema 1942 — Magoknaru</div>
+        <p>A bakery-cafe inside the Magoknaru Station Botanic Biz Tower, celebrated for its desserts and churros. Korean bloggers single it out as "satisfying on dessert alone" — a strong teatime anchor between the garden and the train.</p>
+        <div class="det"><b>Address:</b> 서울 강서구 마곡중앙5로1길 20, 보타닉비즈타워 1층 105호</div>
+      </div>
+
+      <div class="cafe-card" data-query="프레베리 마곡">
+        <span class="badge">Cake</span>
+        <h3>프레베리 마곡케이크</h3>
+        <div class="en">Preberry — Magok Cake</div>
+        <p>The local cake specialist, beloved enough to make a resident foodie's personal top-10 for the neighbourhood. Whole-cake and slice culture, the kind of place you pre-order for a birthday but drop into for a slice.</p>
+        <div class="det"><b>Best for:</b> celebratory slices, afternoon sugar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ITINERARY ============ -->
+<section id="itinerary">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">A Suggested Day · 24시간 코스</span>
+      <h2>One Foodie Day, Choreographed <span class="ko">하루, 동선으로 정리</span></h2>
+      <p>A walkable arc that hits the garden, the gems, and a late-night bowl — all within a tight radius. Adjust hunger accordingly.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="t-stop">
+        <div class="t-time">09:00</div>
+        <h4>Coffee in the indoor forest</h4>
+        <p>Start at <strong>Flower Flow</strong> (Magok COEX 2F) — let the greenery and a serious flat white reset you. 15 min from Magoknaru Exit 5.</p>
+      </div>
+      <div class="t-stop">
+        <div class="t-time">09:45</div>
+        <h4>Wander the Seoul Botanic Garden</h4>
+        <p>The glass arc, the Mediterranean glasshouse, the wetland boardwalk. Budget 2–3 hours. Buy the ₩5,000 ticket at the gate or via Naver.</p>
+      </div>
+      <div class="t-stop">
+        <div class="t-time">12:00</div>
+        <h4>The elusive burger, or a proper Korean lunch</h4>
+        <p>Book <strong>Nowness</strong> for the cheese-fondue burger (remember: 11:30–14:30 only). If closed, pivot to <strong>Bongi Bap</strong> for Korean home cooking or <strong>Dongyang Sikdang</strong> for bright wasabi noodles.</p>
+      </div>
+      <div class="t-stop">
+        <div class="t-time">14:30</div>
+        <h4>Tea &amp; pastry pause</h4>
+        <p><strong>Théheuve</strong> for French viennoiserie, or <strong>Tardema 1942</strong> for dessert and churros by the station.</p>
+      </div>
+      <div class="t-stop">
+        <div class="t-time">16:00</div>
+        <h4>Magok Canal &amp; LG Science Park stroll</h4>
+        <p>Walk it off along the canal — the architecture alone is worth the loop. Or grab a tea to-go from <strong>Cafe Dial</strong>.</p>
+      </div>
+      <div class="t-stop">
+        <div class="t-time">18:30</div>
+        <h4>Dinner — the centrepiece</h4>
+        <p>Choose your fighter: <strong>Seochon Kim's Osteria</strong> (Michelin-lineage Italian, book ahead), <strong>Viva Napoli</strong> (wood-fired pizza, reserve!), or <strong>Umi Mato</strong> (₩35,000 omakase, reserve a week out). For a group, <strong>Jungang Haejang</strong> gopchang hot pot.</p>
+      </div>
+      <div class="t-stop">
+        <div class="t-time">21:30</div>
+        <h4>Late-night drinks or a bowl</h4>
+        <p><strong>Simya Sikdang Keum</strong> for the rotating-menu gourmet pub and "Today's Glass." Or, if you want to end gentle: <strong>Wonjo Naju Gomtang</strong>, the 20-year bone-soup anchor.</p>
+      </div>
+      <div class="t-stop">
+        <div class="t-time">23:30</div>
+        <h4>Last train home</h4>
+        <p>Magoknaru serves both Line 9 and the Airport Railroad (공항철도) — direct to Hongdae, Gimpo, or Incheon. A clean exit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIPS ============ -->
+<section id="tips">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Field Notes · 현지 팁</span>
+      <h2>Five Things to Know First <span class="ko">먼저 알아둘 것 다섯 가지</span></h2>
+    </div>
+    <div class="tips-grid">
+      <div class="tip">
+        <div class="tnum">01</div>
+        <h4>Reserve everything</h4>
+        <p>Load <strong>네이버예약</strong> and <strong>캐치테이블 (Catch Table)</strong> before you arrive. Viva Napoli, Umi Mato, and Seochon Kim's Osteria all need booking — walk-ins will wait or be turned away.</p>
+      </div>
+      <div class="tip">
+        <div class="tnum">02</div>
+        <h4>Mind the hours</h4>
+        <p>Several gems (Nowness) run a 3-hour lunch window. Many dinner spots break 16:00–17:00. Korean restaurants close one weekday — check before you walk.</p>
+      </div>
+      <div class="tip">
+        <div class="tnum">03</div>
+        <h4>Parking is usually free</h4>
+        <p>Most building restaurants (Seochon Kim's, Flower Flow, Jungang Haejang) validate 2 hours free. Useful if you're day-tripping by car.</p>
+      </div>
+      <div class="tip">
+        <div class="tnum">04</div>
+        <h4>Salt is a feature here</h4>
+        <p>Korean drinking-food (안주) is seasoned assertively. Simya Sikdang Keum even prints a warning. If you prefer milder, ask — Korean kitchens will adjust without offence.</p>
+      </div>
+      <div class="tip">
+        <div class="tnum">05</div>
+        <h4>Buy the garden ticket</h4>
+        <p>Seoul Botanic Garden is ₩5,000, the glasshouse is the highlight, and it closes Mondays. Pair it with the Magok canal loop for a perfect food-walking day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <p>"맛있는 곳에는 이유가 있다."</p>
+    <small>
+      A foodie's field guide to Magok &amp; the Seoul Botanic Garden.<br>
+      Researched from Korean-language sources: 네이버 블로그, 다이닝코드 (Diningcode), 식신 (Siksin),<br>에스콰이어 코리아, 코스모폴리탄 코리아, and resident foodie reels.<br>
+      Prices and hours are indicative — verify on Naver Maps before you go.
+    </small>
+    <div class="sig">서울식물원 · 마곡 · 강서구 · 2026</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var naverIcon='<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>';
+  var gIcon='<svg viewBox="0 0 24 24" width="14" height="14">'+
+    '<path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>'+
+    '<path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>'+
+    '<path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>'+
+    '<path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>';
+  document.querySelectorAll('[data-query]').forEach(function(el){
+    var enc=encodeURIComponent(el.getAttribute('data-query'));
+    var html='<div class="pop-links">'+
+      '<a href="https://map.naver.com/v5/search/'+enc+'" target="_blank" rel="noopener" class="pl naver">'+naverIcon+'<span>네이버 지도</span></a>'+
+      '<a href="https://www.google.com/search?q='+enc+'" target="_blank" rel="noopener" class="pl google">'+gIcon+'<span>Google</span></a>'+
+      '</div>';
+    var meta=el.querySelector('.entry-meta');
+    if(meta){meta.insertAdjacentHTML('afterend',html);}
+    else{el.insertAdjacentHTML('beforeend',html);}
+  });
+})();
+</script>
+
+</body>
+</html>
