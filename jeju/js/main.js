@@ -96,7 +96,30 @@ window.JEJU_MAPS = {
     {name:"카페 월정리101",en:"Woljeongri 101",lat:33.5540,lng:126.7330,type:"cafe",cuisine:"인스타핫플",desc:"Hot on Instagram for its ocean view. Woljeongri beach.",query:"카페 월정리101"},
     {name:"카페 테라로사 제주",en:"Terrarosa Jeju",lat:33.2750,lng:126.3450,type:"cafe",cuisine:"커피전문",desc:"Coffee specialty + vibe. Seogwipo's top roaster.",query:"카페 테라로사 제주 서귀포"},
     {name:"서귀다원",en:"Seogwi Dawon",lat:33.3600,lng:126.4200,type:"cafe",cuisine:"티하우스",desc:"Tea house near Geum Oreum. No-kids zone. Green nature views.",query:"서귀다원 제주"},
-    {name:"동문시장",en:"Dongmun Market",lat:33.5140,lng:126.5220,type:"special",cuisine:"시장먹거리",desc:"Jeju's biggest traditional market. Street food, tangerines, 빙떡.",query:"동문시장 제주"}
+    {name:"동문시장",en:"Dongmun Market",lat:33.5140,lng:126.5220,type:"special",cuisine:"시장먹거리",desc:"Jeju's biggest traditional market. Street food, tangerines, 빙떡.",query:"동문시장 제주"},
+
+    // Bakeries & Bagels
+    {name:"런던베이글뮤지엄 제주",en:"London Bagel Museum",lat:33.5540,lng:126.8600,type:"cafe",cuisine:"베이글",desc:"SNS-viral bagels. Ocean-view dining room. Wait required — takeaway is faster.",query:"런던베이글뮤지엄 제주 구좌"},
+    {name:"블루메베이글",en:"Blume Bagel",lat:33.4900,lng:126.5300,type:"cafe",cuisine:"베이글",desc:"Healthy bagels — no egg/butter/oil. Jeju milk cream cheese. Near airport.",query:"블루메베이글 제주시"},
+    {name:"우드노트 베이커리",en:"Woodnote Bakery",lat:33.2240,lng:126.3100,type:"cafe",cuisine:"사워도우",desc:"French croissants &amp; sourdough in a stone-wall converted space. #1 bakery 2025.",query:"우드노트 베이커리 서귀포 안덕"},
+    {name:"백마베이크",en:"Baekma Bake",lat:33.5000,lng:126.5300,type:"cafe",cuisine:"사워도우",desc:"48-hour cold-fermented natural sourdough. 'Bread that sits comfortably in your stomach.'",query:"백마베이크 제주시"},
+    {name:"웃뜨리",en:"Utturi",lat:33.4660,lng:126.3070,type:"cafe",cuisine:"베이커리",desc:"50+ bakery items using 쉰다리 fermentation starter. Free tangerine picking in their 귤밭.",query:"웃뜨리 애월"},
+    {name:"아베베 베이커리",en:"Abebe Bakery",lat:33.5140,lng:126.5220,type:"cafe",cuisine:"도넛",desc:"Dongmun Market institution. 8,945 blog reviews. Peanut cream donuts, milk bread.",query:"아베베 베이커리 제주 동문시장"},
+    {name:"빵귿",en:"Bbang-Gyul",lat:33.2760,lng:126.6200,type:"cafe",cuisine:"감귤베이커리",desc:"Tangerine croissant, tangerine castella. Open-run required — sells out fast.",query:"빵귿 서귀포 남원"},
+
+    // Hard-to-book
+    {name:"이모카세 제주",en:"Emocase Jeju",lat:33.4060,lng:126.2580,type:"special",cuisine:"한식파인다이닝",desc:"Black/White Chef Kim Mi-ryeong's Jeju debut. '바다술상' concept. Sold out in 2 hours on opening day.",query:"이모카세 제주 한림"},
+    {name:"더 스푼",en:"The Spoon",lat:33.5000,lng:126.5300,type:"special",cuisine:"이탈리안",desc:"Jeju seafood Italian. Sea urchin pasta, octopus saffron. Catchtable booking. Solo bar.",query:"더스푼 제주시"},
+    {name:"엘엠엔티",en:"LMNT",lat:33.2530,lng:126.4160,type:"special",cuisine:"코스다이닝",desc:"Secret glass building in the forest. Seasonal courses. Instagram DM only. Not on maps.",query:"엘엠엔티 제주 중문"},
+    {name:"서문 수산",en:"Seomun Sushan",lat:33.5000,lng:126.5300,type:"special",cuisine:"오마카세",desc:"Aged fish omakase. Sea snail porridge, shrimp course. Phone reservation + deposit.",query:"서문수산 제주시"},
+    {name:"치저스",en:"Cheeses",lat:33.5540,lng:126.8600,type:"special",cuisine:"라클렛",desc:"Raclette steak — cheese waterfall. Naver booking opens Tuesdays. Food-truck roots.",query:"치저스 제주 조천 구좌"},
+
+    // Summer/beach & ocean view
+    {name:"짐바란 비치",en:"Jimbalan Beach",lat:33.4660,lng:126.3070,type:"cafe",cuisine:"비치카페",desc:"Bali-style beach tables right on the sand. Beach wind + summer vibes.",query:"짐바란비치 애월"},
+    {name:"해지개",en:"Haejigae",lat:33.4660,lng:126.3070,type:"cafe",cuisine:"한옥카페",desc:"Hanok concept cafe facing Handam Beach. Bakery + signature drinks.",query:"해지개 애월 한담해변"},
+    {name:"원앤온리",en:"One & Only",lat:33.2240,lng:126.3100,type:"cafe",cuisine:"브런치",desc:"3-in-1 view: Sanbangsan + ocean + brother islands. 'Jeju compressed into one spot.'",query:"원앤온리 서귀포 산방산"},
+    {name:"아베베 베이커리 비킬라",en:"Abebe Bikilla",lat:33.5540,lng:126.8600,type:"cafe",cuisine:"도넛베이커리",desc:"Right on Conan Beach, east coast. Donut pastries + summer beach combo.",query:"아베베베이커리 비킬라 구좌 코난비치"},
+    {name:"오드랑베이커리 함덕",en:"Odrang Bakery Hamdeok",lat:33.5420,lng:126.6680,type:"cafe",cuisine:"베이커리",desc:"3-min walk from Hamdeok Beach. Garlic baguette, injeolmi bread. Summer essential.",query:"오드랑베이커리 함덕"}
   ],
 
   init: function(containerId, dataSet, opts){
