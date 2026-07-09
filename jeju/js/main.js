@@ -119,7 +119,19 @@ window.JEJU_MAPS = {
     {name:"해지개",en:"Haejigae",lat:33.4660,lng:126.3070,type:"cafe",cuisine:"한옥카페",desc:"Hanok concept cafe facing Handam Beach. Bakery + signature drinks.",query:"해지개 애월 한담해변"},
     {name:"원앤온리",en:"One & Only",lat:33.2240,lng:126.3100,type:"cafe",cuisine:"브런치",desc:"3-in-1 view: Sanbangsan + ocean + brother islands. 'Jeju compressed into one spot.'",query:"원앤온리 서귀포 산방산"},
     {name:"아베베 베이커리 비킬라",en:"Abebe Bikilla",lat:33.5540,lng:126.8600,type:"cafe",cuisine:"도넛베이커리",desc:"Right on Conan Beach, east coast. Donut pastries + summer beach combo.",query:"아베베베이커리 비킬라 구좌 코난비치"},
-    {name:"오드랑베이커리 함덕",en:"Odrang Bakery Hamdeok",lat:33.5420,lng:126.6680,type:"cafe",cuisine:"베이커리",desc:"3-min walk from Hamdeok Beach. Garlic baguette, injeolmi bread. Summer essential.",query:"오드랑베이커리 함덕"}
+    {name:"오드랑베이커리 함덕",en:"Odrang Bakery Hamdeok",lat:33.5420,lng:126.6680,type:"cafe",cuisine:"베이커리",desc:"3-min walk from Hamdeok Beach. Garlic baguette, injeolmi bread. Summer essential.",query:"오드랑베이커리 함덕"},
+
+    // Coffee Roasters
+    {name:"롱플레이",en:"Longplay",lat:33.5540,lng:126.8600,type:"cafe",cuisine:"스페셜티커피",desc:"Musician Lee Sang-soon's roastery. Curated playlists on hi-fi. Reservation required.",query:"롱플레이 제주 구좌"},
+    {name:"커피공장 귀덕",en:"Coffee Factory Gwideok",lat:33.3900,lng:126.2400,type:"cafe",cuisine:"옥나무장작로스팅",desc:"World's only oak-firewood direct-fire roasting. Bean nose tasting before order.",query:"커피공장 귀덕 한림"},
+    {name:"무우수 커피 로스터스",en:"Muusu Coffee",lat:33.5280,lng:126.6400,type:"cafe",cuisine:"스페셜티커피",desc:"Cold brew einspänner + canelés. 'Tree of No Worries.' Holiday location at Hwabuk Harbor.",query:"무우수커피로스터스 제주 조천"},
+    {name:"팩토리얼파크",en:"Pac.Par",lat:33.5130,lng:126.5220,type:"cafe",cuisine:"에스프레소바",desc:"Jeju's best espresso bar. Vintage La Marzocco. All-you-can-drink coffee buffet until 11 AM.",query:"팩토리얼파크 제주시 남성로"},
+    {name:"커피라이트 로스터스",en:"Coffee Light Roasters",lat:33.5140,lng:126.5210,type:"cafe",cuisine:"라이트로스팅",desc:"Light-roast specialist. Peru Geisha praised as 'best of the year' by coffee columnist.",query:"커피라이트로스터스 제주시 서사로"},
+    {name:"모모스 로스터리",en:"Momos Roastery",lat:33.2490,lng:126.5650,type:"cafe",cuisine:"글로벌로스터리",desc:"#1 Notable Roaster by Sprudge 2022. FT's 100 Best Coffee Shops in the World.",query:"모모스커피 서귀포"},
+    {name:"바이러닉 에스프레소 바",en:"Byronic Espresso Bar",lat:33.5060,lng:126.4900,type:"cafe",cuisine:"에스프레소바",desc:"Seoul chain's signature Jeju location. 3-floor ocean-view minimalist space. Byronic pudding.",query:"바이러닉에스프레소바 제주 테우해안로"},
+    {name:"그린루스카",en:"Green Ruska",lat:33.5150,lng:126.5230,type:"cafe",cuisine:"브루잉전문",desc:"Brewing-only — no espresso machine. Pepper milk signature. Stone-wall house remodel.",query:"그린루스카 제주시 삼도동"},
+    {name:"하토우 커피 로스터스",en:"Hatou Coffee",lat:33.5300,lng:126.8700,type:"cafe",cuisine:"라이트로스팅",desc:"Tea-ceremony service with welcome tea before drip. Tasting notes per cup. Hidden gem.",query:"하토우커피로스터스 제주 구좌 하도리"},
+    {name:"제레미",en:"Jeremy",lat:33.4660,lng:126.3070,type:"cafe",cuisine:"테이크아웃로스터리",desc:"Takeout-only roastery stand on Aewol cafe street. Minimalist, quality-focused.",query:"제레미 애월 커피"}
   ],
 
   init: function(containerId, dataSet, opts){
@@ -274,7 +286,19 @@ window.JEJU_RATINGS = {
   "해지개":{f:3.8,v:4.8,val:4.0,u:4.2},
   "원앤온리":{f:4.0,v:5.0,val:3.8,u:4.5},
   "아베베 베이커리 비킬라":{f:4.0,v:4.5,val:4.3,u:4.0},
-  "오드랑베이커리":{f:4.2,v:4.3,val:4.5,u:3.8}
+  "오드랑베이커리":{f:4.2,v:4.3,val:4.5,u:3.8},
+
+  // ---- HOT HITS: Coffee Roasters ----
+  "롱플레이":{f:4.8,v:4.8,val:3.8,u:4.8},
+  "커피공장 귀덕":{f:4.5,v:3.8,val:4.7,u:5.0},
+  "무우수 커피 로스터스":{f:4.5,v:4.5,val:4.3,u:4.3},
+  "팩토리얼파크":{f:4.7,v:4.5,val:5.0,u:4.5},
+  "커피라이트 로스터스":{f:4.8,v:4.0,val:4.0,u:4.5},
+  "모모스 로스터리":{f:4.8,v:4.8,val:3.5,u:4.5},
+  "바이러닉 에스프레소 바":{f:4.5,v:4.8,val:4.0,u:4.2},
+  "그린루스카":{f:4.5,v:4.3,val:4.0,u:4.8},
+  "하토우 커피 로스터스":{f:4.5,v:4.0,val:4.3,u:4.5},
+  "제레미":{f:4.3,v:3.5,val:4.0,u:4.0}
 };
 
 // ---- Backup recommendations for specialties ----
