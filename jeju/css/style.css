@@ -318,6 +318,17 @@ section{padding:5rem 0}
 .spec-card p{font-size:.88rem;color:#332e26;margin-bottom:.8rem}
 .spec-card .where{font-size:.74rem;color:var(--ocean);letter-spacing:.04em;padding-top:.7rem;border-top:1px solid var(--line)}
 .spec-card .where b{font-weight:600}
+/* Spec recommendation blocks */
+.spec-recs{padding-top:.7rem;border-top:1px solid var(--line)}
+.spec-recs .rec-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ocean);font-weight:600;margin-bottom:.5rem}
+.spec-rec{display:flex;align-items:flex-start;gap:.5rem;padding:.4rem 0;border-bottom:1px dotted var(--line);font-size:.78rem}
+.spec-rec:last-of-type{border-bottom:none;margin-bottom:.5rem}
+.spec-rec .rec-pin{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:.5rem}
+.spec-rec .rec-info{flex:1}
+.spec-rec b{font-family:'Noto Sans KR',sans-serif;font-weight:600;color:var(--ink);font-size:.82rem}
+.spec-rec .rec-note{color:var(--muted);font-size:.74rem;margin-top:.1rem}
+.spec-recs .pop-links{margin-top:.4rem}
+.spec-recs .pl{font-size:.66rem;padding:.3rem .7rem}
 
 /* cafe cards */
 .cafe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.3rem}

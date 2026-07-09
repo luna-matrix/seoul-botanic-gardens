@@ -19,6 +19,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="jeju-city.html">Jeju City · 제주시</a></li>
       <li><a href="island.html">Island · 섬 전체</a></li>
+      <li><a href="hot-hits.html">Hot Hits · 핫플</a></li>
       <li><a href="specialties.html" class="active">Specialties · 특산물</a></li>
     </ul>
     <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
@@ -40,132 +41,203 @@
   <div class="wrap">
     <div class="spec-grid">
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="돈사촌 애월 흑돼지">
         <div class="spec-num">01</div>
         <h3>흑돼지</h3>
         <div class="spec-en">Jeju Black Pork</div>
         <p>Jeju's most iconic dish. Indigenous black pigs raised on volcanic soil. Chewier texture and richer savoury flavour than regular pork. Traditionally grilled over charcoal and dipped in <em>멜젓</em> (anchovy sauce), which cuts through the fat and creates an addictive loop.</p>
-        <div class="where">Eat at <b>돈사촌</b> (원조 근고기), <b>돈사돈</b>, <b>고향흑돼지</b>, <b>옛날옛적</b></div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>돈사촌</b> (Aewol)<div class="rec-note">원조 근고기 — thick-cut over briquette charcoal. The pilgrim's choice.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>돈사돈 본점</b> (Jeju City, Yeon-dong)<div class="rec-note">Charcoal self-grill institution. Reservation essential.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>고향흑돼지</b> (Hallim / Hyeopjae)<div class="rec-note">Ocean view, owner grills for you. 2-person set ₩44,000.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="자매국수 제주시 고기국수">
         <div class="spec-num">02</div>
         <h3>고기국수</h3>
         <div class="spec-en">Meat Noodle Soup</div>
-        <p>Jeju's civic dish. Milky pork-bone broth topped with sliced boiled pork, served over thin wheat noodles. Diners add chili flakes, black pepper, and green chili to taste. Found everywhere, but the shops argue bitterly about who's best. Medium-thickness noodles (중면) are preferred.</p>
-        <div class="where">Eat at <b>자매국수</b>, <b>올래국수</b>, <b>골막식당</b>, <b>국수마당</b></div>
+        <p>Jeju's civic dish. Milky pork-bone broth topped with sliced boiled pork, served over thin wheat noodles. Diners add chili flakes, black pepper, and green chili to taste. Found everywhere, but the shops argue bitterly about who's best.</p>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>자매국수</b> (Jeju City)<div class="rec-note">The "mild" pillar. Built a new building for the crowds. ₩9,000.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>올래국수</b> (Jeju City)<div class="rec-note">The "deep" pillar. One dish only. Milky-white broth. ₩9,000.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>골막식당</b> (Jeju City, near airport)<div class="rec-note">The "original." Opens 06:30 — first meal off the plane.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="덕승식당 제주 갈치조림">
         <div class="spec-num">03</div>
         <h3>갈치요리</h3>
         <div class="spec-en">Hairtail / Cutlassfish</div>
         <p>Jeju hairtail is legendary — thick, tender, prepared five ways: <em>갈치구이</em> (grilled), <em>갈치조림</em> (braised in soy), <em>갈치회</em> (raw sashimi — surprisingly not fishy), <em>갈치국</em> (soup), and <em>갈치젓</em> (fermented). The braised version is "sweet, spicy, and addictive."</p>
-        <div class="where">Eat at <b>덕승식당</b>, <b>수희네</b> (Jeju hairtail specialists)</div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>덕승식당</b><div class="rec-note">Grilled hairtail specialist — thick, crispy, tender.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>수희네</b><div class="rec-note">Braised hairtail with potato and radish — the classic stew.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>우정회센타 중문점</b> (Seogwipo)<div class="rec-note">Hairtail sashimi — the raw version. A rare delicacy.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="해녀의집 구좌 성게미역국">
         <div class="spec-num">04</div>
         <h3>성게미역국</h3>
         <div class="spec-en">Sea Urchin & Seaweed Soup</div>
         <p>A nourishing soup and hangover cure. In Jeju dialect, sea urchin is <em>구살</em> (gusal) — locals call this <em>구살국</em>. Seaweed sautéed in sesame oil, then sea urchin and <em>오분자기</em> (disk abalone) added and boiled. Warming, oceanic, restorative.</p>
-        <div class="where">Eat at <b>해녀의 집</b>, <b>traditional seafood restaurants</b></div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>해녀의 집</b> (Gujwa / Woljeongri)<div class="rec-note">Haenyeo-caught that morning. Also serves sea urchin &amp; abalone porridge.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>국수마을</b> (Seongsan)<div class="rec-note">Sea urchin knife-cut noodles (성게칼국수) — a cousin dish. ₩10,000.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="명진전복 제주 전복죽">
         <div class="spec-num">05</div>
         <h3>전복</h3>
         <div class="spec-en">Abalone</div>
         <p>Jeju is one of Korea's major abalone producers — a "magical ingredient" that elevates any dish. Eaten as <em>전복회</em> (raw sashimi), <em>전복죽</em> (porridge), <em>전복 뚝배기</em> (earthenware pot), or in stews. The liver is particularly prized.</p>
-        <div class="where">Eat at <b>해녀의 집</b>, <b>순옥이네명가</b>, <b>명진전복</b></div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>명진전복</b><div class="rec-note">The renowned abalone specialist. Porridge, raw, stew — all exceptional.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>생원전복</b> (Seogwipo, Andeok)<div class="rec-note">Abalone stone-pot rice + pork shabu. Actor Yoo Hae-jin's pick.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>해녀의 집</b> (Gujwa)<div class="rec-note">Fresh-caught abalone in ramen, porridge, or raw.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="해녀의집 구좌 오분자기">
         <div class="spec-num">06</div>
         <h3>오분자기</h3>
         <div class="spec-en">Disk Abalone (Tteokjogae)</div>
         <p>Called <em>떡조개</em> ("rice cake clam") in Jeju. A mollusk similar to abalone but smaller. Jeju produces 70% of Korea's total harvest. Eaten grilled, in <em>된장찌개</em>, as porridge, or fermented into <em>젓갈</em>. Lives on rocks at ~20m depth.</p>
-        <div class="where">Eat at <b>해녀 houses</b>, <b>traditional markets</b></div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>해녀의 집</b> (Gujwa)<div class="rec-note">Sourced by haenyeo divers. Grilled, in stew, or as jeotgal.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>동문시장</b> (Jeju City)<div class="rec-note">Traditional market — buy fresh or as fermented jeotgal to take home.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="팔도수산식당 제주시 물회">
         <div class="spec-num">07</div>
         <h3>물회</h3>
         <div class="spec-en">Cold Raw Seafood Soup</div>
         <p>Thin-sliced raw fish and vegetables in a spicy, vinegary broth — served cold or at room temperature. Best in spring (April–May). Varieties include sea cucumber, conch, flounder, and bigfin reef squid. A refreshing, sharp contrast to Jeju's heavier pork dishes.</p>
-        <div class="where">Eat at <b>팔도수산식당</b>, <b>순옥이네명가</b></div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>팔도수산식당</b> (Jeju City)<div class="rec-note">Opens 07:00. 한치물회 ₩15,000, 회덮밥 ₩10,000.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>삼대국수회관</b> (Jeju City, Yeon-dong)<div class="rec-note">한치물회 &amp; 활어물회 — "practically in the middle of the sea."</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>순옥이네명가</b> (Jeju City)<div class="rec-note">House water sashimi ₩16,000 — generous portions.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="몰질식육식당 서귀포 복지리">
         <div class="spec-num">08</div>
         <h3>복지리</h3>
         <div class="spec-en">Pufferfish Stew with Milt</div>
         <p>A Jeju hangover specialty. Pufferfish and its <em>"애"</em> (milt/soft roe — "a symbol of freshness") cooked at the table with water parsley, mushrooms, and bean sprouts. The milt is delicate and soft; the meat is firm and chewy. Dip in soy sauce with vinegar. Sells out by noon.</p>
-        <div class="where">Eat at <b>몰질 식육식당</b> (the specialist)</div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>몰질 식육식당</b> (Seogwipo)<div class="rec-note">The specialist. 제주 고메 FESTA pick. Arrive before 12:00 — milt sells out.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>Also here:</b> 고기짬뽕 ₩8,000<div class="rec-note">The sleeper-hit jjamppong is almost as famous as the pufferfish.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="자연수산 서귀포 고등어회">
         <div class="spec-num">09</div>
         <h3>고등어회</h3>
         <div class="spec-en">Fresh Mackerel Sashimi</div>
         <p>A rare delicacy "not easily found even for Jeju residents." Freshly caught mackerel served raw — contrary to expectations, it has <strong>no fishy smell</strong> at all when this fresh. Tender texture. Eaten with pickled onions and seaweed. Ends with <em>지리탕</em> (spicy bone stew).</p>
-        <div class="where">Eat at <b>자연수산</b>, <b>블랙씨걸</b></div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>자연수산</b> (Seogwipo)<div class="rec-note">Elderly couple, closes when fish runs out. Call same-day. ₩30,000–50,000.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>블랙씨걸</b> (Hallim)<div class="rec-note">Near Hyeopjae. Clean aquariums, generous portions. Medium ₩40,000.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="국수마당 제주시 몸국">
         <div class="spec-num">10</div>
         <h3>몸국</h3>
         <div class="spec-en">Brown Seaweed Soup (Momguk)</div>
-        <p>A Jeju <em>향토음식</em> (heritage dish). <em>몸</em> is Jeju dialect for <em>모자반</em> (stringy brown seaweed / mozuku). Has a distinctive natural odor that each restaurant manages through their own recipe. Excellent as both a meal and a <em>해장</em> (hangover cure). Featured in virtually every Jeju travel pamphlet.</p>
-        <div class="where">Eat at <b>국수마당</b>, <b>제주미담</b>, <b>traditional restaurants island-wide</b></div>
+        <p>A Jeju <em>향토음식</em> (heritage dish). <em>몸</em> is Jeju dialect for <em>모자반</em> (stringy brown seaweed / mozuku). Has a distinctive natural odor that each restaurant manages through their own recipe. Excellent as both a meal and a <em>해장</em> (hangover cure).</p>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>국수마당</b> (Jeju City, Noodle Street)<div class="rec-note">Serves momguk alongside gogi-guksu. Open till 02:00. ₩9,000.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>제주미담</b> (Jeju City)<div class="rec-note">Momguk ₩8,500. Also order the makchang sundae.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="제주 동문시장 빙떡">
         <div class="spec-num">11</div>
         <h3>빙떡</h3>
         <div class="spec-en">Rolled Buckwheat Rice Cake</div>
-        <p>Name means "rolled round and round" (빙빙 말아서). Buckwheat-flour crepe spread thin, filled with shredded radish, carrot, green onion, sesame powder, and sesame oil, then rolled into a cylinder. A traditional Jeju rice cake distinct from <em>오메기떡</em>. Found at traditional markets.</p>
-        <div class="where">Eat at <b>제주 전통시장</b> (Jeju traditional markets)</div>
+        <p>Name means "rolled round and round" (빙빙 말아서). Buckwheat-flour crepe spread thin, filled with shredded radish, carrot, green onion, sesame powder, and sesame oil, then rolled into a cylinder. A traditional Jeju rice cake distinct from <em>오메기떡</em>.</p>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>동문시장</b> (Jeju City)<div class="rec-note">Jeju's biggest traditional market. Multiple vendors sell fresh 빙떡 daily.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>제주 전통시장</b><div class="rec-note">Olle Market (Seogwipo), 5-day markets — any traditional market will have it.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="제주 문게죽 전문점">
         <div class="spec-num">12</div>
         <h3>문게죽</h3>
         <div class="spec-en">Octopus Porridge</div>
         <p>A rustic nourishing dish. <em>문게</em> (munge) is Jeju dialect for octopus — specifically <em>돌문어</em> (stone octopus). The octopus is pounded in a mortar, stir-fried in sesame oil with soaked rice, then boiled into porridge. Known for an exceptionally chewy texture from the pounded octopus.</p>
-        <div class="where">Eat at <b>문게죽 전문점</b> (specialty restaurants)</div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>문게죽 전문점</b><div class="rec-note">Search Naver for "제주 문게죽" — specialty porridge shops, mostly in Jeju City &amp; Seogwipo.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>향토음식점</b><div class="rec-note">Traditional Jeju restaurants that serve heritage cuisine often have it as a seasonal special.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="맛존디 본점 서귀포 보말죽">
         <div class="spec-num">13</div>
         <h3>보말죽</h3>
         <div class="spec-en">Sea Snail Porridge</div>
         <p><em>보말</em> is Jeju dialect for <em>고둥</em> (sea conch/whelk). A savory porridge with a pumpkin-like color and slightly bitter edge. A heritage food that Matjondi reimagines for modern palates. Best in summer when the snails are at their peak.</p>
-        <div class="where">Eat at <b>맛존디 본점</b></div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>맛존디 본점</b> (Seogwipo)<div class="rec-note">Reimagined heritage food. 보말죽 ₩10,000. Robot-served sides. Pet-friendly.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>Also here:</b> 고기국수 ₩9,000<div class="rec-note">Milky, rich bone broth — the other reason to visit.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="삼대국수회관 제주시 옥돔">
         <div class="spec-num">14</div>
         <h3>옥돔</h3>
         <div class="spec-en">Tilefish</div>
         <p>Jeju's premium fish — soft, savory flesh, excellent grilled or as porridge. Often served as a complimentary side dish (the grilled version at Paldo Susikdang is a good example). A mark of quality at any seafood restaurant.</p>
-        <div class="where">Eat at <b>삼대국수회관</b>, <b>서문옥돔</b></div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>삼대국수회관</b> (Jeju City, Yeon-dong)<div class="rec-note">Grilled tilefish as a side to their famous 물회.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>서문옥돔</b><div class="rec-note">Tilefish specialist — grilled and as porridge (옥돔죽).</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>팔도수산식당</b> (Jeju City)<div class="rec-note">Complimentary grilled tilefish with your 물회 order — a generous tell.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="제주 꿩고기 전문점">
         <div class="spec-num">15</div>
         <h3>꿩고기</h3>
         <div class="spec-en">Pheasant</div>
-        <p>Jeju has an abundance of pheasants; autumn pheasant (가을꿩) is finest. Eaten as sashimi, jerky, shabu-shabu (breast meat only), <em>꿩메밀국수</em> (buckwheat noodles in pheasant broth — "superior in both digestibility and flavour"), and <em>꿩 만두국</em> (dumpling soup). Niche but exceptional.</p>
-        <div class="where">Eat at <b>꿩요리 전문점</b> (specialty pheasant restaurants)</div>
+        <p>Jeju has an abundance of pheasants; autumn pheasant (가을꿩) is finest. Eaten as sashimi, jerky, shabu-shabu (breast meat only), <em>꿩메밀국수</em> (buckwheat noodles in pheasant broth), and <em>꿩 만두국</em> (dumpling soup). Niche but exceptional.</p>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>꿩요리 전문점</b><div class="rec-note">Search Naver for "제주 꿩요리" — specialty pheasant restaurants, mostly in the interior.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>Season:</b> Autumn (Sept–Nov)<div class="rec-note">가을꿩 is considered finest. The shabu-shabu is breast-meat only.</div></div></div>
+        </div>
       </div>
 
-      <div class="spec-card">
+      <div class="spec-card" data-query="자매국수 제주시 돔베고기">
         <div class="spec-num">16</div>
         <h3>돔베고기</h3>
         <div class="spec-en">Dombe Pork (Sliced Boiled Pork)</div>
         <p>Jeju's answer to boiled pork (<em>수육</em>) — served on a cutting board (돔베 is dialect for 도마, cutting board). Thick slices of boiled black pork, eaten with Jeju kimchi and <em>멜젓</em>. Often ordered alongside gogi-guksu. The purity of this preparation — just pork, boiled — is the test of the animal.</p>
-        <div class="where">Eat at <b>자매국수</b>, <b>청송 고기국수</b>, <b>any gogi-guksu shop</b></div>
+        <div class="spec-recs">
+          <div class="rec-label">Where to go</div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>자매국수</b> (Jeju City)<div class="rec-note">Order domebegi alongside your gogi-guksu. The combination is classic.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>청송 고기국수</b> (Seogwipo)<div class="rec-note">흑돼지 수육 ₩15,000 — black pork boiled slices. Best-value version.</div></div></div>
+          <div class="spec-rec"><div class="rec-pin"></div><div class="rec-info"><b>Any gogi-guksu shop</b><div class="rec-note">Dombe is the standard side order at virtually every noodle house.</div></div></div>
+        </div>
       </div>
 
     </div>
@@ -228,9 +300,9 @@
 <!-- PAGE NAV -->
 <div class="wrap" style="padding-bottom:3rem">
   <div class="page-nav">
-    <a href="island.html">
+    <a href="hot-hits.html">
       <div class="pn-dir">← Previous</div>
-      <div class="pn-title">The Island Atlas</div>
+      <div class="pn-title">Hot Hits &amp; Trending</div>
     </a>
     <a href="index.html" class="next">
       <div class="pn-dir">Home →</div>

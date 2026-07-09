@@ -91,6 +91,7 @@
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="jeju-city.html">Jeju City · 제주시</a></li>
       <li><a href="island.html">Island · 섬 전체</a></li>
+      <li><a href="hot-hits.html">Hot Hits · 핫플</a></li>
       <li><a href="specialties.html">Specialties · 특산물</a></li>
     </ul>
     <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
@@ -168,6 +169,15 @@
           <div class="more">Explore the island</div>
         </div>
       </a>
+      <a href="hot-hits.html" class="gcard">
+        <div class="gcard-banner b1" style="background:linear-gradient(135deg,var(--tangerine),var(--gold))"><span class="icon">🔥</span></div>
+        <div class="gcard-body">
+          <h3>Hot Hits &amp; Trending</h3>
+          <div class="en">제주 핫플 · SNS 바이럴</div>
+          <p>15 viral and trending spots: black pork burgers, tangerine desserts, matcha gelato, ocean-view cafes, Udo peanut ice cream, authentic Chinese dumplings in Seogwipo, and Jeju's biggest market. The fun layer on top.</p>
+          <div class="more">See what's trending</div>
+        </div>
+      </a>
       <a href="specialties.html" class="gcard">
         <div class="gcard-banner b3"><span class="icon">食</span></div>
         <div class="gcard-body">
@@ -216,7 +226,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="js/main.js"></script>
 <script>
-  var allData = JEJU_MAPS.jejuCity.concat(JEJU_MAPS.island);
+  var allData = JEJU_MAPS.jejuCity.concat(JEJU_MAPS.island).concat(JEJU_MAPS.hotHits);
   JEJU_MAPS.init('map-overview', allData, {zoom:10, fixedView:false});
 </script>
 </body>

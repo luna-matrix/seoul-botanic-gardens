@@ -80,6 +80,25 @@ window.JEJU_MAPS = {
     {name:"제미니국수 서귀포점",en:"Gemini Noodles",lat:33.2200,lng:126.6200,type:"local",cuisine:"고기국수",desc:"Near Sogeummak. Fresh hand-pulled noodles, family-farmed ingredients.",query:"제미니국수 서귀포 쇠소깍"}
   ],
 
+  // Hot hits / trending spots
+  hotHits: [
+    {name:"제주 몬트락 버거",en:"Jeju Montlac Burger",lat:33.4900,lng:126.5300,type:"special",cuisine:"흑돼지버거",desc:"SNS-viral black pork patty burger. The Jeju burger trend.",query:"제주 몬트락 버거"},
+    {name:"블랙버거하우스",en:"Black Burger House",lat:33.4900,lng:126.5400,type:"special",cuisine:"흑돼지버거",desc:"The other viral black pork burger. SNS sensation.",query:"블랙버거하우스 제주"},
+    {name:"오설록 티뮤지엄",en:"Osulloc Tea Museum",lat:33.3060,lng:126.2890,type:"cafe",cuisine:"말차한라봉젤라또",desc:"Jeju-grown matcha + hallabong gelato. Iconic dessert destination.",query:"오설록 티뮤지엄"},
+    {name:"귤향당",en:"Gulhyangdang",lat:33.5000,lng:126.5300,type:"cafe",cuisine:"감귤크림카스텔라",desc:"Moist tangerine cream castella. The Jeju bakery trend.",query:"귤향당 제주"},
+    {name:"카페 델문도",en:"Cafe Del Mundo",lat:33.5100,lng:126.5200,type:"cafe",cuisine:"감귤크림카스텔라",desc:"Also tangerine cream castella. Right in front of the sea.",query:"카페 델문도 제주"},
+    {name:"우도왕자",en:"Udo Prince",lat:33.4960,lng:126.9430,type:"cafe",cuisine:"땅콩아이스크림",desc:"Udo Island peanut ice cream, cream bread, latte. The ferry-trip classic.",query:"우도왕자 땅콩아이스크림"},
+    {name:"한라면옥",en:"Hallamyeonok",lat:33.5100,lng:126.5300,type:"special",cuisine:"한라산국수",desc:"Hallasan Noodles — bibim noodles topped with broth ice shaped like Mt. Hallasan.",query:"한라면옥 제주"},
+    {name:"천일만두",en:"Cheonil Mandu",lat:33.2480,lng:126.5630,type:"special",cuisine:"중식만두",desc:"Authentic Chinese dumplings in Seogwipo. Snowflake 눈꽃만두 + mapo tofu.",query:"천일만두 서귀포"},
+    {name:"희신이네",en:"Heuisinne",lat:33.2470,lng:126.5650,type:"special",cuisine:"닭요리중식",desc:"Chicken cold noodles + kanpunggi. YouTube 또간집 featured.",query:"희신이네 서귀포"},
+    {name:"봄날",en:"Bomnal",lat:33.4660,lng:126.3070,type:"cafe",cuisine:"감성카페",desc:"Aewol ocean-view cafe. Movie filming location. Yellow bus photo zone.",query:"봄날 애월 카페"},
+    {name:"리브레 제주",en:"Libre Jeju",lat:33.3940,lng:126.2370,type:"cafe",cuisine:"오션뷰카페",desc:"Hyeopjae Beach aesthetic cafe. Full-wall glass ocean view.",query:"리브레 제주 협재"},
+    {name:"카페 월정리101",en:"Woljeongri 101",lat:33.5540,lng:126.7330,type:"cafe",cuisine:"인스타핫플",desc:"Hot on Instagram for its ocean view. Woljeongri beach.",query:"카페 월정리101"},
+    {name:"카페 테라로사 제주",en:"Terrarosa Jeju",lat:33.2750,lng:126.3450,type:"cafe",cuisine:"커피전문",desc:"Coffee specialty + vibe. Seogwipo's top roaster.",query:"카페 테라로사 제주 서귀포"},
+    {name:"서귀다원",en:"Seogwi Dawon",lat:33.3600,lng:126.4200,type:"cafe",cuisine:"티하우스",desc:"Tea house near Geum Oreum. No-kids zone. Green nature views.",query:"서귀다원 제주"},
+    {name:"동문시장",en:"Dongmun Market",lat:33.5140,lng:126.5220,type:"special",cuisine:"시장먹거리",desc:"Jeju's biggest traditional market. Street food, tangerines, 빙떡.",query:"동문시장 제주"}
+  ],
+
   init: function(containerId, dataSet, opts){
     opts = opts || {};
     if(typeof L === 'undefined'){

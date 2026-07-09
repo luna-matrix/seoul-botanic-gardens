@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeju Hot Hits · 제주 핫플</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .hot-card{
+    background:var(--white);border:1px solid var(--line);
+    border-radius:3px;overflow:hidden;margin-bottom:1.3rem;
+    display:grid;grid-template-columns:100px 1fr;gap:0;
+    transition:box-shadow .3s ease,transform .3s ease;
+  }
+  .hot-card:hover{box-shadow:0 8px 28px -8px rgba(28,30,34,.15);transform:translateY(-1px)}
+  .hot-badge{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:1.5rem .5rem;text-align:center;color:#fff;
+  }
+  .hot-badge .emoji{font-size:2rem;line-height:1;margin-bottom:.4rem}
+  .hot-badge .tag{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85;font-weight:600}
+  .hot-badge.b1{background:linear-gradient(135deg,var(--tangerine-deep),var(--tangerine))}
+  .hot-badge.b2{background:linear-gradient(135deg,var(--green-deep),var(--green))}
+  .hot-badge.b3{background:linear-gradient(135deg,var(--ocean-deep),var(--ocean))}
+  .hot-badge.b4{background:linear-gradient(135deg,var(--basalt),var(--basalt-light))}
+  .hot-body{padding:1.5rem 1.8rem}
+  .hot-body .entry-head h3{font-family:'Noto Serif KR',serif;font-size:1.25rem;font-weight:700}
+  .hot-body .entry-head h3 .en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.88rem;display:block;margin-top:.1rem}
+  .hot-body .entry-cuisine{font-size:.72rem;color:var(--tangerine);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.7rem;font-weight:500}
+  .hot-body p{font-size:.9rem;color:#332e26;margin-bottom:.7rem}
+  .hot-body .entry-meta{display:flex;flex-wrap:wrap;gap:.35rem .75rem;padding-top:.7rem;margin-top:.2rem;border-top:1px dashed var(--line);font-size:.74rem;color:var(--muted)}
+  .hot-body .entry-meta .m{display:flex;align-items:center;gap:.3rem}
+  .hot-body .entry-meta .m::before{content:"";width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
+  .hot-body .entry-meta .m.addr::before{display:none}
+  .hot-body .entry-meta .m.addr{font-weight:500;color:var(--ink);min-width:100%}
+  .hot-body .anecdote{background:linear-gradient(135deg,rgba(221,107,31,.07),rgba(12,92,116,.05));border-left:3px solid var(--tangerine);padding:.7rem 1rem;margin:.6rem 0;font-size:.84rem;font-style:italic;color:#332e26;border-radius:0 3px 3px 0}
+  .hot-body .anecdote b{font-style:normal;font-weight:600;color:var(--tangerine-deep)}
+  @media(max-width:768px){.hot-card{grid-template-columns:72px 1fr}.hot-body{padding:1.1rem 1.2rem}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="logo-dot"></span>Jeju Food Atlas</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="jeju-city.html">Jeju City · 제주시</a></li>
+      <li><a href="island.html">Island · 섬 전체</a></li>
+      <li><a href="hot-hits.html" class="active">Hot Hits · 핫플</a></li>
+      <li><a href="specialties.html">Specialties · 특산물</a></li>
+    </ul>
+    <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- SUB HERO -->
+<header class="sub-hero">
+  <div class="wrap sub-hero-inner">
+    <span class="kicker">제주 핫플 · Trending &amp; Viral</span>
+    <h1>Hot Hits &amp; <em>Trending</em></h1>
+    <p class="ko">제주 핫플 — 지금 가장 뜨는 곳들</p>
+    <p class="lead">The Instagram-famous, SNS-viral, can't-miss-if-you're-online side of Jeju food. Black pork burgers that broke the internet, tangerine desserts that fill your feed, ocean-view cafes worth the detour, and unique finds like authentic Chinese dumplings in Seogwipo. This is the fun layer on top of the local guide.</p>
+  </div>
+</header>
+
+<!-- MAP -->
+<section style="padding-top:3rem">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:1.5rem">
+      <span class="kicker">Map · 핫플 지도</span>
+      <h2 style="font-size:1.8rem">Trending Spots Map <span class="ko">핫플 지도</span></h2>
+    </div>
+    <div class="map-container">
+      <div id="map-hot" style="height:550px;width:100%;background:var(--paper-dark)"></div>
+      <div class="map-legend">
+        <div class="lg-item"><div class="lg-dot gem"></div>Trending Food</div>
+        <div class="lg-item"><div class="lg-dot cafe"></div>Cafe &amp; Dessert</div>
+        <div class="lg-item"><div class="lg-dot special"></div>Unique Find</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLACK PORK BURGERS -->
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <div class="region-anchor">
+      <div class="compass" style="background:var(--tangerine-deep)">🍔</div>
+      <div class="info">
+        <h3>Black Pork Burgers · 흑돼지 버거</h3>
+        <span>The SNS food trend that defines 2025 Jeju</span>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <p style="max-width:620px;color:var(--muted);margin-bottom:1.5rem;font-size:.95rem">Somewhere between a meme and a movement: Jeju's black pork reimagined as a burger patty. These went viral on Korean Instagram and are now a mandatory photo stop.</p>
+
+    <div class="hot-card" data-query="제주 몬트락 버거">
+      <div class="hot-badge b1"><div class="emoji">🍔</div><div class="tag">Viral</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>제주 몬트락 버거<span class="en">Jeju Montlac Burger</span></h3>
+          <span class="price-pill">₩8,000–12,000</span>
+        </div>
+        <div class="entry-cuisine">Black Pork Patty Burger · 흑돼지 버거</div>
+        <p>The original SNS-viral black pork burger. A patty made from actual Jeju 흑돼지, grilled and assembled with the kind of care that turns a burger into content. The photos from here circulate Korean food Instagram like currency.</p>
+        <div class="anecdote"><b>Why it went viral:</b> It's not a gimmick — the black pork actually tastes different. The fat-to-lean ratio is closer to wagyu than a standard beef patty, and the Jeju-sourcing story gives it authenticity. Go before noon to avoid the longest queues.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 · Jeju City area</span>
+          <span class="m">Search Naver for current pop-up locations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="블랙버거하우스 제주">
+      <div class="hot-badge b1"><div class="emoji">🍔</div><div class="tag">Viral</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>블랙버거하우스<span class="en">Black Burger House</span></h3>
+          <span class="price-pill">₩8,000–12,000</span>
+        </div>
+        <div class="entry-cuisine">Black Pork Patty Burger · 흑돼지 버거</div>
+        <p>The other viral black pork burger — the rival to Montlac. SNS-popular for the same reasons: real Jeju black pork, photogenic presentation, and a patty that justifies the trend rather than riding it.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주시 · Jeju City area</span>
+          <span class="m">Instagram-famous · trending 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESSERTS & SWEETS -->
+<section style="padding-top:2rem;background:var(--paper-warm)">
+  <div class="wrap">
+    <div class="region-anchor">
+      <div class="compass" style="background:var(--green-deep)">🍰</div>
+      <div class="info">
+        <h3>Desserts &amp; Sweets · 디저트</h3>
+        <span>Tangerine castella, matcha-hallabong gelato, and Udo peanut ice cream</span>
+      </div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="hot-card" data-query="오설록 티뮤지엄">
+      <div class="hot-badge b2"><div class="emoji">🍦</div><div class="tag">Iconic</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>오설록 티뮤지엄<span class="en">Osulloc Tea Museum</span></h3>
+          <span class="price-pill">₩5,000–8,000</span>
+        </div>
+        <div class="entry-cuisine">Matcha &amp; Hallabong Gelato · 말차 한라봉 젤라또</div>
+        <p>The icon. Osulloc grows its own matcha on Jeju and turns it into gelato swirled with <em>한라봉</em> (hallabong — the prized Jeju citrus). The museum itself is a pilgrimage site for tea lovers. The gelato is the move — two flavours in one cup, intensely green, intensely orange.</p>
+        <div class="anecdote"><b>Pro tip:</b> The museum shop sells takeaway tea and desserts. Buy the matcha powder — it's the same stuff they use in the gelato, and you can't get this quality off-island.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주 특별자치도 서귀포시 안덕면 신화역사로 15</span>
+          <span class="m">Near Jungmun area · free parking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="귤향당 제주">
+      <div class="hot-badge b2"><div class="emoji">🍰</div><div class="tag">Trending</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>귤향당<span class="en">Gulhyangdang</span></h3>
+          <span class="price-pill">₩4,000–7,000</span>
+        </div>
+        <div class="entry-cuisine">Tangerine Cream Castella · 감귤 크림카스텔라</div>
+        <p>Moist castella cake made with Jeju 감귤 (tangerines). The tangerine cream layer adds a citrusy tang that cuts the sweetness — a distinctly Jeju bake. One of the bakery trends that's blown up on Korean social media in recent seasons.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주시 · Jeju City area</span>
+          <span class="m">Sells out — arrive early</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="카페 델문도 제주">
+      <div class="hot-badge b2"><div class="emoji">🍰</div><div class="tag">Cafe</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>카페 델문도<span class="en">Cafe Del Mundo</span></h3>
+          <span class="price-pill">₩4,000–8,000</span>
+        </div>
+        <div class="entry-cuisine">Tangerine Desserts &amp; Ocean View · 감귤 디저트</div>
+        <p>Also tangerine cream castella, but in a completely different setting: right in front of the sea with a "cinematic atmosphere" (영화 같은 감성). The combo of citrus dessert and ocean view is peak Jeju Instagram content.</p>
+        <div class="entry-meta">
+          <span class="m addr">세화/구좌 · Sehwa/Gujwa area, east coast</span>
+          <span class="m">Ocean front · cinematic vibe</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="우도왕자 땅콩아이스크림">
+      <div class="hot-badge b2"><div class="emoji">🥜</div><div class="tag">Classic</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>우도왕자<span class="en">Udo Prince</span></h3>
+          <span class="price-pill">₩3,000–6,000</span>
+        </div>
+        <div class="entry-cuisine">Udo Peanut Ice Cream · 우도 땅콩 아이스크림</div>
+        <p>The ferry-trip classic. Located on Udo Island (a short ferry from the east coast), serving ice cream, cream bread, and lattes made from peanuts grown on Udo itself. The peanuts here have a "richer, deeper flavor than regular peanuts" — the volcanic soil does the work.</p>
+        <div class="anecdote"><b>The ritual:</b> Take the ferry to Udo, rent a bike, ride the coastal loop, stop here for peanut ice cream. It's the single most photographed food moment on Jeju Instagram, and it genuinely tastes like the island.</div>
+        <div class="entry-meta">
+          <span class="m addr">우도 · Udo Island (ferry from Seongsan Port)</span>
+          <span class="m">Peanut ice cream, cream bread, latte</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OCEAN-VIEW CAFES -->
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <div class="region-anchor">
+      <div class="compass" style="background:var(--ocean-deep)">☕</div>
+      <div class="info">
+        <h3>Ocean-View Cafes · 감성 카페</h3>
+        <span>The aesthetic cafe trail that rivals the food</span>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <p style="max-width:620px;color:var(--muted);margin-bottom:1.5rem;font-size:.95rem">Jeju's cafe scene is a destination in itself. These are the ones worth a deliberate detour — sorted by coast so you can route them into your road trip.</p>
+
+    <div class="hot-card" data-query="봄날 애월 카페">
+      <div class="hot-badge b3"><div class="emoji">☕</div><div class="tag">Film</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>봄날<span class="en">Bomnal / Spring Day</span></h3>
+          <span class="price-pill">₩5,000–8,000</span>
+        </div>
+        <div class="entry-cuisine">Aewol Ocean-View Cafe · 애월 감성 카페</div>
+        <p>Aewol's representative ocean-view cafe. Famous as a <strong>movie filming location</strong> — the yellow bus in the courtyard is the photo zone everyone comes for. The cafe connects naturally to the sea. Their Bomnal Latte and carrot cake are the signatures.</p>
+        <div class="anecdote"><b>Timing:</b> Go early in the morning for fewer crowds and better light. Afternoon gets packed with tour groups. The Aewol coastal road is beautiful at golden hour — plan the drive accordingly.</div>
+        <div class="entry-meta">
+          <span class="m addr">애월 해안도로 · Aewol Coastal Road</span>
+          <span class="m">Movie filming location · yellow bus photo zone</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="리브레 제주 협재">
+      <div class="hot-badge b3"><div class="emoji">🌊</div><div class="tag">View</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>리브레 제주<span class="en">Libre Jeju</span></h3>
+          <span class="price-pill">₩6,000–9,000</span>
+        </div>
+        <div class="entry-cuisine">Hyeopjae Beach Cafe · 협재 감성 끝판왕</div>
+        <p>Called the <strong>"ultimate Hyeopjae Beach 감성 cafe"</strong> (협재 해변 감성 끝판왕). Full-wall glass windows facing the ocean. Vanilla latte, Jeju carrot cake, and Einspänner (Viennese coffee). Go at sunset for the golden sea views.</p>
+        <div class="entry-meta">
+          <span class="m addr">협재 해변 앞 · Right in front of Hyeopjae Beach</span>
+          <span class="m">Parking available · go at golden hour</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="카페 월정리101">
+      <div class="hot-badge b3"><div class="emoji">📸</div><div class="tag">Instagram</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>카페 월정리101<span class="en">Cafe Woljeongri 101</span></h3>
+          <span class="price-pill">₩5,000–8,000</span>
+        </div>
+        <div class="entry-cuisine">Woljeongri Beach Cafe · 인스타 핫플</div>
+        <p>Described as <strong>"hot on Instagram"</strong> (인스타에서 핫한) for its ocean view. Located in the famous Woljeongri beach area on the east coast — the emerald water and white sand make this the most photogenic beach on the island, and this cafe is positioned to prove it.</p>
+        <div class="entry-meta">
+          <span class="m addr">세화/구좌 · Woljeongri Beach, east coast</span>
+          <span class="m">Instagram-famous · ocean view</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="카페 테라로사 제주 서귀포">
+      <div class="hot-badge b3"><div class="emoji">☕</div><div class="tag">Coffee</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>카페 테라로사 제주<span class="en">Terrarosa Jeju</span></h3>
+          <span class="price-pill">₩5,000–8,000</span>
+        </div>
+        <div class="entry-cuisine">Coffee Roaster · 커피 전문 + 분위기</div>
+        <p>Known as both a <strong>"coffee specialty spot" and a "vibe spot"</strong> (커피 맛집 + 분위기 맛집). Seogwipo's top roaster — the rare cafe where the coffee quality matches the architecture. Come for the beans, stay for the space.</p>
+        <div class="entry-meta">
+          <span class="m addr">서귀포 · Seogwipo area</span>
+          <span class="m">Coffee + atmosphere · roaster on-site</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="서귀다원 제주 금오름">
+      <div class="hot-badge b3"><div class="emoji">🍵</div><div class="tag">Tea</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>서귀다원<span class="en">Seogwi Dawon</span></h3>
+          <span class="price-pill">₩5,000–8,000</span>
+        </div>
+        <div class="entry-cuisine">Tea House · 유자차 · 녹차 라떼</div>
+        <p>A calm, quiet tea house surrounded by green nature views near Geum Oreum. Tea-based menu — yuja cha (citron tea), green tea latte. Operates as a <strong>no-kids zone</strong> (노키즈존). Perfect for healing between meals. Window seats and outdoor tables are ideal for reading.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주시~서귀포 중간 · Midpoint between Jeju City &amp; Seogwipo, near 금오름</span>
+          <span class="m">No-kids zone · nature views</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIQUE FINDS -->
+<section style="padding-top:2rem;background:var(--paper-warm)">
+  <div class="wrap">
+    <div class="region-anchor">
+      <div class="compass" style="background:var(--basalt)">✨</div>
+      <div class="info">
+        <h3>Unique Finds · 특별한 발견</h3>
+        <span>The dishes and spots that don't fit any category — and that's the point</span>
+      </div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="hot-card" data-query="한라면옥 제주 한라산국수">
+      <div class="hot-badge b4"><div class="emoji">🍜</div><div class="tag">Unique</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>한라면옥<span class="en">Hallamyeonok</span></h3>
+          <span class="price-pill">₩8,000–10,000</span>
+        </div>
+        <div class="entry-cuisine">Hallasan Noodles · 한라산 국수</div>
+        <p>A Jeju-only dish: bibim (spicy mixed) noodles topped with a piece of <strong>broth ice shaped like Mt. Hallasan</strong>. As the ice melts, it transforms the spicy bibim into a complex hybrid broth. Gimmicky? Yes. But it works — the temperature and dilution arc is genuinely interesting.</p>
+        <div class="anecdote"><b>Also at 명랑식당 (Myeongrang Sikdang):</b> The same dish, slightly different execution. Try both if you're a noodle completist. The "mountain" melting is genuinely photogenic — this is one viral food moment that earns its posts.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 · Jeju City area</span>
+          <span class="m">Also at: 명랑식당</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="천일만두 서귀포">
+      <div class="hot-badge b4"><div class="emoji">🥟</div><div class="tag">Authentic</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>천일만두<span class="en">Cheonil Mandu</span></h3>
+          <span class="price-pill">₩9,000–25,000</span>
+        </div>
+        <div class="entry-cuisine">Authentic Chinese Dumplings · 중국식 만두 전문</div>
+        <p>Authentic mainland Chinese dumplings in the middle of Seogwipo. Run by Chinese owners and staff. The signature <em>눈꽃만두</em> (snowflake dumplings, ₩10,000) — fried dumplings coated with starch water, crispy on top and juicy on bottom. The <em>부추군만두</em> (chive dumplings with shrimp) has "explosive juice." Don't skip the <em>마파두부</em> (mapo tofu, ₩12,000) — authentic Sichuan, numbing and spicy.</p>
+        <div class="anecdote"><b>Why it's here:</b> This is the kind of place you don't expect on Jeju — a genuinely good Chinese restaurant in a Korean food paradise. Tables fill up fast after break time. ~10 tables, open kitchen, cozy. Near Seogwipo 매일올레시장 (Olle Market).</div>
+        <div class="entry-meta">
+          <span class="m addr">서귀포시 서문로 25 · Near Olle Market, Seogwipo</span>
+          <span class="m">10:00–22:00 · Break 14:00–17:00 · Closed Thursdays</span>
+          <span class="m">Phone: 0507-1414-9799 · No private parking — use 공영주차장</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="희신이네 서귀포">
+      <div class="hot-badge b4"><div class="emoji">🍗</div><div class="tag">TV</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>희신이네<span class="en">Heuisinne</span></h3>
+          <span class="price-pill">₩9,000–15,000</span>
+        </div>
+        <div class="entry-cuisine">Korean-Chinese Chicken &amp; Chinese Food · 닭요리 + 중식</div>
+        <p>Featured on YouTube's <strong>"또간집" (Tteoggan Jip)</strong> hosted by 풍자 (Poongja). A Korean-Chinese chicken and Chinese food specialist. The <em>닭고기냉밀면</em> (cold chicken noodle, ~₩9,000) is the blogger's #1 pick — a unique cold milmyeon with rich chicken broth. The <em>순살 닭깐풍기</em> (boneless fried chicken kanpunggi) is the other reason to come.</p>
+        <div class="anecdote"><b>The name:</b> Named after the owner's daughter. "Better when you lower your expectations," wrote one reviewer — then proceeded to eat everything. Open kitchen, long-established local feel. The chicken kanpunggi's sweetness may vary by who cooks it — that's part of the charm.</div>
+        <div class="entry-meta">
+          <span class="m addr">서귀포시 서홍로 175 · Seogwipo</span>
+          <span class="m">~11:00–20:30</span>
+          <span class="m">Also serves: 짬뽕, 해물짬뽕밥, 내장볶음밥</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hot-card" data-query="동문시장 제주">
+      <div class="hot-badge b4"><div class="emoji">🏪</div><div class="tag">Market</div></div>
+      <div class="hot-body">
+        <div class="entry-head">
+          <h3>동문시장<span class="en">Dongmun Market</span></h3>
+          <span class="price-pill">₩2,000–15,000</span>
+        </div>
+        <div class="entry-cuisine">Traditional Market Street Food · 시장 먹거리</div>
+        <p>Jeju's biggest traditional market. The place to eat <em>해물파전</em> (seafood &amp; green onion pancake), sample fresh tangerines, find <em>빙떡</em> (buckwheat rice cake), buy <em>자리돔젓</em> (rabbitfish jeotgal), and graze through street food stalls. The energy is the attraction as much as the food.</p>
+        <div class="anecdote"><b>Strategy:</b> Come hungry, don't commit to one stall. Walk the lanes, taste as you go, buy tangerine gifts at the end. This is also where you'll find the best <em>오메기떡</em> (omegi rice cake) and Jeju-specific condiments to take home.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 · Central Jeju City</span>
+          <span class="m">Open daily · best in morning for fresh produce, evening for food stalls</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PAGE NAV -->
+<div class="wrap" style="padding-bottom:3rem">
+  <div class="page-nav">
+    <a href="island.html">
+      <div class="pn-dir">← Previous</div>
+      <div class="pn-title">The Island Atlas</div>
+    </a>
+    <a href="specialties.html" class="next">
+      <div class="pn-dir">Next →</div>
+      <div class="pn-title">Specialties &amp; Dishes</div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <p>"먹는 것도 즐거움, 사진도 즐거움."</p>
+    <small>
+      Jeju trending spots guide · 제주 핫플 가이드<br>
+      Social media trends move fast — verify current hours on Naver before visiting.
+    </small>
+    <div class="sig">제주특별자치도 · 2026</div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="js/main.js"></script>
+<script>
+  JEJU_MAPS.init('map-hot', JEJU_MAPS.hotHits, {zoom:10});
+</script>
+</body>
+</html>
