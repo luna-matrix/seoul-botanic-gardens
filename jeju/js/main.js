@@ -134,6 +134,23 @@ window.JEJU_MAPS = {
     {name:"제레미",en:"Jeremy",lat:33.4660,lng:126.3070,type:"cafe",cuisine:"테이크아웃로스터리",desc:"Takeout-only roastery stand on Aewol cafe street. Minimalist, quality-focused.",query:"제레미 애월 커피"}
   ],
 
+  // Coffee roasters (dedicated page dataset)
+  coffeeRoasters: [
+    {name:"롱플레이",en:"Longplay",lat:33.5540,lng:126.8600,type:"gem",cuisine:"Hi-Fi + 싱글오리진",desc:"Lee Sang-soon's roastery. Curated playlists on hi-fi audio. Coffee columnist: 'worth traveling to Jeju just for this.'",query:"롱플레이 제주시 구좌읍 동복로"},
+    {name:"커피공장 귀덕",en:"Coffee Factory Gwideok",lat:33.3900,lng:126.2400,type:"gem",cuisine:"참나무 장작 직화",desc:"World's ONLY oak-firewood direct-fire roasting. Bean nose tasting. ₩6,500 drip. Near Gwideok Beach.",query:"커피공장 제주시 한림읍 귀덕 일주서로"},
+    {name:"팩토리얼파크",en:"Pac.Par",lat:33.5130,lng:126.5220,type:"gem",cuisine:"에스프레소 + 올유캔드링크",desc:"Jeju's best espresso bar. Vintage La Marzocco. ALL-YOU-CAN-DRINK buffet until 11 AM for ₩6,000.",query:"팩토리얼파크 제주시 남성로"},
+    {name:"모모스 로스터리",en:"Momos Roastery",lat:33.2490,lng:126.5650,type:"gem",cuisine:"글로벌 스페셜티",desc:"Sprudge #1 Notable Roaster globally (2022). FT Top 100 Coffee Shops in the World (2026). Direct trade.",query:"모모스커피 서귀포시"},
+    {name:"커피라이트 로스터스",en:"Coffee Light Roasters",lat:33.5140,lng:126.5210,type:"local",cuisine:"라이트로스팅 필터",desc:"Light-roast purist. Peru Geisha called 'best cup of the year' by coffee columnist. Rotating seasonal beans.",query:"커피라이트로스터스 제주시 서사로"},
+    {name:"무우수 커피 로스터스",en:"Muusu Coffee",lat:33.5280,lng:126.6400,type:"local",cuisine:"콜드브루 + 카넬레",desc:"'Tree of No Worries.' Signature cold brew einspänder. Daily canelés. 2nd location at Hwabuk Harbor (ocean view).",query:"무우수커피로스터스 제주시 조천읍"},
+    {name:"바이러닉 에스프레소 바",en:"Byronic Espresso Bar",lat:33.5060,lng:126.4900,type:"local",cuisine:"에스프레소 + 푸딩",desc:"3-floor black-and-white ocean-view space. Byronic Pudding (whiskey/caramel) cult following. 8 min from airport.",query:"바이러닉에스프레소바 제주시 테우해안로"},
+    {name:"그린루스카",en:"Green Ruska",lat:33.5150,lng:126.5230,type:"gem",cuisine:"브루잉 전문 (에스프레소 없음)",desc:"BREWING-ONLY — no espresso machine. Pepper milk signature in a stone-wall house. Former Haso Coffee barista.",query:"그린루스카 제주시 삼도동 서사로"},
+    {name:"하토우 커피 로스터스",en:"Hatou Coffee",lat:33.5300,lng:126.8700,type:"gem",cuisine:"라이트로스팅 + 환차서비스",desc:"Welcome tea before drip. Detailed tasting notes per cup. Colombia Granja Paraíso 92, Ethiopia. Tea-ceremony sensibility.",query:"하토우커피로스터스 제주시 구좌읍 하도리"},
+    {name:"제레미",en:"Jeremy",lat:33.4660,lng:126.3070,type:"local",cuisine:"테이크아웃 로스터리",desc:"Takeout-only roastery stand on Aewol cafe street. No seating, no view — just freshly roasted coffee handed through a window.",query:"제레미 제주시 애월읍 애월로"},
+    {name:"구씨커피로스터스",en:"Gu's Coffee Roasters",lat:33.5200,lng:126.8600,type:"local",cuisine:"셀프로스팅 드립",desc:"KTO-listed village roastery in Sehwa-ri since 2019. Calm, nuanced single-origin drip. The 'coffee artisan' of the east coast.",query:"구씨커피로스터스 제주시 구좌읍 세화리"},
+    {name:"나인브로스커피",en:"Nine Bros Coffee",lat:33.2300,lng:126.2500,type:"local",cuisine:"로스팅 + 바리스타교육",desc:"Run by brothers — older is an international barista competition judge. 3 bean choices. Also trains aspiring baristas.",query:"나인브로스커피 서귀포시 대정읍"},
+    {name:"유동커피",en:"Yudong Coffee",lat:33.2480,lng:126.5630,type:"local",cuisine:"시즌 싱글오리진",desc:"Started as Jeju roastery, now 20+ locations nationwide. Seasonal blends with vivid tropical fruit aromas.",query:"유동커피 서귀포시 태평로"}
+  ],
+
   init: function(containerId, dataSet, opts){
     opts = opts || {};
     if(typeof L === 'undefined'){
@@ -298,7 +315,10 @@ window.JEJU_RATINGS = {
   "바이러닉 에스프레소 바":{f:4.5,v:4.8,val:4.0,u:4.2},
   "그린루스카":{f:4.5,v:4.3,val:4.0,u:4.8},
   "하토우 커피 로스터스":{f:4.5,v:4.0,val:4.3,u:4.5},
-  "제레미":{f:4.3,v:3.5,val:4.0,u:4.0}
+  "제레미":{f:4.3,v:3.5,val:4.0,u:4.0},
+  "구씨커피로스터스":{f:4.3,v:4.0,val:4.5,u:4.0},
+  "나인브로스커피":{f:4.2,v:3.8,val:4.3,u:3.8},
+  "유동커피":{f:4.0,v:3.8,val:4.5,u:3.5}
 };
 
 // ---- Backup recommendations for specialties ----

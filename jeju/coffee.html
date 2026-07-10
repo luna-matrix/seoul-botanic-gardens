@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeju Coffee Roasters · 제주 커피 로스터리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .coffee-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start;margin-bottom:2rem}
+  .coffee-intro p{font-size:1.02rem;margin-bottom:1rem;color:#332e26}
+  .coffee-intro .kw{background:linear-gradient(transparent 62%,rgba(61,43,31,.15) 62%);font-weight:500;padding:0 .1em}
+  .coffee-factbox{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:1.8rem}
+  .coffee-factbox h4{font-family:'Noto Serif KR',serif;font-size:1.05rem;font-weight:600;margin-bottom:.8rem;padding-bottom:.6rem;border-bottom:1px dashed var(--line-strong)}
+  .coffee-factbox ul{list-style:none}
+  .coffee-factbox li{padding:.45rem 0;border-bottom:1px dotted var(--line);font-size:.84rem;display:flex;gap:.5rem;align-items:baseline}
+  .coffee-factbox li:last-child{border-bottom:none}
+  .coffee-factbox li b{font-family:'Noto Sans KR',sans-serif;font-weight:600;min-width:70px;flex-shrink:0;color:var(--ink)}
+  .coffee-factbox li span{color:var(--muted)}
+  @media(max-width:820px){.coffee-intro{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="logo-dot"></span>Jeju Food Atlas</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="jeju-city.html">Jeju City · 제주시</a></li>
+      <li><a href="island.html">Island · 섬 전체</a></li>
+      <li><a href="hot-hits.html">Hot Hits · 핫플</a></li>
+      <li><a href="coffee.html" class="active">Coffee · 커피</a></li>
+      <li><a href="specialties.html">Specialties · 특산물</a></li>
+    </ul>
+    <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- SUB HERO -->
+<header class="sub-hero">
+  <div class="wrap sub-hero-inner">
+    <span class="kicker">제주 커피 로스터리 · Specialty Coffee</span>
+    <h1>Jeju <em>Coffee</em><br>Roasters</h1>
+    <p class="ko">제주 커피 — 섬에서 굽는 빈</p>
+    <p class="lead">Jeju has quietly become one of Asia's deepest specialty coffee destinations. A Sprudge #1 global roaster. The world's only oak-firewood roasting operation. An all-you-can-drink espresso bar. A musician's hi-fi roastery you book before you fly. These aren't cafes with coffee — they're coffee destinations that happen to be on a volcanic island.</p>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section style="padding-top:3rem">
+  <div class="wrap">
+    <div class="coffee-intro">
+      <div>
+        <p>Something remarkable happened on Jeju over the last five years. The island's combination of <span class="kw">volcanic water</span>, a slow-living culture imported by Seoul escapees, and a critical mass of baristas who trained abroad produced a roasting scene that punches far above its weight.</p>
+        <p>Korean coffee columnist Sim Jae-beom said of <span class="kw">Longplay</span>: <em>"a place worth traveling to Jeju just for the coffee."</em> The <span class="kw">Financial Times</span> ranked Jeju's <span class="kw">Momos Roastery</span> among the 100 best coffee shops in the world. And <span class="kw">Coffee Factory Gwideok</span> roasts over oak firewood — a method so rare it may be the only one on the planet.</p>
+        <p>This guide covers 13 roasteries and specialty coffee bars across the island, from the old downtown of Jeju City to the east coast villages and down to Seogwipo. Each has its own philosophy: light-roast purists, espresso obsessives, brewing-only contrarians, firewood madmen. All rated and mapped.</p>
+      </div>
+      <aside class="coffee-factbox">
+        <h4>The Jeju Coffee Cheat Sheet</h4>
+        <ul>
+          <li><b>Best for:</b><span>World ranking → Momos Roastery (#22 FT)</span></li>
+          <li><b>Most unique:</b><span>Oak firewood → Coffee Factory Gwideok</span></li>
+          <li><b>Best deal:</b><span>All-you-can-drink → Pac.Par (₩6,000 till 11 AM)</span></li>
+          <li><b>Celebrity:</b><span>Lee Sang-soon → Longplay (book ahead)</span></li>
+          <li><b>Brewing-only:</b><span>No espresso → Green Ruska</span></li>
+          <li><b>Best ritual:</b><span>Welcome tea → Hatou Coffee</span></li>
+          <li><b>Quickest:</b><span>Takeout window → Jeremy (Aewol)</span></li>
+          <li><b>Proximity:</b><span>8 min from airport → Byronic</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:1.5rem">
+      <span class="kicker">Roastery Map · 로스터리 지도</span>
+      <h2 style="font-size:1.8rem">Jeju Coffee Map <span class="ko">제주 커피 지도</span></h2>
+    </div>
+    <div class="map-container">
+      <div id="map-coffee" style="height:550px;width:100%;background:var(--paper-dark)"></div>
+      <div class="map-legend">
+        <div class="lg-item"><div class="lg-dot gem"></div>World-Class / Unique Method</div>
+        <div class="lg-item"><div class="lg-dot local"></div>Local Favourite Roaster</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PILGRIM CHOICES -->
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <div class="region-anchor">
+      <div class="compass" style="background:#3d2b1f">★</div>
+      <div class="info">
+        <h3>Pilgrim's Choices · 성지급</h3>
+        <span>Worth a detour — or a trip — on their own</span>
+      </div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="entry" data-query="롱플레이 제주시 구좌읍 동복로">
+      <div class="entry-tag gem"><div class="icon">♪</div><div class="lab">Hi-Fi</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>롱플레이<span class="en">Longplay</span></h3>
+          <span class="price-pill">₩5,000–8,000</span>
+        </div>
+        <div class="entry-cuisine">Specialty Coffee + Hi-Fi Audio · 싱글오리진 · 블렌딩</div>
+        <p>Opened by <strong>musician Lee Sang-soon (이상순)</strong> — husband of Lee Hyori, Jeju's most famous transplant. Curated seasonal playlists on high-fidelity audio. Collaborates with Fritz, Rowkey, Center Coffee, and Montage for beans. Coffee columnist Sim Jae-beom called it <em>"a place worth traveling to Jeju just for the coffee."</em></p>
+        <div class="anecdote"><b>The play:</b> This is what happens when a serious music obsessive applies the same curatorial discipline to coffee. The beans rotate seasonally, the playlists match the weather, and the room sounds as good as it tastes. <strong>Pre-reservation required</strong> — it's small and the reputation precedes it.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 구좌읍 동복로 44 · Between Gujwa &amp; Hamdeok, east coast</span>
+          <span class="m">Pre-reservation required · IG: @longplay_jeju</span>
+          <span class="m">Collabs: Fritz, Rowkey, Center Coffee, Montage</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="커피공장 제주시 한림읍 귀덕 일주서로">
+      <div class="entry-tag gem"><div class="icon">🔥</div><div class="lab">Fire</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>커피공장 귀덕<span class="en">Coffee Factory Gwideok</span></h3>
+          <span class="price-pill">₩6,500</span>
+        </div>
+        <div class="entry-cuisine">Oak-Firewood Direct-Fire Roasting · 참나무 장작 직화</div>
+        <p>The <strong>world's only oak-firewood direct-fire coffee roasting</strong> operation. Oak logs, real flame, direct contact — an impossibly rare method that produces a smoky depth no electric or gas roaster can replicate. Single-origin drip (Ethiopia, Guatemala, Yemen Matari, Kenya, Blue Mountain) for just ₩6,500. <em>시향</em> (bean nose tasting) before you order.</p>
+        <div class="anecdote"><b>Why it matters:</b> This isn't a gimmick — it's an act of madness that produces coffee you literally cannot get anywhere else on the planet. The firewood flavour is subtle, not overpowering — it reads as an extra layer of warmth beneath the origin character. Near Gwideok Beach on the west coast. <strong>Buy beans to take home</strong> — turnover is high so freshness is guaranteed. Also sells online via Naver Smart Store.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 한림읍 일주서로 5896 · Near Gwideok, west coast</span>
+          <span class="m">Drip ₩6,500 · Bean selection: Ethiopia, Guatemala, Yemen, Kenya, Blue Mountain</span>
+          <span class="m">Also online via Naver Smart Store</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="팩토리얼파크 제주시 남성로">
+      <div class="entry-tag gem"><div class="icon">☕</div><div class="lab">Buffet</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>팩토리얼파크<span class="en">Pac.Par (Factorial Park)</span></h3>
+          <span class="price-pill">Buffet ₩6,000 · Drinks ₩4,000+</span>
+        </div>
+        <div class="entry-cuisine">Espresso Bar · La Marzocco · 올유캔드링크</div>
+        <p>Called <strong>"Jeju's best espresso coffee bar."</strong> A vintage <em>La Marzocco</em> with a unique group head produces extractions that are "chewy and punchy." The deal: <strong>all-you-can-drink coffee buffet until 11 AM daily</strong> — pour as many cups as you want from the day's rotating selection for ₩6,000. Signatures: <em>서핑 플레이</em> (espresso + muscat lemon tea slush), <em>레몬로마노</em>.</p>
+        <div class="anecdote"><b>The buffet:</b> This is the most generous coffee offer in Korea. Arrive before 11, pay ₩6,000, taste everything. The owners — a former Jeju local and a Jeju native — built this for the love of extraction. The vintage La Marzocco is the visual anchor; sit at the bar and watch them work.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 남성로 154-2 1층 · Old downtown Jeju City</span>
+          <span class="m">Coffee buffet until 11:00 AM daily · IG: @pac.par</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="모모스커피 서귀포시">
+      <div class="entry-tag gem"><div class="icon">🌍</div><div class="lab">Global</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>모모스 로스터리<span class="en">Momos Roastery &amp; Coffee Bar</span></h3>
+          <span class="price-pill">₩5,000–8,000</span>
+        </div>
+        <div class="entry-cuisine">Globally Acclaimed Roaster · 글로벌 스페셜티</div>
+        <p>The globally recognised name. Named <strong>#1 "Notable Roaster" by Sprudge (2022)</strong> — the coffee world's most influential publication — and ranked <strong>#22 in the Financial Times' "100 Best Coffee Shops in the World" (2026)</strong>. Direct-trade single origin. Long coffee bar where you watch roasting and brewing happen in real time. Drip bags and green beans to go.</p>
+        <div class="entry-meta">
+          <span class="m addr">서귀포시 · Seogwipo</span>
+          <span class="m">Sprudge #1 Notable Roaster 2022 · FT Top 100 World 2026</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- THE LOCAL HEROES -->
+<section style="padding-top:2rem;background:var(--paper-warm)">
+  <div class="wrap">
+    <div class="region-anchor">
+      <div class="compass" style="background:var(--basalt)">◆</div>
+      <div class="info">
+        <h3>Local Heroes · 현지 사랑</h3>
+        <span>Roasteries beloved by Jeju residents</span>
+      </div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="entry" data-query="커피라이트로스터스 제주시 서사로">
+      <div class="entry-tag local"><div class="icon">🔆</div><div class="lab">Light</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>커피라이트 로스터스<span class="en">Coffee Light Roasters</span></h3>
+          <span class="price-pill">₩4,500–7,000</span>
+        </div>
+        <div class="entry-cuisine">Light-Roast Pour-Over Specialist · 라이트 로스팅</div>
+        <p>The name means both "coffee leads the way" and a commitment to light roasting. The most impressive roasting specialty shop in Jeju's old downtown. A professional coffee columnist wrote: <em>"the Peru Geisha was the best I had all year."</em> Rotating seasonal beans — anaerobic Costa Rica, Peru Geisha. Natural, uncontrived atmosphere with genuine hospitality.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주시 서사로 10-2 · Old downtown Jeju City</span>
+          <span class="m">Pour-over focus · IG: @coffeelight_roasters</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="무우수커피로스터스 제주시 조천읍">
+      <div class="entry-tag local"><div class="icon">🧊</div><div class="lab">Cold</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>무우수 커피 로스터스<span class="en">Muusu Coffee Roasters</span></h3>
+          <span class="price-pill">₩4,500–7,000</span>
+        </div>
+        <div class="entry-cuisine">Bright Roast + Cold Brew Einspänder · 콜드브루 아인슈페너</div>
+        <p>"Muusu" means the Tree of No Worries (보리수나무). Beloved by locals and travellers alike since opening. Four rotating single-origin beans for brewing; the signature <strong>콜드브루 아인슈페너</strong> (cold brew with vanilla cream) is one of the best on the island. Freshly baked canelés daily. Second location <em>무우수 홀리데이</em> at Hwabuk Harbor offers ocean views.</p>
+        <div class="anecdote"><b>The affogato move:</b> Their cold brew einspänder — cold brew topped with vanilla cream — is the most-ordered drink and the most photographed. The cream slowly sinks into the coffee, creating a gradient. Daily canelés pair perfectly.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 조천읍 조천11길 22-2 · Jocheon</span>
+          <span class="m">Also: 무우수 홀리데이 at 화북포구 (ocean view)</span>
+          <span class="m">Daily canelés · 4 rotating beans · decaf available</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="바이러닉에스프레소바 제주시 테우해안로">
+      <div class="entry-tag local"><div class="icon">🏛</div><div class="lab">Ocean</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>바이러닉 에스프레소 바<span class="en">Byronic Espresso Bar — Jeju</span></h3>
+          <span class="price-pill">₩4,500–7,000</span>
+        </div>
+        <div class="entry-cuisine">Espresso Bar + Pudding · 에스프레소 + 푸딩</div>
+        <p>The signature Jeju location of Seoul's popular espresso bar chain. A <strong>three-floor black-and-white minimalist space</strong> near Iho Tewoo Beach, 8 minutes from the airport. Focused on "just two things: chewy pudding and rich espresso." The <em>Byronic Pudding</em> (whiskey or caramel) has a cult following separate from the coffee. Sells roasted beans and branded goods.</p>
+        <div class="anecdote"><b>The architecture:</b> This building is a statement — black-and-white geometric, ocean-facing, three floors of seating. Order on ground, sit upstairs with the view. 8 minutes from the airport makes this the perfect first or last stop on the island.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 테우해안로 96 · Near Iho Tewoo Beach, ~8 min from airport</span>
+          <span class="m">3-floor space · ocean view · roasted beans sold on-site</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="그린루스카 제주시 삼도동 서사로">
+      <div class="entry-tag gem"><div class="icon">🌿</div><div class="lab">Brew</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>그린루스카<span class="en">Green Ruska</span></h3>
+          <span class="price-pill">₩5,000–7,000</span>
+        </div>
+        <div class="entry-cuisine">Brewing-Only Specialty Coffee · 브루잉 전문 (에스프레소 없음)</div>
+        <p>The <strong>only brewing-only specialty coffee shop in Jeju's old downtown</strong> — no espresso machine, just pour-over. Run by a former Haso Local Coffee and Café Imagei barista. Housed in a remodeled traditional Jeju stone-wall house (구축). The signature <em>카페페퍼밀크</em> (oat milk + organic black pepper from Azad Hind farm) sounds insane and works beautifully.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주시 서사로12길 45 1층 · Old downtown, Samdo-dong</span>
+          <span class="m">Brewing only — no espresso · Stone-wall house · IG: @green_ruska</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="하토우커피로스터스 제주시 구좌읍 하도리">
+      <div class="entry-tag gem"><div class="icon">🌊</div><div class="lab">Tea</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>하토우 커피 로스터스<span class="en">Hatou Coffee Roasters</span></h3>
+          <span class="price-pill">₩7,000–8,000</span>
+        </div>
+        <div class="entry-cuisine">Light Roast + Tea Ceremony Service · 환차 서비스</div>
+        <p>"Hatou" means "wave" in Japanese — the owner discovered specialty coffee during a year living in Japan. Light-roast specialist. Each cup comes with <strong>detailed tasting notes</strong> (origin, processing method, flavour profile) and a <em>welcome tea before the drip</em> — a tea-ceremony sensibility applied to coffee. Colombia Granja Paraíso 92 Vanilla, Ethiopia Haru Suke Kurume.</p>
+        <div class="anecdote"><b>Why it's a hidden gem:</b> This is a relatively unknown spot in Hado-ri, Gujwa — small, intimate, focused purely on coffee excellence. The welcome-tea-before-drip ritual is unique on Jeju. If you're the type who reads origin labels, this is your spot.</div>
+        <div class="entry-meta">
+          <span class="m addr">제주시 구좌읍 구좌로 188-1 · Hado-ri, Gujwa</span>
+          <span class="m">Welcome tea service · tasting notes per cup · decaf available</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EAST COAST & WEST -->
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <div class="region-anchor">
+      <div class="compass" style="background:var(--ocean-deep)">●</div>
+      <div class="info">
+        <h3>Coastal &amp; Village Roasters · 해안도로</h3>
+        <span>Roasteries on the driving routes</span>
+      </div>
+      <div class="rule"></div>
+    </div>
+
+    <div class="entry" data-query="제레미 제주시 애월읍 애월로">
+      <div class="entry-tag local"><div class="icon">🏃</div><div class="lab">To-Go</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>제레미<span class="en">Jeremy</span></h3>
+          <span class="price-pill">₩4,000–5,000</span>
+        </div>
+        <div class="entry-cuisine">Takeout-Only Roastery Stand · 테이크아웃 로스터리</div>
+        <p>A tiny <strong>takeout-only roastery stand</strong> on the Aewol cafe street. Minimalist and focused purely on quality coffee to-go. No seating, no view, no food — just freshly roasted beans, pulled into a cup, handed through a window. The anti-thesis of the ocean-view cafe culture Aewol is known for. Coffee for people who care about coffee.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주시 애월읍 애월로 106-1 · Aewol cafe street</span>
+          <span class="m">Takeout only · no seating · in-house roasting</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="구씨커피로스터스 제주시 구좌읍 세화리">
+      <div class="entry-tag local"><div class="icon">☕</div><div class="lab">KTO</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>구씨커피로스터스<span class="en">Gu's Coffee Roasters</span></h3>
+          <span class="price-pill">₩4,500–6,000</span>
+        </div>
+        <div class="entry-cuisine">Self-Roasted Village Drip · 셀프로스팅 드립</div>
+        <p>A <strong>Korea Tourism Organisation-listed</strong> village roastery in Sehwa-ri, opened 2019. Calm, nuanced single-origin drip coffee from self-roasted beans — each bean's unique flavour expressed through diverse extraction methods. Known locally as a "coffee artisan" shop. The kind of place where the roaster talks you through the bean before brewing.</p>
+        <div class="entry-meta">
+          <span class="m addr">제주시 구좌읍 구좌로 21 · Sehwa-ri village, Gujwa</span>
+          <span class="m">KTO-listed · since 2019 · diverse extraction methods</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="나인브로스커피 서귀포시 대정읍">
+      <div class="entry-tag local"><div class="icon">⚖</div><div class="lab">Judge</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>나인브로스커피<span class="en">Nine Bros Coffee</span></h3>
+          <span class="price-pill">₩4,000–6,000</span>
+        </div>
+        <div class="entry-cuisine">Roasting + Barista Training · 로스팅 + 바리스타 교육</div>
+        <p>Run by two brothers with serious credentials — the older brother is an <strong>international barista competition judge</strong>, and the younger is an active competitor. Three bean choices: easy-drinking, aromatic, or acidic. Also runs barista training, café consulting, and wholesale bean supply. VisitJeju-recognised for coffee passion.</p>
+        <div class="entry-meta">
+          <span class="m addr">서귀포시 대정읍 중산간서로 2595 · Southwest Jeju, near English Education City</span>
+          <span class="m">3 bean choices · barista training available</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-query="유동커피 서귀포시 태평로">
+      <div class="entry-tag local"><div class="icon">🌴</div><div class="lab">Tropical</div></div>
+      <div class="entry-body">
+        <div class="entry-head">
+          <h3>유동커피<span class="en">Yudong Coffee</span></h3>
+          <span class="price-pill">₩4,000–5,500</span>
+        </div>
+        <div class="entry-cuisine">Seasonal Single Origin · 시즌 싱글오리진</div>
+        <p>Started as a Jeju local roastery that has now expanded to <strong>20+ locations nationwide</strong>. Seasonal blends with remarkably vivid tropical fruit aromas — so aromatic they're sometimes mistaken for flavoured coffee. A testament to Jeju's growing influence on Korea's national coffee culture. The Seogwipo original is still the best.</p>
+        <div class="entry-meta">
+          <span class="m addr">서귀포시 태평로 406-1 · Seogwipo</span>
+          <span class="m">Seasonal single origin · 20+ national locations</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PAGE NAV -->
+<div class="wrap" style="padding-bottom:3rem">
+  <div class="page-nav">
+    <a href="hot-hits.html">
+      <div class="pn-dir">← Previous</div>
+      <div class="pn-title">Hot Hits &amp; Trending</div>
+    </a>
+    <a href="specialties.html" class="next">
+      <div class="pn-dir">Next →</div>
+      <div class="pn-title">Specialties &amp; Dishes</div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <p>"섬에서 굽는 빈, 바다에서 마시는 커피."</p>
+    <small>
+      Jeju coffee roasters guide · 제주 커피 로스터리 가이드<br>
+      Roasteries open and close — always verify on Naver or Instagram before driving out.
+    </small>
+    <div class="sig">제주특별자치도 · 2026</div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="js/main.js"></script>
+<script>
+  JEJU_MAPS.init('map-coffee', JEJU_MAPS.coffeeRoasters, {zoom:10});
+</script>
+</body>
+</html>

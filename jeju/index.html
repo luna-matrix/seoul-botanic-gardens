@@ -92,6 +92,7 @@
       <li><a href="jeju-city.html">Jeju City · 제주시</a></li>
       <li><a href="island.html">Island · 섬 전체</a></li>
       <li><a href="hot-hits.html">Hot Hits · 핫플</a></li>
+      <li><a href="coffee.html">Coffee · 커피</a></li>
       <li><a href="specialties.html">Specialties · 특산물</a></li>
     </ul>
     <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
@@ -146,7 +147,7 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker">Three Guides · 세 가지 가이드</span>
+      <span class="kicker">Six Guides · 여섯 가지 가이드</span>
       <h2>Choose Your Path <span class="ko">어디서부터?</span></h2>
       <p>Each guide is a standalone deep-dive with an interactive map, restaurant cards with pop-out links, and local anecdotes from the Korean food community.</p>
     </div>
@@ -174,8 +175,17 @@
         <div class="gcard-body">
           <h3>Hot Hits &amp; Trending</h3>
           <div class="en">제주 핫플 · SNS 바이럴</div>
-          <p>40+ trending spots across 7 categories: the world's only oak-firewood coffee roaster, a Spotify-famous espresso bar, bagel museums, sourdough in stone barns, Netflix-star restaurants, secret glass dining in the forest, tangerine desserts, beach bakeries, and Jeju's biggest market. The complete hipster layer.</p>
+          <p>30+ trending spots: black pork burgers, tangerine desserts, sourdough in stone barns, bagel museums, Netflix-star restaurants, secret glass dining, beach bakeries, and Jeju's biggest market.</p>
           <div class="more">See what's trending</div>
+        </div>
+      </a>
+      <a href="coffee.html" class="gcard">
+        <div class="gcard-banner b1" style="background:linear-gradient(135deg,#3d2b1f,#5a3a1a)"><span class="icon">☕</span></div>
+        <div class="gcard-body">
+          <h3>Coffee Roasters</h3>
+          <div class="en">제주 커피 로스터리</div>
+          <p>13 roasteries and specialty bars: Sprudge's #1 global roaster, the world's only oak-firewood roasting, an all-you-can-drink espresso bar, a musician's hi-fi roastery, and brewing-only contrarians. Jeju's quietly world-class coffee scene.</p>
+          <div class="more">Find your bean</div>
         </div>
       </a>
       <a href="specialties.html" class="gcard">
@@ -227,7 +237,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="js/main.js"></script>
 <script>
-  var allData = JEJU_MAPS.jejuCity.concat(JEJU_MAPS.island).concat(JEJU_MAPS.hotHits);
+  var allData = JEJU_MAPS.jejuCity.concat(JEJU_MAPS.island).concat(JEJU_MAPS.hotHits).concat(JEJU_MAPS.coffeeRoasters);
   JEJU_MAPS.init('map-overview', allData, {zoom:10, fixedView:false});
 </script>
 </body>
