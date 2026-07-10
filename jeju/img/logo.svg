@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#073d4d"/>
+      <stop offset="100%" stop-color="#0c5c74"/>
+    </linearGradient>
+    <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b3f47"/>
+      <stop offset="100%" stop-color="#1c1e22"/>
+    </linearGradient>
+    <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c5c74"/>
+      <stop offset="100%" stop-color="#2a8ba8"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dd6b1f"/>
+      <stop offset="100%" stop-color="#c4932f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#sky)"/>
+
+  <!-- Sun -->
+  <circle cx="356" cy="150" r="58" fill="url(#sun)" opacity="0.95"/>
+
+  <!-- Hallasan mountain (volcanic peak silhouette) -->
+  <path d="M 0 340
+           L 120 300
+           L 180 250
+           L 230 200
+           L 256 170
+           L 282 200
+           L 332 250
+           L 392 300
+           L 512 340
+           L 512 512
+           L 0 512 Z"
+        fill="url(#mountain)"/>
+
+  <!-- Ocean -->
+  <rect x="0" y="340" width="512" height="172" fill="url(#ocean)" opacity="0.7"/>
+
+  <!-- Wave lines -->
+  <path d="M 40 380 Q 80 370 120 380 T 200 380 T 280 380 T 360 380 T 440 380 T 500 380"
+        stroke="rgba(255,253,248,0.25)" stroke-width="3" fill="none"/>
+  <path d="M 60 420 Q 100 410 140 420 T 220 420 T 300 420 T 380 420 T 460 420"
+        stroke="rgba(255,253,248,0.15)" stroke-width="2.5" fill="none"/>
+
+  <!-- Bowl/noodle steam (food element) -->
+  <path d="M 200 460 Q 210 440 200 420 Q 190 400 200 380"
+        stroke="rgba(255,253,248,0.3)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 256 460 Q 266 440 256 420 Q 246 400 256 380"
+        stroke="rgba(255,253,248,0.35)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 312 460 Q 322 440 312 420 Q 302 400 312 380"
+        stroke="rgba(255,253,248,0.3)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Bowl -->
+  <path d="M 170 460 L 342 460 Q 332 490 300 495 L 212 495 Q 180 490 170 460 Z"
+        fill="#c4932f" opacity="0.9"/>
+  <ellipse cx="256" cy="460" rx="86" ry="12" fill="#dcc06e" opacity="0.95"/>
+</svg>

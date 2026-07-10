@@ -9,10 +9,17 @@ const ASSETS = [
   './hot-hits.html',
   './coffee.html',
   './specialties.html',
+  './manifest.json',
   './css/style.css',
   './css/vendor/leaflet.css',
   './js/main.js',
-  './js/vendor/leaflet.js'
+  './js/vendor/leaflet.js',
+  './img/logo.svg',
+  './img/icon-192.png',
+  './img/icon-512.png',
+  './img/apple-touch-icon.png',
+  './img/favicon-32.png',
+  './img/favicon-16.png'
 ];
 
 // Install: cache all core assets

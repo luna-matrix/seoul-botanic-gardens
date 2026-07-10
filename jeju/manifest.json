@@ -1,0 +1,61 @@
+{
+  "name": "Jeju Food Atlas",
+  "short_name": "Jeju Food",
+  "description": "A foodie's field guide to Jeju Island — 80+ restaurants, cafes, bakeries, and coffee roasters with interactive maps and ratings.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#073d4d",
+  "theme_color": "#0c5c74",
+  "lang": "en",
+  "categories": ["food", "travel", "lifestyle"],
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "img/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Jeju City",
+      "short_name": "제주시",
+      "url": "./jeju-city.html"
+    },
+    {
+      "name": "Island Guide",
+      "short_name": "섬 전체",
+      "url": "./island.html"
+    },
+    {
+      "name": "Coffee Roasters",
+      "short_name": "커피",
+      "url": "./coffee.html"
+    },
+    {
+      "name": "Hot Hits",
+      "short_name": "핫플",
+      "url": "./hot-hits.html"
+    }
+  ]
+}
