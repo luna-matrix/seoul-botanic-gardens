@@ -435,15 +435,16 @@ window.JEJU_ALT = {
     var score = calcOverall(r);
     var tier = getTier(score);
     var pct = function(n){return (n/5*100)+'%'};
+    var tierCls = score>=4.5 ? 'A' : score>=4.0 ? 'B' : 'C';
     if(compact){
       return '<div class="rating-compact">'+
         '<span class="tier-badge tier-'+tier.cls+'">'+tier.label+'</span>'+
-        '<span class="score-overall">'+score.toFixed(1)+'<span class="max">/5</span></span>'+
+        '<div class="score-circle sc-tier-'+tierCls+'"><span class="sc-num">'+score.toFixed(1)+'</span></div>'+
         '</div>';
     }
     return '<div class="rating-block">'+
+      '<div class="score-circle sc-tier-'+tierCls+'"><span class="sc-num">'+score.toFixed(1)+'</span><span class="sc-max">/5</span></div>'+
       '<span class="tier-badge tier-'+tier.cls+'">'+tier.label+'</span>'+
-      '<span class="score-overall">'+score.toFixed(1)+'<span class="max">/5</span></span>'+
       '<div class="score-bars">'+
         '<div class="score-bar"><span class="sb-label">Food</span><div class="sb-track"><div class="sb-fill food" style="width:'+pct(r.f)+'"></div></div><span class="sb-num">'+r.f.toFixed(1)+'</span></div>'+
         '<div class="score-bar"><span class="sb-label">Vibe</span><div class="sb-track"><div class="sb-fill vibe" style="width:'+pct(r.v)+'"></div></div><span class="sb-num">'+r.v.toFixed(1)+'</span></div>'+
@@ -474,8 +475,8 @@ window.JEJU_ALT = {
         var meta = body.querySelector('.entry-meta');
         if(meta){
           meta.insertAdjacentHTML('beforebegin',
-            '<div style="font-size:.76rem;color:var(--muted);padding:.4rem 0;font-style:italic">'+
-            '<b style="color:var(--basalt);font-style:normal">↻ Also consider:</b> '+alt+
+            '<div class="alt-suggest">'+
+            '<b>↻ Also consider:</b> '+alt+
             '</div>');
         }
       }
@@ -530,10 +531,11 @@ window.JEJU_ALT = {
       });
       if(topScore > 0){
         var tier = getTier(topScore);
+        var tierCls = topScore>=4.5 ? 'A' : topScore>=4.0 ? 'B' : 'C';
         specEn.insertAdjacentHTML('afterend',
           '<div class="rating-compact">'+
           '<span class="tier-badge tier-'+tier.cls+'">Top Pick: '+tier.label+'</span>'+
-          '<span class="score-overall">'+topScore.toFixed(1)+'<span class="max">/5</span></span>'+
+          '<div class="score-circle sc-tier-'+tierCls+'"><span class="sc-num">'+topScore.toFixed(1)+'</span></div>'+
           '</div>');
       }
 

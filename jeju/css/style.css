@@ -384,13 +384,13 @@ section{padding:5rem 0}
    RATING SYSTEM
    ================================================ */
 .rating-block{
-  display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;
-  padding:.7rem 0;margin-top:.3rem;
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  padding:.8rem 0;margin-top:.3rem;
   border-top:1px solid var(--line);
 }
 .tier-badge{
   display:inline-flex;align-items:center;gap:.3rem;
-  padding:.28rem .75rem;border-radius:3px;
+  padding:.3rem .8rem;border-radius:3px;
   font-family:'Noto Sans KR',sans-serif;
   font-size:.66rem;font-weight:700;letter-spacing:.08em;
   text-transform:uppercase;white-space:nowrap;
@@ -402,6 +402,24 @@ section{padding:5rem 0}
 .tier-essential::before{content:"◆"}
 .tier-solid{background:var(--paper-dark);color:var(--basalt)}
 .tier-solid::before{content:"●"}
+
+/* Big circular score */
+.score-circle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:46px;height:46px;border-radius:50%;
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;font-weight:900;
+  color:#fff;flex-shrink:0;
+  box-shadow:0 3px 10px -2px rgba(0,0,0,.3);
+  position:relative;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.score-circle:hover{transform:scale(1.1)}
+.score-circle .sc-num{line-height:1}
+.score-circle .sc-max{font-family:'Inter',sans-serif;font-size:.4rem;font-weight:500;opacity:.7;position:absolute;bottom:8px}
+.sc-tier-A{background:linear-gradient(135deg,#b54e12,#dd6b1f)}
+.sc-tier-B{background:linear-gradient(135deg,var(--ocean-deep),var(--ocean))}
+.sc-tier-C{background:linear-gradient(135deg,var(--basalt),var(--basalt-light))}
 
 .score-overall{
   font-family:'Playfair Display',serif;
@@ -429,6 +447,8 @@ section{padding:5rem 0}
 .rating-compact{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:.4rem}
 .rating-compact .tier-badge{font-size:.6rem;padding:.22rem .6rem}
 .rating-compact .score-overall{font-size:.95rem}
+.rating-compact .score-circle{width:32px;height:32px;font-size:.95rem}
+.rating-compact .score-circle .sc-max{font-size:.3rem;bottom:5px}
 
 /* spec backup section */
 .spec-backup{
@@ -447,7 +467,15 @@ section{padding:5rem 0}
 }
 .spec-backup .bk-item b{font-family:'Noto Sans KR',sans-serif;font-weight:600;color:var(--basalt)}
 
+/* "Also consider" backup */
+.alt-suggest{
+  font-size:.76rem;color:var(--muted);
+  padding:.4rem 0;font-style:italic;
+}
+.alt-suggest b{color:var(--basalt);font-style:normal;font-weight:600}
+
 @media(max-width:600px){
   .score-bars{min-width:100%}
   .rating-block{flex-direction:column;align-items:flex-start}
+  .score-circle{width:40px;height:40px;font-size:1.15rem}
 }
