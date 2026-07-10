@@ -32,7 +32,7 @@ html{scroll-behavior:smooth}
 body{
   background:var(--paper);
   color:var(--ink);
-  font-family:'Inter','Noto Sans KR',sans-serif;
+  font-family:'Inter','Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
@@ -490,4 +490,115 @@ section{padding:5rem 0}
   .score-bars{min-width:100%}
   .rating-block{flex-direction:column;align-items:flex-start}
   .score-circle{width:40px;height:40px;font-size:1.15rem}
+}
+
+/* ================================================
+   MOBILE READING OPTIMIZATION
+   ================================================ */
+@media(max-width:600px){
+  /* Typography: larger, more readable */
+  body{font-size:1.02rem;line-height:1.75}
+  .entry-body p, .hot-body p{font-size:.96rem;line-height:1.72}
+  .entry-body h3, .hot-body h3{font-size:1.18rem}
+  .entry-cuisine{font-size:.7rem;margin-bottom:.6rem}
+
+  /* Entry card: tag column narrower, body more room */
+  .entry{grid-template-columns:56px 1fr}
+  .entry-tag{padding:1rem .3rem}
+  .entry-tag .food-thumb{font-size:1.6rem;margin-bottom:.1rem}
+  .entry-tag .lab{font-size:.5rem;letter-spacing:.12em}
+  .entry-body{padding:1rem .9rem}
+
+  /* Price pill: smaller, wraps better */
+  .price-pill{font-size:.68rem;padding:.22rem .6rem}
+
+  /* Rating block: compact on mobile */
+  .rating-block{gap:.5rem;padding:.5rem 0}
+  .score-bars{gap:.5rem}
+  .score-bar{min-width:48px}
+  .score-bar .sb-label{font-size:.54rem}
+  .score-bar .sb-num{font-size:.56rem}
+  .score-bar .sb-track{height:4px}
+
+  /* Anecdote: more readable */
+  .anecdote{padding:.7rem .85rem;font-size:.82rem;line-height:1.65;margin:.5rem 0}
+  .anecdote b{display:inline-block;margin-bottom:.15rem}
+
+  /* Entry meta: stacked, larger text */
+  .entry-meta{font-size:.72rem;gap:.2rem .5rem;padding-top:.6rem}
+  .entry-meta .m{font-size:.72rem}
+
+  /* Hot cards: badge column narrower */
+  .hot-card{grid-template-columns:64px 1fr}
+  .hot-badge{padding:1rem .3rem}
+  .hot-badge .emoji{font-size:1.5rem}
+  .hot-badge .tag{font-size:.5rem}
+  .hot-body{padding:1rem .9rem}
+
+  /* Spec cards: single column, more padding */
+  .spec-grid{grid-template-columns:1fr;gap:1rem}
+  .spec-card{padding:1.5rem 1.2rem}
+
+  /* Cafe cards: single column */
+  .cafe-grid{grid-template-columns:1fr}
+
+  /* Section heads: tighter */
+  .section-head{margin-bottom:2rem}
+  .section-head h2{font-size:1.6rem}
+  .section-head p{font-size:.92rem}
+
+  /* Region/meal anchors: compact */
+  .meal-anchor{gap:.8rem;margin:2.5rem 0 1.5rem}
+  .meal-anchor .tag{font-size:1.5rem}
+  .meal-anchor .label{font-size:1.05rem}
+  .meal-anchor .label span{font-size:.72rem}
+  .region-anchor{gap:.8rem;margin:2.5rem 0 1.5rem}
+  .region-anchor .info h3{font-size:1.1rem}
+  .region-anchor .info span{font-size:.74rem}
+
+  /* Sub-hero: less padding */
+  .sub-hero{padding:6rem 0 2rem}
+  .sub-hero h1{font-size:2rem}
+  .sub-hero .lead{font-size:.92rem}
+
+  /* Map: shorter on mobile */
+  #map-city,#map-island,#map-hot,#map-coffee,#map-overview{height:350px!important}
+
+  /* Map legend: smaller */
+  .map-legend{font-size:.65rem;padding:.5rem .7rem;bottom:.5rem;left:.5rem}
+  .map-legend .lg-dot{width:10px;height:10px}
+
+  /* Pop-out links: smaller, tap-friendly */
+  .pl{font-size:.7rem;padding:.4rem .8rem;gap:.3rem}
+
+  /* Footer: tighter */
+  .footer{padding:2.5rem 0 2rem}
+  .footer small{font-size:.7rem;line-height:1.7}
+
+  /* Page nav: tighter */
+  .page-nav a{padding:.9rem 1rem}
+  .page-nav .pn-title{font-size:.95rem}
+
+  /* Alt-suggest: readable */
+  .alt-suggest{font-size:.72rem;line-height:1.55}
+
+  /* Spec recs: compact */
+  .spec-rec{font-size:.74rem}
+  .spec-rec b{font-size:.78rem}
+  .spec-backup .bk-item{font-size:.72rem}
+
+  /* Coffee intro / factbox: stacked */
+  .coffee-intro{grid-template-columns:1fr;gap:1.5rem}
+  .coffee-intro p{font-size:.95rem}
+}
+
+/* Very small screens (iPhone SE etc) */
+@media(max-width:380px){
+  .entry{grid-template-columns:48px 1fr}
+  .entry-tag .food-thumb{font-size:1.3rem}
+  .entry-body{padding:.85rem .75rem}
+  .entry-body h3{font-size:1.08rem}
+  .hot-card{grid-template-columns:56px 1fr}
+  .score-bars{flex-wrap:wrap}
+  .score-bar{min-width:42px}
 }

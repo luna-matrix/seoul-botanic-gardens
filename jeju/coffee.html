@@ -381,11 +381,18 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="js/vendor/leaflet.js"></script>
+<link rel="stylesheet" href="css/vendor/leaflet.css"/>
 <script src="js/main.js"></script>
 <script>
   JEJU_MAPS.init('map-coffee', JEJU_MAPS.coffeeRoasters, {zoom:10});
 </script>
+
+<script>
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("sw.js").catch(function(){});
+}
+</script>
+
 </body>
 </html>
