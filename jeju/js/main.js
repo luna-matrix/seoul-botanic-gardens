@@ -474,6 +474,34 @@ window.JEJU_ALT = {
     '</div>';
   }
 
+  // ---- Food emoji map by cuisine keyword ----
+  var FOOD_EMOJI = {
+    '고기국수':'🍜','흑돼지':'🐷','해산물':'🦐','해장국':'🥣','칼국수':'🍲',
+    '복지리':'🐡','갈치':'🐟','물회':'🐠','성게':'🌊','전복':'🦪',
+    '보말죽':'🐚','몸국':'🌿','빙떡':'🫓','문게죽':'🐙','옥돔':'📐',
+    '꿩고기':'🦃','돔베고기':'🥩','퓨전':'🍝','해녀':'🤿',
+    '베이글':'🥯','사워도우':'🍞','도넛':'🍩','감귤':'🍊',
+    '커피':'☕','에스프레소':'☕','로스팅':'🔥','브루잉':'🍵',
+    '말차':'🍵','젤라또':'🍨','아이스크림':'🍦','카스텔라':'🍰',
+    '비치':'🏖️','한옥':'🏛️','브런치':'🥐','오션뷰':'🌊',
+    '흑돼지버거':'🍔','한라산':'⛰️','만두':'🥟','중식':'🥡',
+    '시장':'🏪','파인다이닝':'⭐','이탈리안':'🍝','오마카세':'🍣',
+    '라클렛':'🧀','코스다이닝':'🍾'
+  };
+  function emojiFor(cuisineText){
+    var t = cuisineText.toLowerCase();
+    for(var key in FOOD_EMOJI){
+      if(cuisineText.indexOf(key)!==-1) return FOOD_EMOJI[key];
+    }
+    // Fallbacks by category
+    if(t.indexOf('국수')!==-1||t.indexOf('noodle')!==-1) return '🍜';
+    if(t.indexOf('돼지')!==-1||t.indexOf('pork')!==-1) return '🐷';
+    if(t.indexOf('해')!==-1||t.indexOf('sea')!==-1||t.indexOf('fish')!==-1) return '🦐';
+    if(t.indexOf('카페')!==-1||t.indexOf('cafe')!==-1) return '☕';
+    if(t.indexOf('베이커리')!==-1||t.indexOf('bakery')!==-1) return '🥐';
+    return '🍽️';
+  }
+
   function injectRatings(){
     // Entry cards (jeju-city, island)
     document.querySelectorAll('.entry-body').forEach(function(body){
@@ -484,6 +512,16 @@ window.JEJU_ALT = {
       if(!key) return;
       var r = window.JEJU_RATINGS[key];
       if(!r) return;
+      // Inject food emoji into entry-tag
+      var cuisineEl = body.querySelector('.entry-cuisine');
+      var tag = body.closest('.entry').querySelector('.entry-tag');
+      if(cuisineEl && tag && !tag.querySelector('.food-thumb')){
+        var emoji = emojiFor(cuisineEl.textContent);
+        var oldIcon = tag.querySelector('.icon');
+        if(oldIcon){
+          oldIcon.outerHTML = '<div class="food-thumb">'+emoji+'</div>';
+        }
+      }
       var cuisine = body.querySelector('.entry-cuisine');
       if(cuisine){
         cuisine.insertAdjacentHTML('afterend', buildRatingHtml(r,false));
@@ -511,6 +549,15 @@ window.JEJU_ALT = {
       if(!key) return;
       var r = window.JEJU_RATINGS[key];
       if(!r) return;
+      // Inject food emoji into hot-badge emoji
+      var cuisineEl = body.querySelector('.entry-cuisine');
+      var badge = body.closest('.hot-card').querySelector('.hot-badge .emoji');
+      if(cuisineEl && badge){
+        var emoji = emojiFor(cuisineEl.textContent);
+        if(emoji && emoji !== '🍽️'){
+          badge.textContent = emoji;
+        }
+      }
       var cuisine = body.querySelector('.entry-cuisine');
       if(cuisine){
         cuisine.insertAdjacentHTML('afterend', buildRatingHtml(r,false));
